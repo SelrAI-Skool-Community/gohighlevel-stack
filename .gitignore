@@ -1,0 +1,5 @@
+secrets/ghl.env
+.env
+*.log
+.DS_Store
+catalog.json

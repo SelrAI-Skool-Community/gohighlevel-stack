@@ -1,0 +1,6272 @@
+[
+{
+"operationId": "fb-get-ad-accounts",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/ad-accounts",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get ad accounts"
+},
+{
+"operationId": "fb-delete-ad-account",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/facebook/ad-accounts/{adAccountId}",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete ad account"
+},
+{
+"operationId": "fb-get-ad-account",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/ad-accounts/{adAccountId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get ad account details"
+},
+{
+"operationId": "fb-upsert-ad",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/facebook/ads",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Upsert ad"
+},
+{
+"operationId": "fb-delete-ad",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/facebook/ads/{adId}",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete ad"
+},
+{
+"operationId": "fb-duplicate-ad",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/ads/{adId}/duplicate",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Duplicate ad"
+},
+{
+"operationId": "fb-pause-ad",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/ads/{adId}/pause",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Pause ad"
+},
+{
+"operationId": "fb-resume-ad",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/ads/{adId}/resume",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Resume ad"
+},
+{
+"operationId": "fb-upsert-adset",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/facebook/adsets",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Upsert adset"
+},
+{
+"operationId": "fb-delete-adset",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/facebook/adsets/{adSetId}",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete ad set"
+},
+{
+"operationId": "fb-duplicate-adset",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/adsets/{adSetId}/duplicate",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Duplicate ad set"
+},
+{
+"operationId": "fb-pause-adset",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/adsets/{adSetId}/pause",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Pause ad set"
+},
+{
+"operationId": "fb-resume-adset",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/adsets/{adSetId}/resume",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Resume ad set"
+},
+{
+"operationId": "fb-get-campaign",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/campaign/{campaignId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get campaign with linked entities"
+},
+{
+"operationId": "fb-upsert-campaign",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/facebook/campaigns",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Upsert campaign"
+},
+{
+"operationId": "fb-delete-campaign",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/facebook/campaigns/{campaignId}",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete campaign"
+},
+{
+"operationId": "fb-duplicate-campaign",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/campaigns/{campaignId}/duplicate",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Duplicate campaign"
+},
+{
+"operationId": "fb-pause-campaign",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/campaigns/{campaignId}/pause",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Pause campaign"
+},
+{
+"operationId": "fb-publish-campaign",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/campaigns/{campaignId}/publish",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Publish campaign"
+},
+{
+"operationId": "fb-get-campaign-publishing-progress",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/campaigns/{campaignId}/publishing-progress",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get campaign publishing progress"
+},
+{
+"operationId": "fb-resume-campaign",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/campaigns/{campaignId}/resume",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Resume campaign"
+},
+{
+"operationId": "fb-get-conversation-forms",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/conversation-forms",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get conversation forms"
+},
+{
+"operationId": "fb-create-conversation-form",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/conversation-forms",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Create conversation form"
+},
+{
+"operationId": "fb-get-custom-audiences",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/custom-audience",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get custom audiences"
+},
+{
+"operationId": "fb-delete-custom-audience",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/facebook/custom-audience/{audienceId}",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete custom audience"
+},
+{
+"operationId": "fb-get-custom-audience-by-id",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/custom-audience/{audienceId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get custom audience by ID"
+},
+{
+"operationId": "fb-update-custom-audience",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/facebook/custom-audience/{audienceId}",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Update custom audience"
+},
+{
+"operationId": "fb-remove-custom-audience-member",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/facebook/custom-audience/{audienceId}/member",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Remove custom audience member"
+},
+{
+"operationId": "fb-add-custom-audience-member",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/facebook/custom-audience/{audienceId}/member",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Add custom audience member"
+},
+{
+"operationId": "fb-batch-update-audience-members",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/facebook/custom-audience/{audienceId}/member/batch",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Batch update audience members"
+},
+{
+"operationId": "fb-get-entity",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/entity",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get entities"
+},
+{
+"operationId": "fb-delete-integration",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/facebook/integration",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete Facebook integration"
+},
+{
+"operationId": "fb-get-integration",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/integration",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get Facebook integration"
+},
+{
+"operationId": "fb-create-integration",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/integration",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Create Facebook integration"
+},
+{
+"operationId": "fb-get-lead-form",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/lead-form/{leadFormId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get lead form by ID"
+},
+{
+"operationId": "fb-get-current-user",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/me",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get current Facebook user"
+},
+{
+"operationId": "fb-delete-page",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/facebook/page",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete page connection"
+},
+{
+"operationId": "fb-set-default-page",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/facebook/page/default",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Set default page"
+},
+{
+"operationId": "fb-get-page-lead-forms",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/page/{pageId}/forms",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get page lead forms"
+},
+{
+"operationId": "fb-create-page-lead-form",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/facebook/page/{pageId}/forms",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Create page lead form"
+},
+{
+"operationId": "fb-get-instagram-accounts",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/page/{pageId}/instagram",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get Instagram accounts for page"
+},
+{
+"operationId": "fb-get-pages",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/pages",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get Facebook pages"
+},
+{
+"operationId": "fb-get-pixels",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/pixels",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get conversion pixels"
+},
+{
+"operationId": "fb-upsert-pixel",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/facebook/pixels",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Upsert conversion pixel"
+},
+{
+"operationId": "fb-get-reporting",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/reporting",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get reporting data"
+},
+{
+"operationId": "fb-get-campaign-reporting",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/reporting/campaign/{campaignId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get campaign reporting"
+},
+{
+"operationId": "fb-get-reporting-list",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/reporting/list",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get reporting list"
+},
+{
+"operationId": "fb-search-targeting",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/facebook/targeting/search",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Search targeting options"
+},
+{
+"operationId": "google-get-ad-accounts",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/ad-accounts",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get Google ad accounts"
+},
+{
+"operationId": "google-delete-ad-account",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/google/ad-accounts/{adAccountId}",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete ad account"
+},
+{
+"operationId": "google-get-ad-account-details",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/ad-accounts/{adAccountId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get ad account details"
+},
+{
+"operationId": "google-upsert-campaign",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/google/ads",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Upsert Google campaign"
+},
+{
+"operationId": "google-get-campaign-by-id",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/ads/{adId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get Google campaign by ID"
+},
+{
+"operationId": "google-publish-ad",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/google/ads/{adId}/publish",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Publish ad"
+},
+{
+"operationId": "google-get-assets",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/assets",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get assets"
+},
+{
+"operationId": "google-upsert-assets",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/google/assets",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Upsert assets"
+},
+{
+"operationId": "google-get-audiences",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/audiences",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get audiences"
+},
+{
+"operationId": "google-upsert-audience",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/google/audiences",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Upsert audience"
+},
+{
+"operationId": "google-get-audience-by-id",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/audiences/{audienceId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get audience by ID"
+},
+{
+"operationId": "google-get-conversion-goals",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/conversion-goals",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get conversion goals"
+},
+{
+"operationId": "google-get-conversions",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/conversions",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get conversions"
+},
+{
+"operationId": "google-upsert-conversion",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/google/conversions",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Upsert conversion"
+},
+{
+"operationId": "google-delete-conversion",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/google/conversions/{conversionId}",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete conversion"
+},
+{
+"operationId": "google-get-conversion-by-id",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/conversions/{conversionId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get conversion by ID"
+},
+{
+"operationId": "google-get-entity",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/entity",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get entities"
+},
+{
+"operationId": "google-get-integration",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/integration",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get Google integration"
+},
+{
+"operationId": "google-create-integration",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/google/integration",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Create Google integration"
+},
+{
+"operationId": "google-get-keyword-ideas",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/google/keyword-ideas",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get keyword ideas"
+},
+{
+"operationId": "google-get-current-user",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/me",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get current Google user"
+},
+{
+"operationId": "google-get-reporting",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/reporting",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get reporting data"
+},
+{
+"operationId": "google-get-campaign-reporting",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/reporting/campaign/{campaignId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get campaign reporting"
+},
+{
+"operationId": "google-get-reporting-list",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/reporting/list",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get reporting list"
+},
+{
+"operationId": "google-get-segments",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/segments",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get segments"
+},
+{
+"operationId": "google-upsert-segment",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/google/segments",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Upsert segment"
+},
+{
+"operationId": "google-create-offline-user-list-job",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/google/segments/offline-user-list-job",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Create offline user list job"
+},
+{
+"operationId": "google-delete-segment",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/google/segments/{segmentId}",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete segment"
+},
+{
+"operationId": "google-get-segment-by-id",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/segments/{segmentId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get segment by ID"
+},
+{
+"operationId": "google-get-target-interests",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/target-interests",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get target interests"
+},
+{
+"operationId": "google-search-targeting",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/google/targeting/search",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Search targeting options"
+},
+{
+"operationId": "li-delete-ad-account",
+"domain": "ad-publishing",
+"method": "DELETE",
+"path": "/ad-publishing/linkedin/ad-account",
+"kind": "delete",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Delete ad account"
+},
+{
+"operationId": "li-get-ad-account-details",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/linkedin/ad-account",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get ad account details"
+},
+{
+"operationId": "li-get-ad-accounts",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/linkedin/ad-accounts",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get LinkedIn ad accounts"
+},
+{
+"operationId": "li-upsert-campaign-group",
+"domain": "ad-publishing",
+"method": "PUT",
+"path": "/ad-publishing/linkedin/ads",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Upsert ad campaign group"
+},
+{
+"operationId": "li-get-campaign-group",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/linkedin/ads/{adId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get ad campaign group"
+},
+{
+"operationId": "li-publish-campaign-group",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/linkedin/ads/{adId}/publish",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Publish ad campaign group"
+},
+{
+"operationId": "li-get-integration",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/linkedin/integration",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get LinkedIn integration"
+},
+{
+"operationId": "li-create-integration",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/linkedin/integration",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Create LinkedIn integration"
+},
+{
+"operationId": "li-get-current-user",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/linkedin/me",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get current LinkedIn user"
+},
+{
+"operationId": "li-get-ad-analytics",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/linkedin/reporting",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get ad analytics"
+},
+{
+"operationId": "li-get-campaign-group-reporting",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/linkedin/reporting/campaign-group/{campaignGroupId}",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get campaign group reporting"
+},
+{
+"operationId": "li-get-reporting-list",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/linkedin/reporting/list",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get reporting list"
+},
+{
+"operationId": "li-search-targeting",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/linkedin/targeting/search",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Search targeting options"
+},
+{
+"operationId": "li-create-lead-form",
+"domain": "ad-publishing",
+"method": "POST",
+"path": "/ad-publishing/linkedin/{accountId}/form",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Create lead form"
+},
+{
+"operationId": "li-get-lead-forms",
+"domain": "ad-publishing",
+"method": "GET",
+"path": "/ad-publishing/linkedin/{accountId}/forms",
+"kind": "read",
+"requiredScopes": [
+"adPublishing.readonly"
+],
+"summary": "Get lead forms"
+},
+{
+"operationId": "li-update-ad-status",
+"domain": "ad-publishing",
+"method": "PATCH",
+"path": "/ad-publishing/linkedin/{adId}/status",
+"kind": "write",
+"requiredScopes": [
+"adPublishing.write"
+],
+"summary": "Update ad status"
+},
+{
+"operationId": "list-affiliates",
+"domain": "affiliate-manager",
+"method": "GET",
+"path": "/affiliate-manager/{locationId}/affiliates",
+"kind": "read",
+"requiredScopes": [
+"affiliate-manager.readonly"
+],
+"summary": "List Affiliates"
+},
+{
+"operationId": "get-affiliate",
+"domain": "affiliate-manager",
+"method": "GET",
+"path": "/affiliate-manager/{locationId}/affiliates/{affiliateId}",
+"kind": "read",
+"requiredScopes": [
+"affiliate-manager.readonly"
+],
+"summary": "Get Affiliate"
+},
+{
+"operationId": "list-commissions",
+"domain": "affiliate-manager",
+"method": "GET",
+"path": "/affiliate-manager/{locationId}/commissions",
+"kind": "read",
+"requiredScopes": [
+"affiliate-manager.readonly"
+],
+"summary": "List Commissions"
+},
+{
+"operationId": "list-payouts",
+"domain": "affiliate-manager",
+"method": "GET",
+"path": "/affiliate-manager/{locationId}/payouts",
+"kind": "read",
+"requiredScopes": [
+"affiliate-manager.readonly"
+],
+"summary": "List Payouts"
+},
+{
+"operationId": "find-associations",
+"domain": "associations",
+"method": "GET",
+"path": "/associations/",
+"kind": "read",
+"requiredScopes": [
+"associations.readonly"
+],
+"summary": "Get all associations for a sub-account / location"
+},
+{
+"operationId": "associations.create-association",
+"domain": "associations",
+"method": "POST",
+"path": "/associations/",
+"kind": "write",
+"requiredScopes": [
+"associations.write"
+],
+"summary": "Create Association"
+},
+{
+"operationId": "get-association-key-by-key-name",
+"domain": "associations",
+"method": "GET",
+"path": "/associations/key/{key_name}",
+"kind": "read",
+"requiredScopes": [
+"associations.readonly"
+],
+"summary": "Get association key by key name"
+},
+{
+"operationId": "get-association-by-object-keys",
+"domain": "associations",
+"method": "GET",
+"path": "/associations/objectKey/{objectKey}",
+"kind": "read",
+"requiredScopes": [
+"associations.readonly"
+],
+"summary": "Get association by object keys"
+},
+{
+"operationId": "create-relation",
+"domain": "associations",
+"method": "POST",
+"path": "/associations/relations",
+"kind": "write",
+"requiredScopes": [
+"associations/relation.write"
+],
+"summary": "Create Relation for you associated entities."
+},
+{
+"operationId": "get-relations-by-record-id",
+"domain": "associations",
+"method": "GET",
+"path": "/associations/relations/{recordId}",
+"kind": "read",
+"requiredScopes": [
+"associations/relation.readonly"
+],
+"summary": "Get all relations By record Id"
+},
+{
+"operationId": "delete-relation",
+"domain": "associations",
+"method": "DELETE",
+"path": "/associations/relations/{relationId}",
+"kind": "delete",
+"requiredScopes": [
+"associations/relation.write"
+],
+"summary": "Delete Relation"
+},
+{
+"operationId": "delete-association",
+"domain": "associations",
+"method": "DELETE",
+"path": "/associations/{associationId}",
+"kind": "delete",
+"requiredScopes": [
+"associations.write"
+],
+"summary": "Delete Association"
+},
+{
+"operationId": "get-association-by-ID",
+"domain": "associations",
+"method": "GET",
+"path": "/associations/{associationId}",
+"kind": "read",
+"requiredScopes": [
+"associations.readonly"
+],
+"summary": "Get association by ID"
+},
+{
+"operationId": "update-association",
+"domain": "associations",
+"method": "PUT",
+"path": "/associations/{associationId}",
+"kind": "write",
+"requiredScopes": [
+"associations.write"
+],
+"summary": "Update Association By Id"
+},
+{
+"operationId": "get-all-blog-authors-by-location",
+"domain": "blogs",
+"method": "GET",
+"path": "/blogs/authors",
+"kind": "read",
+"requiredScopes": [
+"blogs/author.readonly"
+],
+"summary": "Get all authors"
+},
+{
+"operationId": "get-all-categories-by-location",
+"domain": "blogs",
+"method": "GET",
+"path": "/blogs/categories",
+"kind": "read",
+"requiredScopes": [
+"blogs/category.readonly"
+],
+"summary": "Get all categories"
+},
+{
+"operationId": "create-blog-post",
+"domain": "blogs",
+"method": "POST",
+"path": "/blogs/posts",
+"kind": "write",
+"requiredScopes": [
+"blogs/post.write"
+],
+"summary": "Create Blog Post"
+},
+{
+"operationId": "get-blog-post",
+"domain": "blogs",
+"method": "GET",
+"path": "/blogs/posts/all",
+"kind": "read",
+"requiredScopes": [
+"blogs/posts.readonly"
+],
+"summary": "Get Blog posts by Blog ID"
+},
+{
+"operationId": "check-url-slug-exists",
+"domain": "blogs",
+"method": "GET",
+"path": "/blogs/posts/url-slug-exists",
+"kind": "read",
+"requiredScopes": [
+"blogs/check-slug.readonly"
+],
+"summary": "Check url slug"
+},
+{
+"operationId": "update-blog-post",
+"domain": "blogs",
+"method": "PUT",
+"path": "/blogs/posts/{postId}",
+"kind": "write",
+"requiredScopes": [
+"blogs/post-update.write"
+],
+"summary": "Update Blog Post"
+},
+{
+"operationId": "get-blogs",
+"domain": "blogs",
+"method": "GET",
+"path": "/blogs/site/all",
+"kind": "read",
+"requiredScopes": [
+"blogs/list.readonly"
+],
+"summary": "Get Blogs by Location ID"
+},
+{
+"operationId": "createBrandBoard",
+"domain": "brand-boards",
+"method": "POST",
+"path": "/brand-boards/",
+"kind": "write",
+"requiredScopes": [
+"brand-boards/design-kit.write"
+],
+"summary": "Create a new brand board"
+},
+{
+"operationId": "list-brand-voices",
+"domain": "brand-boards",
+"method": "GET",
+"path": "/brand-boards/locations/{locationId}/brand-voices",
+"kind": "read",
+"requiredScopes": [
+"brand-boards/voices.readonly"
+],
+"summary": "List Brand Voices"
+},
+{
+"operationId": "create-brand-voice",
+"domain": "brand-boards",
+"method": "POST",
+"path": "/brand-boards/locations/{locationId}/brand-voices",
+"kind": "write",
+"requiredScopes": [
+"brand-boards/voices.write"
+],
+"summary": "Create Brand Voice"
+},
+{
+"operationId": "delete-brand-voice",
+"domain": "brand-boards",
+"method": "DELETE",
+"path": "/brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}",
+"kind": "delete",
+"requiredScopes": [
+"brand-boards/voices.write"
+],
+"summary": "Delete Brand Voice"
+},
+{
+"operationId": "get-brand-voice",
+"domain": "brand-boards",
+"method": "GET",
+"path": "/brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}",
+"kind": "read",
+"requiredScopes": [
+"brand-boards/voices.readonly"
+],
+"summary": "Get Brand Voice"
+},
+{
+"operationId": "update-brand-voice",
+"domain": "brand-boards",
+"method": "PATCH",
+"path": "/brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}",
+"kind": "write",
+"requiredScopes": [
+"brand-boards/voices.write"
+],
+"summary": "Update Brand Voice"
+},
+{
+"operationId": "set-default-brand-voice",
+"domain": "brand-boards",
+"method": "POST",
+"path": "/brand-boards/locations/{locationId}/brand-voices/{brandVoiceId}/default",
+"kind": "write",
+"requiredScopes": [
+"brand-boards/voices.write"
+],
+"summary": "Set Default Brand Voice"
+},
+{
+"operationId": "getBrandBoardsByLocation",
+"domain": "brand-boards",
+"method": "GET",
+"path": "/brand-boards/{locationId}",
+"kind": "read",
+"requiredScopes": [
+"brand-boards/design-kit.readonly"
+],
+"summary": "Get Brand Boards"
+},
+{
+"operationId": "deleteBrandBoard",
+"domain": "brand-boards",
+"method": "DELETE",
+"path": "/brand-boards/{locationId}/{id}",
+"kind": "delete",
+"requiredScopes": [
+"brand-boards/design-kit.write"
+],
+"summary": "Delete a Brand Board"
+},
+{
+"operationId": "getBrandBoardById",
+"domain": "brand-boards",
+"method": "GET",
+"path": "/brand-boards/{locationId}/{id}",
+"kind": "read",
+"requiredScopes": [
+"brand-boards/design-kit.readonly"
+],
+"summary": "Get Brand Board"
+},
+{
+"operationId": "updateBrandBoard",
+"domain": "brand-boards",
+"method": "PATCH",
+"path": "/brand-boards/{locationId}/{id}",
+"kind": "write",
+"requiredScopes": [
+"brand-boards/design-kit.write"
+],
+"summary": "Update a Brand Board"
+},
+{
+"operationId": "get-businesses-by-location",
+"domain": "businesses",
+"method": "GET",
+"path": "/businesses/",
+"kind": "read",
+"requiredScopes": [
+"businesses.readonly"
+],
+"summary": "Get Businesses by Location"
+},
+{
+"operationId": "create-business",
+"domain": "businesses",
+"method": "POST",
+"path": "/businesses/",
+"kind": "write",
+"requiredScopes": [
+"businesses.write"
+],
+"summary": "Create Business"
+},
+{
+"operationId": "delete-Business",
+"domain": "businesses",
+"method": "DELETE",
+"path": "/businesses/{businessId}",
+"kind": "delete",
+"requiredScopes": [
+"businesses.write"
+],
+"summary": "Delete Business"
+},
+{
+"operationId": "get-business",
+"domain": "businesses",
+"method": "GET",
+"path": "/businesses/{businessId}",
+"kind": "read",
+"requiredScopes": [
+"businesses.readonly"
+],
+"summary": "Get Business"
+},
+{
+"operationId": "update-business",
+"domain": "businesses",
+"method": "PUT",
+"path": "/businesses/{businessId}",
+"kind": "write",
+"requiredScopes": [
+"businesses.write"
+],
+"summary": "Update Business"
+},
+{
+"operationId": "get-calendars",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/",
+"kind": "read",
+"requiredScopes": [
+"calendars.readonly"
+],
+"summary": "Get Calendars"
+},
+{
+"operationId": "create-calendar",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Create Calendar"
+},
+{
+"operationId": "get-appointment-notes",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/appointments/{appointmentId}/notes",
+"kind": "read",
+"requiredScopes": [
+"calendars/events.readonly"
+],
+"summary": "Get Notes"
+},
+{
+"operationId": "create-appointment-note",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/appointments/{appointmentId}/notes",
+"kind": "write",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Create Note"
+},
+{
+"operationId": "delete-appointment-note",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/appointments/{appointmentId}/notes/{noteId}",
+"kind": "delete",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Delete Note"
+},
+{
+"operationId": "update-appointment-note",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/appointments/{appointmentId}/notes/{noteId}",
+"kind": "write",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Update Note"
+},
+{
+"operationId": "get-blocked-slots",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/blocked-slots",
+"kind": "read",
+"requiredScopes": [
+"calendars/events.readonly"
+],
+"summary": "Get Blocked Slots"
+},
+{
+"operationId": "get-calendar-events",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/events",
+"kind": "read",
+"requiredScopes": [
+"calendars/events.readonly"
+],
+"summary": "Get Calendar Events"
+},
+{
+"operationId": "create-appointment",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/events/appointments",
+"kind": "write",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Create appointment"
+},
+{
+"operationId": "get-appointment",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/events/appointments/{eventId}",
+"kind": "read",
+"requiredScopes": [
+"calendars/events.readonly"
+],
+"summary": "Get Appointment"
+},
+{
+"operationId": "edit-appointment",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/events/appointments/{eventId}",
+"kind": "write",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Update Appointment"
+},
+{
+"operationId": "create-block-slot",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/events/block-slots",
+"kind": "write",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Create Block Slot"
+},
+{
+"operationId": "edit-block-slot",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/events/block-slots/{eventId}",
+"kind": "write",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Update Block Slot"
+},
+{
+"operationId": "delete-event",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/events/{eventId}",
+"kind": "delete",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Delete Event"
+},
+{
+"operationId": "get-groups",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/groups",
+"kind": "read",
+"requiredScopes": [
+"calendars/groups.readonly"
+],
+"summary": "Get Groups"
+},
+{
+"operationId": "create-calendar-group",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/groups",
+"kind": "write",
+"requiredScopes": [
+"calendars/groups.write"
+],
+"summary": "Create Calendar Group"
+},
+{
+"operationId": "validate-groups-slug",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/groups/validate-slug",
+"kind": "write",
+"requiredScopes": [
+"calendars/groups.write"
+],
+"summary": "Validate group slug"
+},
+{
+"operationId": "delete-group",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/groups/{groupId}",
+"kind": "delete",
+"requiredScopes": [
+"calendars/groups.write"
+],
+"summary": "Delete Group"
+},
+{
+"operationId": "edit-group",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/groups/{groupId}",
+"kind": "write",
+"requiredScopes": [
+"calendars/groups.write"
+],
+"summary": "Update Group"
+},
+{
+"operationId": "disable-group",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/groups/{groupId}/status",
+"kind": "write",
+"requiredScopes": [
+"calendars/groups.write"
+],
+"summary": "Disable Group"
+},
+{
+"operationId": "fetch-calendar-resources",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/resources/{resourceType}",
+"kind": "read",
+"requiredScopes": [
+"calendars/resources.readonly"
+],
+"summary": "List Calendar Resources"
+},
+{
+"operationId": "create-calendar-resource",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/resources/{resourceType}",
+"kind": "write",
+"requiredScopes": [
+"calendars/resources.write"
+],
+"summary": "Create Calendar Resource"
+},
+{
+"operationId": "delete-calendar-resource",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/resources/{resourceType}/{id}",
+"kind": "delete",
+"requiredScopes": [
+"calendars/resources.write"
+],
+"summary": "Delete Calendar Resource"
+},
+{
+"operationId": "get-calendar-resource",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/resources/{resourceType}/{id}",
+"kind": "read",
+"requiredScopes": [
+"calendars/resources.readonly"
+],
+"summary": "Get Calendar Resource"
+},
+{
+"operationId": "update-calendar-resource",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/resources/{resourceType}/{id}",
+"kind": "write",
+"requiredScopes": [
+"calendars/resources.write"
+],
+"summary": "Update Calendar Resource"
+},
+{
+"operationId": "createSchedule",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/schedules",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Create user availability schedule"
+},
+{
+"operationId": "getCalendarSchedule",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/schedules/event-calendar/{calendarId}",
+"kind": "read",
+"requiredScopes": [
+"calendars.readonly"
+],
+"summary": "Get event calendar availability schedule"
+},
+{
+"operationId": "createCalendarSchedule",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/schedules/event-calendar/{calendarId}",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Create event calendar availability schedule"
+},
+{
+"operationId": "updateCalendarSchedule",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/schedules/event-calendar/{calendarId}",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Update event calendar availability schedule"
+},
+{
+"operationId": "getAllSchedules",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/schedules/search",
+"kind": "read",
+"requiredScopes": [
+"calendars.readonly"
+],
+"summary": "List user availability schedule"
+},
+{
+"operationId": "deleteSchedule",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/schedules/{id}",
+"kind": "delete",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Delete user availability schedule"
+},
+{
+"operationId": "getScheduleById",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/schedules/{id}",
+"kind": "read",
+"requiredScopes": [
+"calendars.readonly"
+],
+"summary": "Get user availability schedule"
+},
+{
+"operationId": "updateSchedule",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/schedules/{id}",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Update user availability schedule"
+},
+{
+"operationId": "remove-calendar-from-schedule",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/schedules/{id}/associations/{calendarId}",
+"kind": "delete",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Remove user availability schedule from a calendar"
+},
+{
+"operationId": "add-calendar-to-schedule",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/schedules/{id}/associations/{calendarId}",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Apply user availability schedule to a calendar"
+},
+{
+"operationId": "get-service-bookings",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/services/bookings",
+"kind": "read",
+"requiredScopes": [
+"calendars/events.readonly"
+],
+"summary": "Get Service Bookings"
+},
+{
+"operationId": "create-service-booking",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/services/bookings",
+"kind": "write",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Create Service Booking"
+},
+{
+"operationId": "delete-service-booking",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/services/bookings/{bookingId}",
+"kind": "delete",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Delete Service Booking"
+},
+{
+"operationId": "get-service-booking-by-id",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/services/bookings/{bookingId}",
+"kind": "read",
+"requiredScopes": [
+"calendars/events.readonly"
+],
+"summary": "Get Service Booking by ID"
+},
+{
+"operationId": "update-service-booking",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/services/bookings/{bookingId}",
+"kind": "write",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Update Service Booking"
+},
+{
+"operationId": "get-services-catalog",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/services/catalog",
+"kind": "read",
+"requiredScopes": [
+"calendars.readonly"
+],
+"summary": "Get Services"
+},
+{
+"operationId": "create-service-catalog",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/services/catalog",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Create Service"
+},
+{
+"operationId": "delete-service-catalog",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/services/catalog/{serviceId}",
+"kind": "delete",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Delete Service"
+},
+{
+"operationId": "get-service-catalog-by-id",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/services/catalog/{serviceId}",
+"kind": "read",
+"requiredScopes": [
+"calendars.readonly"
+],
+"summary": "Get Service by ID"
+},
+{
+"operationId": "update-service-catalog",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/services/catalog/{serviceId}",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Update Service"
+},
+{
+"operationId": "get-service-locations",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/services/locations",
+"kind": "read",
+"requiredScopes": [
+"calendars.readonly"
+],
+"summary": "Get Service Locations"
+},
+{
+"operationId": "create-service-location",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/services/locations",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Create Service Location"
+},
+{
+"operationId": "delete-service-location",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/services/locations/{serviceLocationId}",
+"kind": "delete",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Delete Service Location"
+},
+{
+"operationId": "get-service-location-by-id",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/services/locations/{serviceLocationId}",
+"kind": "read",
+"requiredScopes": [
+"calendars.readonly"
+],
+"summary": "Get Service Location by ID"
+},
+{
+"operationId": "update-service-location",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/services/locations/{serviceLocationId}",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Update Service Location"
+},
+{
+"operationId": "delete-calendar",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/{calendarId}",
+"kind": "delete",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Delete Calendar"
+},
+{
+"operationId": "get-calendar",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/{calendarId}",
+"kind": "read",
+"requiredScopes": [
+"calendars.readonly"
+],
+"summary": "Get Calendar"
+},
+{
+"operationId": "update-calendar",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/{calendarId}",
+"kind": "write",
+"requiredScopes": [
+"calendars.write"
+],
+"summary": "Update Calendar"
+},
+{
+"operationId": "get-slots",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/{calendarId}/free-slots",
+"kind": "read",
+"requiredScopes": [
+"calendars.readonly"
+],
+"summary": "Get Free Slots"
+},
+{
+"operationId": "get-event-notification",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/{calendarId}/notifications",
+"kind": "read",
+"requiredScopes": [
+"calendars/events.readonly"
+],
+"summary": "Get notifications"
+},
+{
+"operationId": "create-event-notification",
+"domain": "calendars",
+"method": "POST",
+"path": "/calendars/{calendarId}/notifications",
+"kind": "write",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Create notification"
+},
+{
+"operationId": "delete-event-notification",
+"domain": "calendars",
+"method": "DELETE",
+"path": "/calendars/{calendarId}/notifications/{notificationId}",
+"kind": "delete",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Delete Notification"
+},
+{
+"operationId": "find-event-notification",
+"domain": "calendars",
+"method": "GET",
+"path": "/calendars/{calendarId}/notifications/{notificationId}",
+"kind": "read",
+"requiredScopes": [
+"calendars/events.readonly"
+],
+"summary": "Get notification"
+},
+{
+"operationId": "update-event-notification",
+"domain": "calendars",
+"method": "PUT",
+"path": "/calendars/{calendarId}/notifications/{notificationId}",
+"kind": "write",
+"requiredScopes": [
+"calendars/events.write"
+],
+"summary": "Update notification"
+},
+{
+"operationId": "get-campaigns",
+"domain": "campaigns",
+"method": "GET",
+"path": "/campaigns/",
+"kind": "read",
+"requiredScopes": [
+"campaigns.readonly"
+],
+"summary": "Get Campaigns"
+},
+{
+"operationId": "createChatWidget",
+"domain": "chat-widget",
+"method": "POST",
+"path": "/chat-widget/",
+"kind": "write",
+"requiredScopes": [
+"chat-widget.write"
+],
+"summary": "Create Chat Widget"
+},
+{
+"operationId": "cloneChatWidget",
+"domain": "chat-widget",
+"method": "POST",
+"path": "/chat-widget/clone",
+"kind": "write",
+"requiredScopes": [
+"chat-widget.write"
+],
+"summary": "Clone Chat Widget"
+},
+{
+"operationId": "getChatWidget",
+"domain": "chat-widget",
+"method": "GET",
+"path": "/chat-widget/data/{locationId}/{id}",
+"kind": "read",
+"requiredScopes": [
+"chat-widget.readonly"
+],
+"summary": "Get Chat Widget"
+},
+{
+"operationId": "patchChatWidget",
+"domain": "chat-widget",
+"method": "PATCH",
+"path": "/chat-widget/data/{locationId}/{id}",
+"kind": "write",
+"requiredScopes": [
+"chat-widget.write"
+],
+"summary": "Patch Chat Widget"
+},
+{
+"operationId": "updateChatWidget",
+"domain": "chat-widget",
+"method": "PUT",
+"path": "/chat-widget/data/{locationId}/{id}",
+"kind": "write",
+"requiredScopes": [
+"chat-widget.write"
+],
+"summary": "Update Chat Widget"
+},
+{
+"operationId": "listChatWidget",
+"domain": "chat-widget",
+"method": "GET",
+"path": "/chat-widget/list",
+"kind": "read",
+"requiredScopes": [
+"chat-widget.readonly"
+],
+"summary": "List Chat Widgets"
+},
+{
+"operationId": "chat-widget.delete",
+"domain": "chat-widget",
+"method": "DELETE",
+"path": "/chat-widget/{locationId}/{id}",
+"kind": "delete",
+"requiredScopes": [
+"chat-widget.write"
+],
+"summary": "Delete Chat Widget"
+},
+{
+"operationId": "create-contact",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Create Contact"
+},
+{
+"operationId": "add-remove-contact-from-business",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/bulk/business",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Add/Remove Contacts From Business"
+},
+{
+"operationId": "contacts.create-association",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/bulk/tags/update/{type}",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Update Contacts Tags"
+},
+{
+"operationId": "get-contacts-by-businessId",
+"domain": "contacts",
+"method": "GET",
+"path": "/contacts/business/{businessId}",
+"kind": "read",
+"requiredScopes": [
+"contacts.readonly"
+],
+"summary": "Get Contacts By BusinessId"
+},
+{
+"operationId": "search-contacts-advanced",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/search",
+"kind": "read",
+"requiredScopes": [
+"contacts.readonly"
+],
+"summary": "Search Contacts"
+},
+{
+"operationId": "get-duplicate-contact",
+"domain": "contacts",
+"method": "GET",
+"path": "/contacts/search/duplicate",
+"kind": "read",
+"requiredScopes": [
+"contacts.readonly"
+],
+"summary": "Get Duplicate Contact"
+},
+{
+"operationId": "upsert-contact",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/upsert",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Upsert Contact"
+},
+{
+"operationId": "delete-contact",
+"domain": "contacts",
+"method": "DELETE",
+"path": "/contacts/{contactId}",
+"kind": "delete",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Delete Contact"
+},
+{
+"operationId": "get-contact",
+"domain": "contacts",
+"method": "GET",
+"path": "/contacts/{contactId}",
+"kind": "read",
+"requiredScopes": [
+"contacts.readonly"
+],
+"summary": "Get Contact"
+},
+{
+"operationId": "update-contact",
+"domain": "contacts",
+"method": "PUT",
+"path": "/contacts/{contactId}",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Update Contact"
+},
+{
+"operationId": "get-appointments-for-contact",
+"domain": "contacts",
+"method": "GET",
+"path": "/contacts/{contactId}/appointments",
+"kind": "read",
+"requiredScopes": [
+"contacts.readonly"
+],
+"summary": "Get Appointments for Contact"
+},
+{
+"operationId": "remove-contact-from-every-campaign",
+"domain": "contacts",
+"method": "DELETE",
+"path": "/contacts/{contactId}/campaigns/remove-all",
+"kind": "delete",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Remove Contact From Every Campaign"
+},
+{
+"operationId": "remove-contact-from-campaign",
+"domain": "contacts",
+"method": "DELETE",
+"path": "/contacts/{contactId}/campaigns/{campaignId}",
+"kind": "delete",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Remove Contact From Campaign"
+},
+{
+"operationId": "add-contact-to-campaign",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/{contactId}/campaigns/{campaignId}",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Add Contact to Campaign"
+},
+{
+"operationId": "remove-followers-contact",
+"domain": "contacts",
+"method": "DELETE",
+"path": "/contacts/{contactId}/followers",
+"kind": "delete",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Remove Followers"
+},
+{
+"operationId": "add-followers-contact",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/{contactId}/followers",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Add Followers"
+},
+{
+"operationId": "get-all-notes",
+"domain": "contacts",
+"method": "GET",
+"path": "/contacts/{contactId}/notes",
+"kind": "read",
+"requiredScopes": [
+"contacts.readonly"
+],
+"summary": "Get All Notes"
+},
+{
+"operationId": "create-note",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/{contactId}/notes",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Create Note"
+},
+{
+"operationId": "delete-note",
+"domain": "contacts",
+"method": "DELETE",
+"path": "/contacts/{contactId}/notes/{id}",
+"kind": "delete",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Delete Note"
+},
+{
+"operationId": "get-note",
+"domain": "contacts",
+"method": "GET",
+"path": "/contacts/{contactId}/notes/{id}",
+"kind": "read",
+"requiredScopes": [
+"contacts.readonly"
+],
+"summary": "Get Note"
+},
+{
+"operationId": "update-note",
+"domain": "contacts",
+"method": "PUT",
+"path": "/contacts/{contactId}/notes/{id}",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Update Note"
+},
+{
+"operationId": "remove-tags",
+"domain": "contacts",
+"method": "DELETE",
+"path": "/contacts/{contactId}/tags",
+"kind": "delete",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Remove Tags"
+},
+{
+"operationId": "add-tags",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/{contactId}/tags",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Add Tags"
+},
+{
+"operationId": "get-all-tasks",
+"domain": "contacts",
+"method": "GET",
+"path": "/contacts/{contactId}/tasks",
+"kind": "read",
+"requiredScopes": [
+"contacts.readonly"
+],
+"summary": "Get all Tasks"
+},
+{
+"operationId": "create-task",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/{contactId}/tasks",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Create Task"
+},
+{
+"operationId": "delete-task",
+"domain": "contacts",
+"method": "DELETE",
+"path": "/contacts/{contactId}/tasks/{taskId}",
+"kind": "delete",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Delete Task"
+},
+{
+"operationId": "get-task",
+"domain": "contacts",
+"method": "GET",
+"path": "/contacts/{contactId}/tasks/{taskId}",
+"kind": "read",
+"requiredScopes": [
+"contacts.readonly"
+],
+"summary": "Get Task"
+},
+{
+"operationId": "update-task",
+"domain": "contacts",
+"method": "PUT",
+"path": "/contacts/{contactId}/tasks/{taskId}",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Update Task"
+},
+{
+"operationId": "update-task-completed",
+"domain": "contacts",
+"method": "PUT",
+"path": "/contacts/{contactId}/tasks/{taskId}/completed",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Update Task Completed"
+},
+{
+"operationId": "delete-contact-from-workflow",
+"domain": "contacts",
+"method": "DELETE",
+"path": "/contacts/{contactId}/workflow/{workflowId}",
+"kind": "delete",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Delete Contact from Workflow"
+},
+{
+"operationId": "add-contact-to-workflow",
+"domain": "contacts",
+"method": "POST",
+"path": "/contacts/{contactId}/workflow/{workflowId}",
+"kind": "write",
+"requiredScopes": [
+"contacts.write"
+],
+"summary": "Add Contact to Workflow"
+},
+{
+"operationId": "create-conversation",
+"domain": "conversations",
+"method": "POST",
+"path": "/conversations/",
+"kind": "write",
+"requiredScopes": [
+"conversations.write"
+],
+"summary": "Create Conversation"
+},
+{
+"operationId": "get-message-transcription",
+"domain": "conversations",
+"method": "GET",
+"path": "/conversations/locations/{locationId}/messages/{messageId}/transcription",
+"kind": "read",
+"requiredScopes": [
+"conversations/message.readonly"
+],
+"summary": "Get transcription by Message ID"
+},
+{
+"operationId": "download-message-transcription",
+"domain": "conversations",
+"method": "GET",
+"path": "/conversations/locations/{locationId}/messages/{messageId}/transcription/download",
+"kind": "read",
+"requiredScopes": [
+"conversations/message.readonly"
+],
+"summary": "Download transcription by Message ID"
+},
+{
+"operationId": "send-a-new-message",
+"domain": "conversations",
+"method": "POST",
+"path": "/conversations/messages",
+"kind": "write",
+"requiredScopes": [
+"conversations/message.write"
+],
+"summary": "Send a new message"
+},
+{
+"operationId": "cancel-scheduled-email-message",
+"domain": "conversations",
+"method": "DELETE",
+"path": "/conversations/messages/email/{emailMessageId}/schedule",
+"kind": "delete",
+"requiredScopes": [
+"conversations/message.write"
+],
+"summary": "Cancel a scheduled email message."
+},
+{
+"operationId": "get-email-by-id",
+"domain": "conversations",
+"method": "GET",
+"path": "/conversations/messages/email/{id}",
+"kind": "read",
+"requiredScopes": [
+"conversations/message.readonly"
+],
+"summary": "Get email by Id"
+},
+{
+"operationId": "export-messages-by-location",
+"domain": "conversations",
+"method": "GET",
+"path": "/conversations/messages/export",
+"kind": "read",
+"requiredScopes": [
+"conversations/message.readonly"
+],
+"summary": "Export messages by location ID"
+},
+{
+"operationId": "add-an-inbound-message",
+"domain": "conversations",
+"method": "POST",
+"path": "/conversations/messages/inbound",
+"kind": "write",
+"requiredScopes": [
+"conversations/message.write"
+],
+"summary": "Add an inbound message"
+},
+{
+"operationId": "add-an-outbound-message",
+"domain": "conversations",
+"method": "POST",
+"path": "/conversations/messages/outbound",
+"kind": "write",
+"requiredScopes": [
+"conversations/message.write"
+],
+"summary": "Add an external outbound call"
+},
+{
+"operationId": "get-message",
+"domain": "conversations",
+"method": "GET",
+"path": "/conversations/messages/{id}",
+"kind": "read",
+"requiredScopes": [
+"conversations/message.readonly"
+],
+"summary": "Get message by message id"
+},
+{
+"operationId": "add-message-attachments",
+"domain": "conversations",
+"method": "PUT",
+"path": "/conversations/messages/{messageId}/attachments",
+"kind": "write",
+"requiredScopes": [
+"conversations/message.write"
+],
+"summary": "Add message attachments"
+},
+{
+"operationId": "get-message-recording",
+"domain": "conversations",
+"method": "GET",
+"path": "/conversations/messages/{messageId}/locations/{locationId}/recording",
+"kind": "read",
+"requiredScopes": [
+"conversations/message.readonly"
+],
+"summary": "Get Recording by Message ID"
+},
+{
+"operationId": "cancel-scheduled-message",
+"domain": "conversations",
+"method": "DELETE",
+"path": "/conversations/messages/{messageId}/schedule",
+"kind": "delete",
+"requiredScopes": [
+"conversations/message.write"
+],
+"summary": "Cancel a scheduled message."
+},
+{
+"operationId": "update-message-status",
+"domain": "conversations",
+"method": "PUT",
+"path": "/conversations/messages/{messageId}/status",
+"kind": "write",
+"requiredScopes": [
+"conversations/message.write"
+],
+"summary": "Update message status"
+},
+{
+"operationId": "live-chat-agent-typing",
+"domain": "conversations",
+"method": "POST",
+"path": "/conversations/providers/live-chat/typing",
+"kind": "write",
+"requiredScopes": [
+"conversations/livechat.write"
+],
+"summary": "Agent/Ai-Bot is typing a message indicator for live chat"
+},
+{
+"operationId": "search-conversation",
+"domain": "conversations",
+"method": "GET",
+"path": "/conversations/search",
+"kind": "read",
+"requiredScopes": [
+"conversations.readonly"
+],
+"summary": "Search Conversations"
+},
+{
+"operationId": "delete-conversation",
+"domain": "conversations",
+"method": "DELETE",
+"path": "/conversations/{conversationId}",
+"kind": "delete",
+"requiredScopes": [
+"conversations.write"
+],
+"summary": "Delete Conversation"
+},
+{
+"operationId": "get-conversation",
+"domain": "conversations",
+"method": "GET",
+"path": "/conversations/{conversationId}",
+"kind": "read",
+"requiredScopes": [
+"conversations.readonly"
+],
+"summary": "Get Conversation"
+},
+{
+"operationId": "update-conversation",
+"domain": "conversations",
+"method": "PUT",
+"path": "/conversations/{conversationId}",
+"kind": "write",
+"requiredScopes": [
+"conversations.write"
+],
+"summary": "Update Conversation"
+},
+{
+"operationId": "get-messages",
+"domain": "conversations",
+"method": "GET",
+"path": "/conversations/{conversationId}/messages",
+"kind": "read",
+"requiredScopes": [
+"conversations/message.readonly"
+],
+"summary": "Get messages by conversation id"
+},
+{
+"operationId": "custom-fields.create-custom-field",
+"domain": "custom-fields",
+"method": "POST",
+"path": "/custom-fields/",
+"kind": "write",
+"requiredScopes": [
+"locations/customFields.write"
+],
+"summary": "Create Custom Field"
+},
+{
+"operationId": "create-custom-field-folder",
+"domain": "custom-fields",
+"method": "POST",
+"path": "/custom-fields/folder",
+"kind": "write",
+"requiredScopes": [
+"locations/customFields.write"
+],
+"summary": "Create Custom Field Folder"
+},
+{
+"operationId": "delete-custom-field-folder",
+"domain": "custom-fields",
+"method": "DELETE",
+"path": "/custom-fields/folder/{id}",
+"kind": "delete",
+"requiredScopes": [
+"locations/customFields.write"
+],
+"summary": "Delete Custom Field Folder"
+},
+{
+"operationId": "update-custom-field-folder",
+"domain": "custom-fields",
+"method": "PUT",
+"path": "/custom-fields/folder/{id}",
+"kind": "write",
+"requiredScopes": [
+"locations/customFields.write"
+],
+"summary": "Update Custom Field Folder Name"
+},
+{
+"operationId": "get-custom-fields-by-object-key",
+"domain": "custom-fields",
+"method": "GET",
+"path": "/custom-fields/object-key/{objectKey}",
+"kind": "read",
+"requiredScopes": [
+"locations/customFields.readonly"
+],
+"summary": "Get Custom Fields By Object Key"
+},
+{
+"operationId": "custom-fields.delete-custom-field",
+"domain": "custom-fields",
+"method": "DELETE",
+"path": "/custom-fields/{id}",
+"kind": "delete",
+"requiredScopes": [
+"locations/customFields.write"
+],
+"summary": "Delete Custom Field By Id"
+},
+{
+"operationId": "get-custom-field-by-id",
+"domain": "custom-fields",
+"method": "GET",
+"path": "/custom-fields/{id}",
+"kind": "read",
+"requiredScopes": [
+"locations/customFields.readonly"
+],
+"summary": "Get Custom Field / Folder By Id"
+},
+{
+"operationId": "custom-fields.update-custom-field",
+"domain": "custom-fields",
+"method": "PUT",
+"path": "/custom-fields/{id}",
+"kind": "write",
+"requiredScopes": [
+"locations/customFields.write"
+],
+"summary": "Update Custom Field By Id"
+},
+{
+"operationId": "verify-email",
+"domain": "email-isv",
+"method": "POST",
+"path": "/email/verify",
+"kind": "write",
+"requiredScopes": [
+"lc-email.readonly"
+],
+"summary": "Email Verification"
+},
+{
+"operationId": "list-bulk-action-campaigns",
+"domain": "emails",
+"method": "GET",
+"path": "/emails/locations/{locationId}/campaigns/bulk-actions",
+"kind": "read",
+"requiredScopes": [
+"emails/campaigns.readonly"
+],
+"summary": "List Bulk Action Campaigns"
+},
+{
+"operationId": "get-bulk-action-campaign",
+"domain": "emails",
+"method": "GET",
+"path": "/emails/locations/{locationId}/campaigns/bulk-actions/{campaignId}",
+"kind": "read",
+"requiredScopes": [
+"emails/campaigns.readonly"
+],
+"summary": "Get Bulk Action Campaign by ID"
+},
+{
+"operationId": "list-email-campaigns",
+"domain": "emails",
+"method": "GET",
+"path": "/emails/locations/{locationId}/campaigns/emails",
+"kind": "read",
+"requiredScopes": [
+"emails/campaigns.readonly"
+],
+"summary": "List Email Campaigns"
+},
+{
+"operationId": "create-email-campaign",
+"domain": "emails",
+"method": "POST",
+"path": "/emails/locations/{locationId}/campaigns/emails",
+"kind": "write",
+"requiredScopes": [
+"emails/campaigns.write"
+],
+"summary": "Create Email Campaign"
+},
+{
+"operationId": "delete-campaign",
+"domain": "emails",
+"method": "DELETE",
+"path": "/emails/locations/{locationId}/campaigns/emails/{campaignId}",
+"kind": "delete",
+"requiredScopes": [
+"emails/campaigns.write"
+],
+"summary": "Delete Campaign"
+},
+{
+"operationId": "get-email-campaign",
+"domain": "emails",
+"method": "GET",
+"path": "/emails/locations/{locationId}/campaigns/emails/{campaignId}",
+"kind": "read",
+"requiredScopes": [
+"emails/campaigns.readonly"
+],
+"summary": "Get Email Campaign by ID"
+},
+{
+"operationId": "update-email-campaign",
+"domain": "emails",
+"method": "PATCH",
+"path": "/emails/locations/{locationId}/campaigns/emails/{campaignId}",
+"kind": "write",
+"requiredScopes": [
+"emails/campaigns.write"
+],
+"summary": "Update Email Campaign"
+},
+{
+"operationId": "schedule-campaign",
+"domain": "emails",
+"method": "POST",
+"path": "/emails/locations/{locationId}/campaigns/emails/{campaignId}/schedule",
+"kind": "write",
+"requiredScopes": [
+"emails/campaigns.write"
+],
+"summary": "Schedule Campaign"
+},
+{
+"operationId": "get-campaign-stats",
+"domain": "emails",
+"method": "GET",
+"path": "/emails/locations/{locationId}/campaigns/stats/{source}/{sourceId}",
+"kind": "read",
+"requiredScopes": [
+"emails/stats.readonly"
+],
+"summary": "Get Campaign Statistics"
+},
+{
+"operationId": "list-workflow-campaigns",
+"domain": "emails",
+"method": "GET",
+"path": "/emails/locations/{locationId}/campaigns/workflows",
+"kind": "read",
+"requiredScopes": [
+"emails/campaigns.readonly"
+],
+"summary": "List Workflow Campaigns"
+},
+{
+"operationId": "get-workflow-campaign",
+"domain": "emails",
+"method": "GET",
+"path": "/emails/locations/{locationId}/campaigns/workflows/{campaignId}",
+"kind": "read",
+"requiredScopes": [
+"emails/campaigns.readonly"
+],
+"summary": "Get Workflow Campaign by ID"
+},
+{
+"operationId": "list-email-templates",
+"domain": "emails",
+"method": "GET",
+"path": "/emails/locations/{locationId}/templates",
+"kind": "read",
+"requiredScopes": [
+"emails/templates.readonly"
+],
+"summary": "List templates"
+},
+{
+"operationId": "create-email-template",
+"domain": "emails",
+"method": "POST",
+"path": "/emails/locations/{locationId}/templates",
+"kind": "write",
+"requiredScopes": [
+"emails/templates.write"
+],
+"summary": "Create an email template"
+},
+{
+"operationId": "create-template-folder",
+"domain": "emails",
+"method": "POST",
+"path": "/emails/locations/{locationId}/templates/folders",
+"kind": "write",
+"requiredScopes": [
+"emails/templates.write"
+],
+"summary": "Create a template folder"
+},
+{
+"operationId": "import-email-template",
+"domain": "emails",
+"method": "POST",
+"path": "/emails/locations/{locationId}/templates/import",
+"kind": "write",
+"requiredScopes": [
+"emails/templates.write"
+],
+"summary": "Import an email template"
+},
+{
+"operationId": "delete-email-template",
+"domain": "emails",
+"method": "DELETE",
+"path": "/emails/locations/{locationId}/templates/{templateId}",
+"kind": "delete",
+"requiredScopes": [
+"emails/templates.write"
+],
+"summary": "Delete a template"
+},
+{
+"operationId": "get-email-template",
+"domain": "emails",
+"method": "GET",
+"path": "/emails/locations/{locationId}/templates/{templateId}",
+"kind": "read",
+"requiredScopes": [
+"emails/templates.readonly"
+],
+"summary": "Get Email Template by ID"
+},
+{
+"operationId": "update-email-template",
+"domain": "emails",
+"method": "PATCH",
+"path": "/emails/locations/{locationId}/templates/{templateId}",
+"kind": "write",
+"requiredScopes": [
+"emails/templates.write"
+],
+"summary": "Update an email template"
+},
+{
+"operationId": "get-forms",
+"domain": "forms",
+"method": "GET",
+"path": "/forms/",
+"kind": "read",
+"requiredScopes": [
+"forms.readonly"
+],
+"summary": "Get Forms"
+},
+{
+"operationId": "get-forms-submissions",
+"domain": "forms",
+"method": "GET",
+"path": "/forms/submissions",
+"kind": "read",
+"requiredScopes": [
+"forms.readonly"
+],
+"summary": "Get Forms Submissions"
+},
+{
+"operationId": "getFunnels",
+"domain": "funnels",
+"method": "GET",
+"path": "/funnels/funnel/list",
+"kind": "read",
+"requiredScopes": [
+"funnels/funnel.readonly"
+],
+"summary": "Fetch List of Funnels"
+},
+{
+"operationId": "create-redirect",
+"domain": "funnels",
+"method": "POST",
+"path": "/funnels/lookup/redirect",
+"kind": "write",
+"requiredScopes": [
+"funnels/redirect.write"
+],
+"summary": "Create Redirect"
+},
+{
+"operationId": "fetch-redirects-list",
+"domain": "funnels",
+"method": "GET",
+"path": "/funnels/lookup/redirect/list",
+"kind": "read",
+"requiredScopes": [
+"funnels/redirect.readonly"
+],
+"summary": "Fetch List of Redirects"
+},
+{
+"operationId": "delete-redirect-by-id",
+"domain": "funnels",
+"method": "DELETE",
+"path": "/funnels/lookup/redirect/{id}",
+"kind": "delete",
+"requiredScopes": [
+"funnels/redirect.write"
+],
+"summary": "Delete Redirect By Id"
+},
+{
+"operationId": "update-redirect-by-id",
+"domain": "funnels",
+"method": "PATCH",
+"path": "/funnels/lookup/redirect/{id}",
+"kind": "write",
+"requiredScopes": [
+"funnels/redirect.write"
+],
+"summary": "Update Redirect By Id"
+},
+{
+"operationId": "getPagesByFunnelId",
+"domain": "funnels",
+"method": "GET",
+"path": "/funnels/page",
+"kind": "read",
+"requiredScopes": [
+"funnels/page.readonly"
+],
+"summary": "Fetch list of funnel pages"
+},
+{
+"operationId": "getPagesCountByFunnelId",
+"domain": "funnels",
+"method": "GET",
+"path": "/funnels/page/count",
+"kind": "read",
+"requiredScopes": [
+"funnels/pagecount.readonly"
+],
+"summary": "Fetch count of funnel pages"
+},
+{
+"operationId": "invoices.list-invoices",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/",
+"kind": "read",
+"requiredScopes": [
+"invoices.readonly"
+],
+"summary": "List invoices"
+},
+{
+"operationId": "create-invoice",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/",
+"kind": "write",
+"requiredScopes": [
+"invoices.write"
+],
+"summary": "Create Invoice"
+},
+{
+"operationId": "create-new-estimate",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/estimate",
+"kind": "write",
+"requiredScopes": [
+"invoices/estimate.write"
+],
+"summary": "Create New Estimate"
+},
+{
+"operationId": "list-estimates",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/estimate/list",
+"kind": "read",
+"requiredScopes": [
+"invoices/estimate.readonly"
+],
+"summary": "List Estimates"
+},
+{
+"operationId": "generate-estimate-number",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/estimate/number/generate",
+"kind": "read",
+"requiredScopes": [
+"invoices/estimate.readonly"
+],
+"summary": "Generate Estimate Number"
+},
+{
+"operationId": "list-estimate-templates",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/estimate/template",
+"kind": "read",
+"requiredScopes": [
+"invoices/estimate.readonly"
+],
+"summary": "List Estimate Templates"
+},
+{
+"operationId": "create-estimate-template",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/estimate/template",
+"kind": "write",
+"requiredScopes": [
+"invoices/estimate.write"
+],
+"summary": "Create Estimate Template"
+},
+{
+"operationId": "preview-estimate-template",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/estimate/template/preview",
+"kind": "read",
+"requiredScopes": [
+"invoices/estimate.readonly"
+],
+"summary": "Preview Estimate Template"
+},
+{
+"operationId": "delete-estimate-template",
+"domain": "invoices",
+"method": "DELETE",
+"path": "/invoices/estimate/template/{templateId}",
+"kind": "delete",
+"requiredScopes": [
+"invoices/estimate.write"
+],
+"summary": "Delete Estimate Template"
+},
+{
+"operationId": "update-estimate-template",
+"domain": "invoices",
+"method": "PUT",
+"path": "/invoices/estimate/template/{templateId}",
+"kind": "write",
+"requiredScopes": [
+"invoices/estimate.write"
+],
+"summary": "Update Estimate Template"
+},
+{
+"operationId": "delete-estimate",
+"domain": "invoices",
+"method": "DELETE",
+"path": "/invoices/estimate/{estimateId}",
+"kind": "delete",
+"requiredScopes": [
+"invoices/estimate.write"
+],
+"summary": "Delete Estimate"
+},
+{
+"operationId": "update-estimate",
+"domain": "invoices",
+"method": "PUT",
+"path": "/invoices/estimate/{estimateId}",
+"kind": "write",
+"requiredScopes": [
+"invoices/estimate.write"
+],
+"summary": "Update Estimate"
+},
+{
+"operationId": "create-invoice-from-estimate",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/estimate/{estimateId}/invoice",
+"kind": "write",
+"requiredScopes": [
+"invoices/estimate.write"
+],
+"summary": "Create Invoice from Estimate"
+},
+{
+"operationId": "send-estimate",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/estimate/{estimateId}/send",
+"kind": "write",
+"requiredScopes": [
+"invoices/estimate.write"
+],
+"summary": "Send Estimate"
+},
+{
+"operationId": "generate-invoice-number",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/generate-invoice-number",
+"kind": "read",
+"requiredScopes": [
+"invoices.readonly"
+],
+"summary": "Generate Invoice Number"
+},
+{
+"operationId": "list-invoice-schedules",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/schedule",
+"kind": "read",
+"requiredScopes": [
+"invoices/schedule.readonly"
+],
+"summary": "List schedules"
+},
+{
+"operationId": "create-invoice-schedule",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/schedule",
+"kind": "write",
+"requiredScopes": [
+"invoices/schedule.write"
+],
+"summary": "Create Invoice Schedule"
+},
+{
+"operationId": "delete-invoice-schedule",
+"domain": "invoices",
+"method": "DELETE",
+"path": "/invoices/schedule/{scheduleId}",
+"kind": "delete",
+"requiredScopes": [
+"invoices/schedule.write"
+],
+"summary": "Delete schedule"
+},
+{
+"operationId": "get-invoice-schedule",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/schedule/{scheduleId}",
+"kind": "read",
+"requiredScopes": [
+"invoices/schedule.readonly"
+],
+"summary": "Get an schedule"
+},
+{
+"operationId": "update-invoice-schedule",
+"domain": "invoices",
+"method": "PUT",
+"path": "/invoices/schedule/{scheduleId}",
+"kind": "write",
+"requiredScopes": [
+"invoices/schedule.write"
+],
+"summary": "Update schedule"
+},
+{
+"operationId": "auto-payment-invoice-schedule",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/schedule/{scheduleId}/auto-payment",
+"kind": "write",
+"requiredScopes": [
+"invoices/schedule.write"
+],
+"summary": "Manage Auto payment for an schedule invoice"
+},
+{
+"operationId": "cancel-invoice-schedule",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/schedule/{scheduleId}/cancel",
+"kind": "write",
+"requiredScopes": [
+"invoices/schedule.write"
+],
+"summary": "Cancel an scheduled invoice"
+},
+{
+"operationId": "schedule-invoice-schedule",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/schedule/{scheduleId}/schedule",
+"kind": "write",
+"requiredScopes": [
+"invoices/schedule.write"
+],
+"summary": "Schedule an schedule invoice"
+},
+{
+"operationId": "update-and-schedule-invoice-schedule",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/schedule/{scheduleId}/updateAndSchedule",
+"kind": "write",
+"requiredScopes": [
+"invoices/schedule.write"
+],
+"summary": "Update scheduled recurring invoice"
+},
+{
+"operationId": "get-invoice-settings",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/settings",
+"kind": "read",
+"requiredScopes": [
+"invoices.readonly"
+],
+"summary": "Get Invoice Settings"
+},
+{
+"operationId": "list-invoice-templates",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/template",
+"kind": "read",
+"requiredScopes": [
+"invoices/template.readonly"
+],
+"summary": "List templates"
+},
+{
+"operationId": "create-invoice-template",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/template",
+"kind": "write",
+"requiredScopes": [
+"invoices/template.write"
+],
+"summary": "Create template"
+},
+{
+"operationId": "delete-invoice-template",
+"domain": "invoices",
+"method": "DELETE",
+"path": "/invoices/template/{templateId}",
+"kind": "delete",
+"requiredScopes": [
+"invoices/template.write"
+],
+"summary": "Delete template"
+},
+{
+"operationId": "get-invoice-template",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/template/{templateId}",
+"kind": "read",
+"requiredScopes": [
+"invoices/template.readonly"
+],
+"summary": "Get an template"
+},
+{
+"operationId": "update-invoice-template",
+"domain": "invoices",
+"method": "PUT",
+"path": "/invoices/template/{templateId}",
+"kind": "write",
+"requiredScopes": [
+"invoices/template.write"
+],
+"summary": "Update template"
+},
+{
+"operationId": "text2pay-invoice",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/text2pay",
+"kind": "write",
+"requiredScopes": [
+"invoices.write"
+],
+"summary": "Create & Send"
+},
+{
+"operationId": "delete-invoice",
+"domain": "invoices",
+"method": "DELETE",
+"path": "/invoices/{invoiceId}",
+"kind": "delete",
+"requiredScopes": [
+"invoices.write"
+],
+"summary": "Delete invoice"
+},
+{
+"operationId": "get-invoice",
+"domain": "invoices",
+"method": "GET",
+"path": "/invoices/{invoiceId}",
+"kind": "read",
+"requiredScopes": [
+"invoices.readonly"
+],
+"summary": "Get invoice"
+},
+{
+"operationId": "update-invoice",
+"domain": "invoices",
+"method": "PUT",
+"path": "/invoices/{invoiceId}",
+"kind": "write",
+"requiredScopes": [
+"invoices.write"
+],
+"summary": "Update invoice"
+},
+{
+"operationId": "record-invoice",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/{invoiceId}/record-payment",
+"kind": "write",
+"requiredScopes": [
+"invoices.write"
+],
+"summary": "Record a manual payment for an invoice"
+},
+{
+"operationId": "send-invoice",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/{invoiceId}/send",
+"kind": "write",
+"requiredScopes": [
+"invoices.write"
+],
+"summary": "Send invoice"
+},
+{
+"operationId": "void-invoice",
+"domain": "invoices",
+"method": "POST",
+"path": "/invoices/{invoiceId}/void",
+"kind": "write",
+"requiredScopes": [
+"invoices.write"
+],
+"summary": "Void invoice"
+},
+{
+"operationId": "listAllKnowledgeBasesPaginated",
+"domain": "knowledge-base",
+"method": "GET",
+"path": "/knowledge-bases/",
+"kind": "read",
+"requiredScopes": [
+"knowledge-bases.readonly"
+],
+"summary": "Get all knowledge bases for a location by location Id (paginated)"
+},
+{
+"operationId": "createKnowledgeBase",
+"domain": "knowledge-base",
+"method": "POST",
+"path": "/knowledge-bases/",
+"kind": "write",
+"requiredScopes": [
+"knowledge-bases.write"
+],
+"summary": "Create a new knowledge base (max 15 knowledge bases per location)"
+},
+{
+"operationId": "deleteTrainedUrlsForKnowledgeBase",
+"domain": "knowledge-base",
+"method": "DELETE",
+"path": "/knowledge-bases/crawler",
+"kind": "delete",
+"requiredScopes": [
+"knowledge-bases.write"
+],
+"summary": "Delete trained pages"
+},
+{
+"operationId": "getAllWebsiteUrlsDataByKnowledgeBase",
+"domain": "knowledge-base",
+"method": "GET",
+"path": "/knowledge-bases/crawler",
+"kind": "read",
+"requiredScopes": [
+"knowledge-bases.readonly"
+],
+"summary": "Get all trained page links by knowledge base"
+},
+{
+"operationId": "discoverWebsite",
+"domain": "knowledge-base",
+"method": "POST",
+"path": "/knowledge-bases/crawler",
+"kind": "write",
+"requiredScopes": [
+"knowledge-bases.write"
+],
+"summary": "Start crawling and discover pages for training"
+},
+{
+"operationId": "getCrawlingStatusForLatestOperation",
+"domain": "knowledge-base",
+"method": "GET",
+"path": "/knowledge-bases/crawler/status",
+"kind": "read",
+"requiredScopes": [
+"knowledge-bases.readonly"
+],
+"summary": "Get crawling status for the latest operation"
+},
+{
+"operationId": "trainDiscoveredUrls",
+"domain": "knowledge-base",
+"method": "POST",
+"path": "/knowledge-bases/crawler/train",
+"kind": "write",
+"requiredScopes": [
+"knowledge-bases.write"
+],
+"summary": "Train discovered website pages and ingest into the knowledge base"
+},
+{
+"operationId": "list",
+"domain": "knowledge-base",
+"method": "GET",
+"path": "/knowledge-bases/faqs",
+"kind": "read",
+"requiredScopes": [
+"knowledge-bases.readonly"
+],
+"summary": "Get all FAQs by knowledge base with pagination support"
+},
+{
+"operationId": "create",
+"domain": "knowledge-base",
+"method": "POST",
+"path": "/knowledge-bases/faqs",
+"kind": "write",
+"requiredScopes": [
+"knowledge-bases.write"
+],
+"summary": "Create a new FAQ inside knowledge base"
+},
+{
+"operationId": "knowledge-base.delete",
+"domain": "knowledge-base",
+"method": "DELETE",
+"path": "/knowledge-bases/faqs/{id}",
+"kind": "delete",
+"requiredScopes": [
+"knowledge-bases.write"
+],
+"summary": "Delete an existing knowledge base FAQ"
+},
+{
+"operationId": "update",
+"domain": "knowledge-base",
+"method": "PUT",
+"path": "/knowledge-bases/faqs/{id}",
+"kind": "write",
+"requiredScopes": [
+"knowledge-bases.write"
+],
+"summary": "Update an existing knowledge base FAQ"
+},
+{
+"operationId": "updateKnowledgeBase",
+"domain": "knowledge-base",
+"method": "PUT",
+"path": "/knowledge-bases/{id}",
+"kind": "write",
+"requiredScopes": [
+"knowledge-bases.write"
+],
+"summary": "Update a knowledge base"
+},
+{
+"operationId": "deleteKnowledgeBase",
+"domain": "knowledge-base",
+"method": "DELETE",
+"path": "/knowledge-bases/{knowledgeBaseId}",
+"kind": "delete",
+"requiredScopes": [
+"knowledge-bases.write"
+],
+"summary": "Delete a knowledge base"
+},
+{
+"operationId": "getKnowledgeBaseById",
+"domain": "knowledge-base",
+"method": "GET",
+"path": "/knowledge-bases/{knowledgeBaseId}",
+"kind": "read",
+"requiredScopes": [
+"knowledge-bases.readonly"
+],
+"summary": "Get knowledge base by ID"
+},
+{
+"operationId": "get-links",
+"domain": "links",
+"method": "GET",
+"path": "/links/",
+"kind": "read",
+"requiredScopes": [
+"links.readonly"
+],
+"summary": "Get Links"
+},
+{
+"operationId": "create-link",
+"domain": "links",
+"method": "POST",
+"path": "/links/",
+"kind": "write",
+"requiredScopes": [
+"links.write"
+],
+"summary": "Create Link"
+},
+{
+"operationId": "get-link-by-id",
+"domain": "links",
+"method": "GET",
+"path": "/links/id/{linkId}",
+"kind": "read",
+"requiredScopes": [
+"links.readonly"
+],
+"summary": "Get Link by ID"
+},
+{
+"operationId": "search-trigger-links",
+"domain": "links",
+"method": "GET",
+"path": "/links/search",
+"kind": "read",
+"requiredScopes": [
+"links.readonly"
+],
+"summary": "Search Trigger Links"
+},
+{
+"operationId": "delete-link",
+"domain": "links",
+"method": "DELETE",
+"path": "/links/{linkId}",
+"kind": "delete",
+"requiredScopes": [
+"links.write"
+],
+"summary": "Delete Link"
+},
+{
+"operationId": "update-link",
+"domain": "links",
+"method": "PUT",
+"path": "/links/{linkId}",
+"kind": "write",
+"requiredScopes": [
+"links.write"
+],
+"summary": "Update Link"
+},
+{
+"operationId": "search-locations",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/search",
+"kind": "read",
+"requiredScopes": [
+"locations.readonly"
+],
+"summary": "Search"
+},
+{
+"operationId": "get-location",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}",
+"kind": "read",
+"requiredScopes": [
+"locations.readonly"
+],
+"summary": "Get Sub-Account (Formerly Location)"
+},
+{
+"operationId": "get-conversation-channel",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}/conversationChannels/{type}",
+"kind": "read",
+"requiredScopes": [
+"locations.readonly"
+],
+"summary": "Get Conversation Channel"
+},
+{
+"operationId": "get-custom-fields",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}/customFields",
+"kind": "read",
+"requiredScopes": [
+"locations/customFields.readonly"
+],
+"summary": "Get Custom Fields"
+},
+{
+"operationId": "locations.create-custom-field",
+"domain": "locations",
+"method": "POST",
+"path": "/locations/{locationId}/customFields",
+"kind": "write",
+"requiredScopes": [
+"locations/customFields.write"
+],
+"summary": "Create Custom Field"
+},
+{
+"operationId": "locations.delete-custom-field",
+"domain": "locations",
+"method": "DELETE",
+"path": "/locations/{locationId}/customFields/{id}",
+"kind": "delete",
+"requiredScopes": [
+"locations/customFields.write"
+],
+"summary": "Delete Custom Field"
+},
+{
+"operationId": "get-custom-field",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}/customFields/{id}",
+"kind": "read",
+"requiredScopes": [
+"locations/customFields.readonly"
+],
+"summary": "Get Custom Field"
+},
+{
+"operationId": "locations.update-custom-field",
+"domain": "locations",
+"method": "PUT",
+"path": "/locations/{locationId}/customFields/{id}",
+"kind": "write",
+"requiredScopes": [
+"locations/customFields.write"
+],
+"summary": "Update Custom Field"
+},
+{
+"operationId": "get-custom-values",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}/customValues",
+"kind": "read",
+"requiredScopes": [
+"locations/customValues.readonly"
+],
+"summary": "Get Custom Values"
+},
+{
+"operationId": "create-custom-value",
+"domain": "locations",
+"method": "POST",
+"path": "/locations/{locationId}/customValues",
+"kind": "write",
+"requiredScopes": [
+"locations/customValues.write"
+],
+"summary": "Create Custom Value"
+},
+{
+"operationId": "delete-custom-value",
+"domain": "locations",
+"method": "DELETE",
+"path": "/locations/{locationId}/customValues/{id}",
+"kind": "delete",
+"requiredScopes": [
+"locations/customValues.write"
+],
+"summary": "Delete Custom Value"
+},
+{
+"operationId": "get-custom-value",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}/customValues/{id}",
+"kind": "read",
+"requiredScopes": [
+"locations/customValues.readonly"
+],
+"summary": "Get Custom Value"
+},
+{
+"operationId": "update-custom-value",
+"domain": "locations",
+"method": "PUT",
+"path": "/locations/{locationId}/customValues/{id}",
+"kind": "write",
+"requiredScopes": [
+"locations/customValues.write"
+],
+"summary": "Update Custom Value"
+},
+{
+"operationId": "create-recurring-task",
+"domain": "locations",
+"method": "POST",
+"path": "/locations/{locationId}/recurring-tasks",
+"kind": "write",
+"requiredScopes": [
+"recurring-tasks.write"
+],
+"summary": "Create Recurring Task"
+},
+{
+"operationId": "delete-recurring-task",
+"domain": "locations",
+"method": "DELETE",
+"path": "/locations/{locationId}/recurring-tasks/{id}",
+"kind": "delete",
+"requiredScopes": [
+"recurring-tasks.write"
+],
+"summary": "Delete Recurring Task"
+},
+{
+"operationId": "get-recurring-task-by-id",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}/recurring-tasks/{id}",
+"kind": "read",
+"requiredScopes": [
+"recurring-tasks.readonly"
+],
+"summary": "Get Recurring Task By Id"
+},
+{
+"operationId": "update-recurring-task",
+"domain": "locations",
+"method": "PUT",
+"path": "/locations/{locationId}/recurring-tasks/{id}",
+"kind": "write",
+"requiredScopes": [
+"recurring-tasks.write"
+],
+"summary": "Update Recurring Task"
+},
+{
+"operationId": "get-location-tags",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}/tags",
+"kind": "read",
+"requiredScopes": [
+"locations/tags.readonly"
+],
+"summary": "Get Tags"
+},
+{
+"operationId": "create-tag",
+"domain": "locations",
+"method": "POST",
+"path": "/locations/{locationId}/tags",
+"kind": "write",
+"requiredScopes": [
+"locations/tags.write"
+],
+"summary": "Create Tag"
+},
+{
+"operationId": "delete-tag",
+"domain": "locations",
+"method": "DELETE",
+"path": "/locations/{locationId}/tags/{tagId}",
+"kind": "delete",
+"requiredScopes": [
+"locations/tags.write"
+],
+"summary": "Delete tag"
+},
+{
+"operationId": "get-tag-by-id",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}/tags/{tagId}",
+"kind": "read",
+"requiredScopes": [
+"locations/tags.readonly"
+],
+"summary": "Get tag by id"
+},
+{
+"operationId": "update-tag",
+"domain": "locations",
+"method": "PUT",
+"path": "/locations/{locationId}/tags/{tagId}",
+"kind": "write",
+"requiredScopes": [
+"locations/tags.write"
+],
+"summary": "Update tag"
+},
+{
+"operationId": "task-search",
+"domain": "locations",
+"method": "POST",
+"path": "/locations/{locationId}/tasks/search",
+"kind": "read",
+"requiredScopes": [
+"locations/tasks.readonly"
+],
+"summary": "Task Search Filter"
+},
+{
+"operationId": "GET-all-or-email-sms-templates",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}/templates",
+"kind": "read",
+"requiredScopes": [
+"locations/templates.readonly"
+],
+"summary": "GET all or email/sms templates"
+},
+{
+"operationId": "DELETE-an-email-sms-template",
+"domain": "locations",
+"method": "DELETE",
+"path": "/locations/{locationId}/templates/{id}",
+"kind": "delete",
+"requiredScopes": [
+"locations/templates.write"
+],
+"summary": "DELETE an email/sms template"
+},
+{
+"operationId": "get-timezones",
+"domain": "locations",
+"method": "GET",
+"path": "/locations/{locationId}/timezones",
+"kind": "read",
+"requiredScopes": [
+"locations.readonly"
+],
+"summary": "Fetch Timezones"
+},
+{
+"operationId": "uninstall-application",
+"domain": "marketplace",
+"method": "DELETE",
+"path": "/marketplace/app/{appId}/installations",
+"kind": "delete",
+"requiredScopes": [
+"oauth.write"
+],
+"summary": "Uninstall an application"
+},
+{
+"operationId": "get-installer-details",
+"domain": "marketplace",
+"method": "GET",
+"path": "/marketplace/app/{appId}/installations",
+"kind": "read",
+"requiredScopes": [
+"marketplace-installer-details.readonly"
+],
+"summary": "Get Installer Details"
+},
+{
+"operationId": "get-rebilling-config-for-app",
+"domain": "marketplace",
+"method": "GET",
+"path": "/marketplace/app/{appId}/rebilling-config/location/{locationId}",
+"kind": "read",
+"requiredScopes": [
+"oauth.readonly"
+],
+"summary": "Get rebilling config for an app subscription and usage plans"
+},
+{
+"operationId": "getCharges",
+"domain": "marketplace",
+"method": "GET",
+"path": "/marketplace/billing/charges",
+"kind": "read",
+"requiredScopes": [
+"charges.readonly"
+],
+"summary": "Get all wallet charges"
+},
+{
+"operationId": "charge",
+"domain": "marketplace",
+"method": "POST",
+"path": "/marketplace/billing/charges",
+"kind": "write",
+"requiredScopes": [
+"charges.write"
+],
+"summary": "Create a new wallet charge"
+},
+{
+"operationId": "hasFunds",
+"domain": "marketplace",
+"method": "GET",
+"path": "/marketplace/billing/charges/has-funds",
+"kind": "read",
+"requiredScopes": [
+"charges.readonly"
+],
+"summary": "Check if account has sufficient funds"
+},
+{
+"operationId": "deleteCharge",
+"domain": "marketplace",
+"method": "DELETE",
+"path": "/marketplace/billing/charges/{chargeId}",
+"kind": "delete",
+"requiredScopes": [
+"charges.write"
+],
+"summary": "Delete a wallet charge"
+},
+{
+"operationId": "getSpecificCharge",
+"domain": "marketplace",
+"method": "GET",
+"path": "/marketplace/billing/charges/{chargeId}",
+"kind": "read",
+"requiredScopes": [
+"charges.readonly"
+],
+"summary": "Get specific wallet charge details"
+},
+{
+"operationId": "migrateConnection",
+"domain": "marketplace",
+"method": "POST",
+"path": "/marketplace/external-auth/migration",
+"kind": "write",
+"requiredScopes": [
+"marketplace-external-auth-migration.write"
+],
+"summary": "Migrate external authentication connection"
+},
+{
+"operationId": "bulk-delete-media-objects",
+"domain": "medias",
+"method": "PUT",
+"path": "/medias/delete-files",
+"kind": "write",
+"requiredScopes": [
+"medias.write"
+],
+"summary": "Bulk Delete / Trash Files or Folders"
+},
+{
+"operationId": "fetch-media-content",
+"domain": "medias",
+"method": "GET",
+"path": "/medias/files",
+"kind": "read",
+"requiredScopes": [
+"medias.readonly"
+],
+"summary": "Get List of Files/ Folders"
+},
+{
+"operationId": "create-media-folder",
+"domain": "medias",
+"method": "POST",
+"path": "/medias/folder",
+"kind": "write",
+"requiredScopes": [
+"medias.write"
+],
+"summary": "Create Folder"
+},
+{
+"operationId": "bulk-update-media-objects",
+"domain": "medias",
+"method": "PUT",
+"path": "/medias/update-files",
+"kind": "write",
+"requiredScopes": [
+"medias.write"
+],
+"summary": "Bulk Update Files/ Folders"
+},
+{
+"operationId": "delete-media-content",
+"domain": "medias",
+"method": "DELETE",
+"path": "/medias/{id}",
+"kind": "delete",
+"requiredScopes": [
+"medias.write"
+],
+"summary": "Delete File or Folder"
+},
+{
+"operationId": "update-media-object",
+"domain": "medias",
+"method": "POST",
+"path": "/medias/{id}",
+"kind": "write",
+"requiredScopes": [
+"medias.write"
+],
+"summary": "Update File/ Folder"
+},
+{
+"operationId": "get-installed-location",
+"domain": "oauth",
+"method": "GET",
+"path": "/oauth/installed-locations",
+"kind": "read",
+"requiredScopes": [
+"oauth.readonly"
+],
+"summary": "Get Location where app is installed"
+},
+{
+"operationId": "get-location-access-token",
+"domain": "oauth",
+"method": "POST",
+"path": "/oauth/location-token",
+"kind": "write",
+"requiredScopes": [
+"oauth.write"
+],
+"summary": "Get Location Access Token from Agency Token"
+},
+{
+"operationId": "get-object-by-location-id",
+"domain": "objects",
+"method": "GET",
+"path": "/objects/",
+"kind": "read",
+"requiredScopes": [
+"objects/schema.readonly"
+],
+"summary": "Get all objects for a location"
+},
+{
+"operationId": "create-custom-object-schema",
+"domain": "objects",
+"method": "POST",
+"path": "/objects/",
+"kind": "write",
+"requiredScopes": [
+"objects/schema.write"
+],
+"summary": "Create Custom Object"
+},
+{
+"operationId": "get-object-schema-by-key",
+"domain": "objects",
+"method": "GET",
+"path": "/objects/{key}",
+"kind": "read",
+"requiredScopes": [
+"objects/schema.readonly"
+],
+"summary": "Get Object Schema by key / id"
+},
+{
+"operationId": "update-custom-object",
+"domain": "objects",
+"method": "PUT",
+"path": "/objects/{key}",
+"kind": "write",
+"requiredScopes": [
+"objects/schema.write"
+],
+"summary": "Update Object Schema By Key / Id"
+},
+{
+"operationId": "create-object-record",
+"domain": "objects",
+"method": "POST",
+"path": "/objects/{schemaKey}/records",
+"kind": "write",
+"requiredScopes": [
+"objects/record.write"
+],
+"summary": "Create Record"
+},
+{
+"operationId": "search-object-records",
+"domain": "objects",
+"method": "POST",
+"path": "/objects/{schemaKey}/records/search",
+"kind": "read",
+"requiredScopes": [
+"objects/record.readonly"
+],
+"summary": "Search Object Records"
+},
+{
+"operationId": "delete-object-record",
+"domain": "objects",
+"method": "DELETE",
+"path": "/objects/{schemaKey}/records/{id}",
+"kind": "delete",
+"requiredScopes": [
+"objects/record.write"
+],
+"summary": "Delete Record"
+},
+{
+"operationId": "get-record-by-id",
+"domain": "objects",
+"method": "GET",
+"path": "/objects/{schemaKey}/records/{id}",
+"kind": "read",
+"requiredScopes": [
+"objects/record.readonly"
+],
+"summary": "Get Record By Id"
+},
+{
+"operationId": "update-object-record",
+"domain": "objects",
+"method": "PUT",
+"path": "/objects/{schemaKey}/records/{id}",
+"kind": "write",
+"requiredScopes": [
+"objects/record.write"
+],
+"summary": "Update Record"
+},
+{
+"operationId": "create-opportunity",
+"domain": "opportunities",
+"method": "POST",
+"path": "/opportunities/",
+"kind": "write",
+"requiredScopes": [
+"opportunities.write"
+],
+"summary": "Create Opportunity"
+},
+{
+"operationId": "get-lost-reason",
+"domain": "opportunities",
+"method": "GET",
+"path": "/opportunities/lost-reason",
+"kind": "read",
+"requiredScopes": [
+"opportunities.readonly"
+],
+"summary": "Get lost reason"
+},
+{
+"operationId": "get-pipelines",
+"domain": "opportunities",
+"method": "GET",
+"path": "/opportunities/pipelines",
+"kind": "read",
+"requiredScopes": [
+"opportunities.readonly"
+],
+"summary": "Get Pipelines"
+},
+{
+"operationId": "search-opportunity",
+"domain": "opportunities",
+"method": "GET",
+"path": "/opportunities/search",
+"kind": "read",
+"requiredScopes": [
+"opportunities.readonly"
+],
+"summary": "Search Opportunity"
+},
+{
+"operationId": "search-opportunities-advanced",
+"domain": "opportunities",
+"method": "POST",
+"path": "/opportunities/search",
+"kind": "read",
+"requiredScopes": [
+"opportunities.readonly"
+],
+"summary": "Search Opportunities"
+},
+{
+"operationId": "Upsert-opportunity",
+"domain": "opportunities",
+"method": "POST",
+"path": "/opportunities/upsert",
+"kind": "write",
+"requiredScopes": [
+"opportunities.write"
+],
+"summary": "Upsert Opportunity"
+},
+{
+"operationId": "delete-opportunity",
+"domain": "opportunities",
+"method": "DELETE",
+"path": "/opportunities/{id}",
+"kind": "delete",
+"requiredScopes": [
+"opportunities.write"
+],
+"summary": "Delete Opportunity"
+},
+{
+"operationId": "get-opportunity",
+"domain": "opportunities",
+"method": "GET",
+"path": "/opportunities/{id}",
+"kind": "read",
+"requiredScopes": [
+"opportunities.readonly"
+],
+"summary": "Get Opportunity"
+},
+{
+"operationId": "update-opportunity",
+"domain": "opportunities",
+"method": "PUT",
+"path": "/opportunities/{id}",
+"kind": "write",
+"requiredScopes": [
+"opportunities.write"
+],
+"summary": "Update Opportunity"
+},
+{
+"operationId": "remove-followers-opportunity",
+"domain": "opportunities",
+"method": "DELETE",
+"path": "/opportunities/{id}/followers",
+"kind": "delete",
+"requiredScopes": [
+"opportunities.write"
+],
+"summary": "Remove Followers"
+},
+{
+"operationId": "add-followers-opportunity",
+"domain": "opportunities",
+"method": "POST",
+"path": "/opportunities/{id}/followers",
+"kind": "write",
+"requiredScopes": [
+"opportunities.write"
+],
+"summary": "Add Followers"
+},
+{
+"operationId": "update-opportunity-status",
+"domain": "opportunities",
+"method": "PUT",
+"path": "/opportunities/{id}/status",
+"kind": "write",
+"requiredScopes": [
+"opportunities.write"
+],
+"summary": "Update Opportunity Status"
+},
+{
+"operationId": "delete-coupon",
+"domain": "payments",
+"method": "DELETE",
+"path": "/payments/coupon",
+"kind": "delete",
+"requiredScopes": [
+"payments/coupons.write"
+],
+"summary": "Delete Coupon"
+},
+{
+"operationId": "get-coupon",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/coupon",
+"kind": "read",
+"requiredScopes": [
+"payments/coupons.readonly"
+],
+"summary": "Fetch Coupon"
+},
+{
+"operationId": "create-coupon",
+"domain": "payments",
+"method": "POST",
+"path": "/payments/coupon",
+"kind": "write",
+"requiredScopes": [
+"payments/coupons.write"
+],
+"summary": "Create Coupon"
+},
+{
+"operationId": "update-coupon",
+"domain": "payments",
+"method": "PUT",
+"path": "/payments/coupon",
+"kind": "write",
+"requiredScopes": [
+"payments/coupons.write"
+],
+"summary": "Update Coupon"
+},
+{
+"operationId": "list-coupons",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/coupon/list",
+"kind": "read",
+"requiredScopes": [
+"payments/coupons.readonly"
+],
+"summary": "List Coupons"
+},
+{
+"operationId": "custom-provider-marketplace-app-update-capabilities",
+"domain": "payments",
+"method": "PUT",
+"path": "/payments/custom-provider/capabilities",
+"kind": "write",
+"requiredScopes": [
+"payments/custom-provider.write"
+],
+"summary": "Custom-provider marketplace app update capabilities"
+},
+{
+"operationId": "fetch-config",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/custom-provider/connect",
+"kind": "read",
+"requiredScopes": [
+"payments/custom-provider.readonly"
+],
+"summary": "Fetch given provider config"
+},
+{
+"operationId": "create-config",
+"domain": "payments",
+"method": "POST",
+"path": "/payments/custom-provider/connect",
+"kind": "write",
+"requiredScopes": [
+"payments/custom-provider.write"
+],
+"summary": "Create new provider config"
+},
+{
+"operationId": "disconnect-config",
+"domain": "payments",
+"method": "POST",
+"path": "/payments/custom-provider/disconnect",
+"kind": "write",
+"requiredScopes": [
+"payments/custom-provider.write"
+],
+"summary": "Disconnect existing provider config"
+},
+{
+"operationId": "delete-integration",
+"domain": "payments",
+"method": "DELETE",
+"path": "/payments/custom-provider/provider",
+"kind": "delete",
+"requiredScopes": [
+"payments/custom-provider.write"
+],
+"summary": "Deleting an existing integration"
+},
+{
+"operationId": "create-integration",
+"domain": "payments",
+"method": "POST",
+"path": "/payments/custom-provider/provider",
+"kind": "write",
+"requiredScopes": [
+"payments/custom-provider.write"
+],
+"summary": "Create new integration"
+},
+{
+"operationId": "list-integration-providers",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/integrations/provider/whitelabel",
+"kind": "read",
+"requiredScopes": [
+"payments/integration.readonly"
+],
+"summary": "List White-label Integration Providers"
+},
+{
+"operationId": "create-integration provider",
+"domain": "payments",
+"method": "POST",
+"path": "/payments/integrations/provider/whitelabel",
+"kind": "write",
+"requiredScopes": [
+"payments/integration.write"
+],
+"summary": "Create White-label Integration Provider"
+},
+{
+"operationId": "list-orders",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/orders",
+"kind": "read",
+"requiredScopes": [
+"payments/orders.readonly"
+],
+"summary": "List Orders"
+},
+{
+"operationId": "get-order-by-id",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/orders/{orderId}",
+"kind": "read",
+"requiredScopes": [
+"payments/orders.readonly"
+],
+"summary": "Get Order by ID"
+},
+{
+"operationId": "list-order-fulfillment",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/orders/{orderId}/fulfillments",
+"kind": "read",
+"requiredScopes": [
+"payments/orders.readonly"
+],
+"summary": "List fulfillment"
+},
+{
+"operationId": "create-order-fulfillment",
+"domain": "payments",
+"method": "POST",
+"path": "/payments/orders/{orderId}/fulfillments",
+"kind": "write",
+"requiredScopes": [
+"payments/orders.write"
+],
+"summary": "Create order fulfillment"
+},
+{
+"operationId": "record-order-payment",
+"domain": "payments",
+"method": "POST",
+"path": "/payments/orders/{orderId}/record-payment",
+"kind": "write",
+"requiredScopes": [
+"payments/orders.collectPayment"
+],
+"summary": "Record Order Payment"
+},
+{
+"operationId": "list-subscriptions",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/subscriptions",
+"kind": "read",
+"requiredScopes": [
+"payments/subscriptions.readonly"
+],
+"summary": "List Subscriptions"
+},
+{
+"operationId": "get-subscription-by-id",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/subscriptions/{subscriptionId}",
+"kind": "read",
+"requiredScopes": [
+"payments/subscriptions.readonly"
+],
+"summary": "Get Subscription by ID"
+},
+{
+"operationId": "list-transactions",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/transactions",
+"kind": "read",
+"requiredScopes": [
+"payments/transactions.readonly"
+],
+"summary": "List Transactions"
+},
+{
+"operationId": "get-transaction-by-id",
+"domain": "payments",
+"method": "GET",
+"path": "/payments/transactions/{transactionId}",
+"kind": "read",
+"requiredScopes": [
+"payments/transactions.readonly"
+],
+"summary": "Get Transaction by ID"
+},
+{
+"operationId": "getNumberPoolList",
+"domain": "phone-system",
+"method": "GET",
+"path": "/phone-system/number-pools",
+"kind": "read",
+"requiredScopes": [
+"numberpools.read"
+],
+"summary": "List number pools"
+},
+{
+"operationId": "active-numbers",
+"domain": "phone-system",
+"method": "GET",
+"path": "/phone-system/numbers/location/{locationId}",
+"kind": "read",
+"requiredScopes": [
+"phonenumbers.read"
+],
+"summary": "List active numbers"
+},
+{
+"operationId": "listAvailableNumbersForACountry",
+"domain": "phone-system",
+"method": "GET",
+"path": "/phone-system/numbers/location/{locationId}/available",
+"kind": "read",
+"requiredScopes": [
+"phonenumbers.read"
+],
+"summary": "List available phone numbers"
+},
+{
+"operationId": "purchase-number-for-location",
+"domain": "phone-system",
+"method": "POST",
+"path": "/phone-system/numbers/location/{locationId}/purchase",
+"kind": "write",
+"requiredScopes": [
+"phonenumbers.write"
+],
+"summary": "Purchase number for location"
+},
+{
+"operationId": "products.list-invoices",
+"domain": "products",
+"method": "GET",
+"path": "/products/",
+"kind": "read",
+"requiredScopes": [
+"products.readonly"
+],
+"summary": "List Products"
+},
+{
+"operationId": "create-product",
+"domain": "products",
+"method": "POST",
+"path": "/products/",
+"kind": "write",
+"requiredScopes": [
+"products.write"
+],
+"summary": "Create Product"
+},
+{
+"operationId": "bulkUpdate",
+"domain": "products",
+"method": "POST",
+"path": "/products/bulk-update",
+"kind": "write",
+"requiredScopes": [
+"products.write"
+],
+"summary": "Bulk Update Products"
+},
+{
+"operationId": "bulkEdit",
+"domain": "products",
+"method": "POST",
+"path": "/products/bulk-update/edit",
+"kind": "write",
+"requiredScopes": [
+"products.write"
+],
+"summary": "Bulk Edit Products and Prices"
+},
+{
+"operationId": "get-product-collection",
+"domain": "products",
+"method": "GET",
+"path": "/products/collections",
+"kind": "read",
+"requiredScopes": [
+"products/collection.readonly"
+],
+"summary": "Fetch Product Collections"
+},
+{
+"operationId": "create-product-collection",
+"domain": "products",
+"method": "POST",
+"path": "/products/collections",
+"kind": "write",
+"requiredScopes": [
+"products/collection.write"
+],
+"summary": "Create Product Collection"
+},
+{
+"operationId": "delete-product-collection",
+"domain": "products",
+"method": "DELETE",
+"path": "/products/collections/{collectionId}",
+"kind": "delete",
+"requiredScopes": [
+"products/collection.write"
+],
+"summary": "Delete Product Collection"
+},
+{
+"operationId": "get-product-collection-id",
+"domain": "products",
+"method": "GET",
+"path": "/products/collections/{collectionId}",
+"kind": "read",
+"requiredScopes": [
+"products/collection.readonly"
+],
+"summary": "Get Details about individual product collection"
+},
+{
+"operationId": "update-product-collection",
+"domain": "products",
+"method": "PUT",
+"path": "/products/collections/{collectionId}",
+"kind": "write",
+"requiredScopes": [
+"products/collection.write"
+],
+"summary": "Update Product Collection"
+},
+{
+"operationId": "get-list-inventory",
+"domain": "products",
+"method": "GET",
+"path": "/products/inventory",
+"kind": "read",
+"requiredScopes": [
+"products/prices.readonly"
+],
+"summary": "List Inventory"
+},
+{
+"operationId": "update-inventory",
+"domain": "products",
+"method": "POST",
+"path": "/products/inventory",
+"kind": "write",
+"requiredScopes": [
+"products/prices.write"
+],
+"summary": "Update Inventory"
+},
+{
+"operationId": "get-product-reviews",
+"domain": "products",
+"method": "GET",
+"path": "/products/reviews",
+"kind": "read",
+"requiredScopes": [
+"products.readonly"
+],
+"summary": "Fetch Product Reviews"
+},
+{
+"operationId": "bulk-update-product-review",
+"domain": "products",
+"method": "POST",
+"path": "/products/reviews/bulk-update",
+"kind": "write",
+"requiredScopes": [
+"products.write"
+],
+"summary": "Update Product Reviews"
+},
+{
+"operationId": "get-reviews-count",
+"domain": "products",
+"method": "GET",
+"path": "/products/reviews/count",
+"kind": "read",
+"requiredScopes": [
+"products.readonly"
+],
+"summary": "Fetch Review Count as per status"
+},
+{
+"operationId": "delete-product-review",
+"domain": "products",
+"method": "DELETE",
+"path": "/products/reviews/{reviewId}",
+"kind": "delete",
+"requiredScopes": [
+"products.write"
+],
+"summary": "Delete Product Review"
+},
+{
+"operationId": "update-product-review",
+"domain": "products",
+"method": "PUT",
+"path": "/products/reviews/{reviewId}",
+"kind": "write",
+"requiredScopes": [
+"products.write"
+],
+"summary": "Update Product Reviews"
+},
+{
+"operationId": "update-store-status",
+"domain": "products",
+"method": "POST",
+"path": "/products/store/{storeId}",
+"kind": "write",
+"requiredScopes": [
+"products.write"
+],
+"summary": "Action to include/exclude the product in store"
+},
+{
+"operationId": "update-display-priority",
+"domain": "products",
+"method": "POST",
+"path": "/products/store/{storeId}/priority",
+"kind": "write",
+"requiredScopes": [
+"products.write"
+],
+"summary": "Update product display priorities in store"
+},
+{
+"operationId": "get-product-store-stats",
+"domain": "products",
+"method": "GET",
+"path": "/products/store/{storeId}/stats",
+"kind": "read",
+"requiredScopes": [
+"products.readonly"
+],
+"summary": "Fetch Product Store Stats"
+},
+{
+"operationId": "delete-product-by-id",
+"domain": "products",
+"method": "DELETE",
+"path": "/products/{productId}",
+"kind": "delete",
+"requiredScopes": [
+"products.write"
+],
+"summary": "Delete Product by ID"
+},
+{
+"operationId": "get-product-by-id",
+"domain": "products",
+"method": "GET",
+"path": "/products/{productId}",
+"kind": "read",
+"requiredScopes": [
+"products.readonly"
+],
+"summary": "Get Product by ID"
+},
+{
+"operationId": "update-product-by-id",
+"domain": "products",
+"method": "PUT",
+"path": "/products/{productId}",
+"kind": "write",
+"requiredScopes": [
+"products.write"
+],
+"summary": "Update Product by ID"
+},
+{
+"operationId": "list-prices-for-product",
+"domain": "products",
+"method": "GET",
+"path": "/products/{productId}/price",
+"kind": "read",
+"requiredScopes": [
+"products/prices.readonly"
+],
+"summary": "List Prices for a Product"
+},
+{
+"operationId": "create-price-for-product",
+"domain": "products",
+"method": "POST",
+"path": "/products/{productId}/price",
+"kind": "write",
+"requiredScopes": [
+"products/prices.write"
+],
+"summary": "Create Price for a Product"
+},
+{
+"operationId": "delete-price-by-id-for-product",
+"domain": "products",
+"method": "DELETE",
+"path": "/products/{productId}/price/{priceId}",
+"kind": "delete",
+"requiredScopes": [
+"products/prices.write"
+],
+"summary": "Delete Price by ID for a Product"
+},
+{
+"operationId": "get-price-by-id-for-product",
+"domain": "products",
+"method": "GET",
+"path": "/products/{productId}/price/{priceId}",
+"kind": "read",
+"requiredScopes": [
+"products/prices.readonly"
+],
+"summary": "Get Price by ID for a Product"
+},
+{
+"operationId": "update-price-by-id-for-product",
+"domain": "products",
+"method": "PUT",
+"path": "/products/{productId}/price/{priceId}",
+"kind": "write",
+"requiredScopes": [
+"products/prices.write"
+],
+"summary": "Update Price by ID for a Product"
+},
+{
+"operationId": "list-documents-contracts",
+"domain": "proposals",
+"method": "GET",
+"path": "/proposals/document",
+"kind": "read",
+"requiredScopes": [
+"documents_contracts/list.readonly"
+],
+"summary": "List documents"
+},
+{
+"operationId": "send-documents-contracts",
+"domain": "proposals",
+"method": "POST",
+"path": "/proposals/document/send",
+"kind": "write",
+"requiredScopes": [
+"documents_contracts/sendLink.write"
+],
+"summary": "Send document"
+},
+{
+"operationId": "list-documents-contracts-templates",
+"domain": "proposals",
+"method": "GET",
+"path": "/proposals/templates",
+"kind": "read",
+"requiredScopes": [
+"documents_contracts_template/list.readonly"
+],
+"summary": "List templates"
+},
+{
+"operationId": "send-documents-contracts-template",
+"domain": "proposals",
+"method": "POST",
+"path": "/proposals/templates/send",
+"kind": "write",
+"requiredScopes": [
+"documents_contracts_template/sendLink.write"
+],
+"summary": "Send template"
+},
+{
+"operationId": "get-agency-plans-deprecated",
+"domain": "saas",
+"method": "GET",
+"path": "/saas-api/public-api/agency-plans/{companyId}",
+"kind": "read",
+"requiredScopes": [
+"saas/location.read"
+],
+"summary": "Get Agency Plans"
+},
+{
+"operationId": "bulk-disable-saas-deprecated",
+"domain": "saas",
+"method": "POST",
+"path": "/saas-api/public-api/bulk-disable-saas/{companyId}",
+"kind": "write",
+"requiredScopes": [
+"saas/company.write"
+],
+"summary": "Disable SaaS for locations"
+},
+{
+"operationId": "bulk-enable-saas-deprecated",
+"domain": "saas",
+"method": "POST",
+"path": "/saas-api/public-api/bulk-enable-saas/{companyId}",
+"kind": "write",
+"requiredScopes": [
+"saas/company.write"
+],
+"summary": "Bulk Enable SaaS"
+},
+{
+"operationId": "enable-saas-location-deprecated",
+"domain": "saas",
+"method": "POST",
+"path": "/saas-api/public-api/enable-saas/{locationId}",
+"kind": "write",
+"requiredScopes": [
+"saas/location.write"
+],
+"summary": "Enable SaaS for Sub-Account (Formerly Location)"
+},
+{
+"operationId": "get-location-subscription-deprecated",
+"domain": "saas",
+"method": "GET",
+"path": "/saas-api/public-api/get-saas-subscription/{locationId}",
+"kind": "read",
+"requiredScopes": [
+"saas/company.read"
+],
+"summary": "Get Location Subscription Details"
+},
+{
+"operationId": "locations-deprecated",
+"domain": "saas",
+"method": "GET",
+"path": "/saas-api/public-api/locations",
+"kind": "read",
+"requiredScopes": [
+"saas/location.read"
+],
+"summary": "Get locations by stripeId with companyId"
+},
+{
+"operationId": "pause-location-deprecated",
+"domain": "saas",
+"method": "POST",
+"path": "/saas-api/public-api/pause/{locationId}",
+"kind": "write",
+"requiredScopes": [
+"saas/location.write"
+],
+"summary": "Pause location"
+},
+{
+"operationId": "get-saas-locations-deprecated",
+"domain": "saas",
+"method": "GET",
+"path": "/saas-api/public-api/saas-locations/{companyId}",
+"kind": "read",
+"requiredScopes": [
+"saas/company.read"
+],
+"summary": "Get SaaS Locations"
+},
+{
+"operationId": "get-saas-plan-deprecated",
+"domain": "saas",
+"method": "GET",
+"path": "/saas-api/public-api/saas-plan/{planId}",
+"kind": "read",
+"requiredScopes": [
+"saas/company.read"
+],
+"summary": "Get SaaS Plan"
+},
+{
+"operationId": "update-rebilling-deprecated",
+"domain": "saas",
+"method": "POST",
+"path": "/saas-api/public-api/update-rebilling/{companyId}",
+"kind": "write",
+"requiredScopes": [
+"saas/location.write"
+],
+"summary": "Update Rebilling"
+},
+{
+"operationId": "generate-payment-link-deprecated",
+"domain": "saas",
+"method": "PUT",
+"path": "/saas-api/public-api/update-saas-subscription/{locationId}",
+"kind": "write",
+"requiredScopes": [
+"saas/location.write"
+],
+"summary": "Update SaaS subscription"
+},
+{
+"operationId": "get-agency-plans",
+"domain": "saas",
+"method": "GET",
+"path": "/saas/agency-plans/{companyId}",
+"kind": "read",
+"requiredScopes": [
+"saas/location.read"
+],
+"summary": "Get Agency Plans"
+},
+{
+"operationId": "bulk-disable-saas",
+"domain": "saas",
+"method": "POST",
+"path": "/saas/bulk-disable-saas/{companyId}",
+"kind": "write",
+"requiredScopes": [
+"saas/company.write"
+],
+"summary": "Disable SaaS for locations"
+},
+{
+"operationId": "bulk-enable-saas",
+"domain": "saas",
+"method": "POST",
+"path": "/saas/bulk-enable-saas/{companyId}",
+"kind": "write",
+"requiredScopes": [
+"saas/company.write"
+],
+"summary": "Bulk Enable SaaS"
+},
+{
+"operationId": "enable-saas-location",
+"domain": "saas",
+"method": "POST",
+"path": "/saas/enable-saas/{locationId}",
+"kind": "write",
+"requiredScopes": [
+"saas/location.write"
+],
+"summary": "Enable SaaS for Sub-Account (Formerly Location)"
+},
+{
+"operationId": "get-location-subscription",
+"domain": "saas",
+"method": "GET",
+"path": "/saas/get-saas-subscription/{locationId}",
+"kind": "read",
+"requiredScopes": [
+"saas/company.read"
+],
+"summary": "Get Location Subscription Details"
+},
+{
+"operationId": "locations",
+"domain": "saas",
+"method": "GET",
+"path": "/saas/locations",
+"kind": "read",
+"requiredScopes": [
+"saas/location.read"
+],
+"summary": "Get locations by stripeId with companyId"
+},
+{
+"operationId": "pause-location",
+"domain": "saas",
+"method": "POST",
+"path": "/saas/pause/{locationId}",
+"kind": "write",
+"requiredScopes": [
+"saas/location.write"
+],
+"summary": "Pause location"
+},
+{
+"operationId": "get-saas-locations",
+"domain": "saas",
+"method": "GET",
+"path": "/saas/saas-locations/{companyId}",
+"kind": "read",
+"requiredScopes": [
+"saas/company.read"
+],
+"summary": "Get SaaS Locations"
+},
+{
+"operationId": "get-saas-plan",
+"domain": "saas",
+"method": "GET",
+"path": "/saas/saas-plan/{planId}",
+"kind": "read",
+"requiredScopes": [
+"saas/company.read"
+],
+"summary": "Get SaaS Plan"
+},
+{
+"operationId": "update-rebilling",
+"domain": "saas",
+"method": "POST",
+"path": "/saas/update-rebilling/{companyId}",
+"kind": "write",
+"requiredScopes": [
+"saas/location.write"
+],
+"summary": "Update Rebilling"
+},
+{
+"operationId": "generate-payment-link",
+"domain": "saas",
+"method": "PUT",
+"path": "/saas/update-saas-subscription/{locationId}",
+"kind": "write",
+"requiredScopes": [
+"saas/location.write"
+],
+"summary": "Update SaaS subscription"
+},
+{
+"operationId": "get-custom-snapshots",
+"domain": "snapshots",
+"method": "GET",
+"path": "/snapshots/",
+"kind": "read",
+"requiredScopes": [
+"snapshots.readonly"
+],
+"summary": "Get Snapshots"
+},
+{
+"operationId": "create-snapshot-share-link",
+"domain": "snapshots",
+"method": "POST",
+"path": "/snapshots/share/link",
+"kind": "write",
+"requiredScopes": [
+"snapshots.write"
+],
+"summary": "Create Snapshot Share Link"
+},
+{
+"operationId": "get-snapshot-push",
+"domain": "snapshots",
+"method": "GET",
+"path": "/snapshots/snapshot-status/{snapshotId}",
+"kind": "read",
+"requiredScopes": [
+"snapshots.readonly"
+],
+"summary": "Get Snapshot Push between Dates"
+},
+{
+"operationId": "get-latest-snapshot-push",
+"domain": "snapshots",
+"method": "GET",
+"path": "/snapshots/snapshot-status/{snapshotId}/location/{locationId}",
+"kind": "read",
+"requiredScopes": [
+"snapshots.readonly"
+],
+"summary": "Get Last Snapshot Push"
+},
+{
+"operationId": "createQueue",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Create a new category queue"
+},
+{
+"operationId": "fetchAvailableCategories",
+"domain": "social-planner",
+"method": "GET",
+"path": "/social-media-posting/category/queues/available-categories",
+"kind": "read",
+"requiredScopes": [
+"socialplanner/category.readonly"
+],
+"summary": "Get all categories with their queue status"
+},
+{
+"operationId": "fetchQueues",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues/list",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.readonly"
+],
+"summary": "Fetch category queues for a location"
+},
+{
+"operationId": "fetchCalendarList",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues/list/calendar",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.readonly"
+],
+"summary": "Get scheduled posts calendar view"
+},
+{
+"operationId": "deleteCurrentActivePostAndScheduleNext",
+"domain": "social-planner",
+"method": "DELETE",
+"path": "/social-media-posting/category/queues/{postId}/active-post",
+"kind": "delete",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Delete an active post and schedule the next one"
+},
+{
+"operationId": "fetchQueueById",
+"domain": "social-planner",
+"method": "GET",
+"path": "/social-media-posting/category/queues/{queueId}",
+"kind": "read",
+"requiredScopes": [
+"socialplanner/category.readonly"
+],
+"summary": "Fetch a category queue by ID"
+},
+{
+"operationId": "updateQueue",
+"domain": "social-planner",
+"method": "PUT",
+"path": "/social-media-posting/category/queues/{queueId}",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Update queue settings or status"
+},
+{
+"operationId": "createQueueItem",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues/{queueId}/create/item",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Create a new item in the queue"
+},
+{
+"operationId": "fetchEditSessionCalendar",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues/{queueId}/edit/calendar",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.readonly"
+],
+"summary": "Fetch calendar view for an edit session"
+},
+{
+"operationId": "discardEditSession",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues/{queueId}/edit/discard",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Discard edit session changes"
+},
+{
+"operationId": "saveEditSession",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues/{queueId}/edit/save",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Save edit session changes"
+},
+{
+"operationId": "startEditSession",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues/{queueId}/edit/start",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Start or resume an edit session"
+},
+{
+"operationId": "fetchQueueItems",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues/{queueId}/items",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.readonly"
+],
+"summary": "Fetch items from a queue"
+},
+{
+"operationId": "deleteQueueItem",
+"domain": "social-planner",
+"method": "DELETE",
+"path": "/social-media-posting/category/queues/{queueId}/items/{itemId}",
+"kind": "delete",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Delete an item from a queue"
+},
+{
+"operationId": "updateQueueItem",
+"domain": "social-planner",
+"method": "PUT",
+"path": "/social-media-posting/category/queues/{queueId}/items/{itemId}",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Update an item in a queue"
+},
+{
+"operationId": "cloneQueueItem",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues/{queueId}/items/{itemId}/clone",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Clone a queue item"
+},
+{
+"operationId": "resetQueueItem",
+"domain": "social-planner",
+"method": "PUT",
+"path": "/social-media-posting/category/queues/{queueId}/items/{itemId}/reset",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.write"
+],
+"summary": "Reset an item in a queue"
+},
+{
+"operationId": "fetchSlots",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/category/queues/{queueId}/slots",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/category.readonly"
+],
+"summary": "Fetch slot information for queue items"
+},
+{
+"operationId": "create-comment",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/comments/{platform}",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/comments.write"
+],
+"summary": "Create a comment or reply"
+},
+{
+"operationId": "get-comment-list",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/comments/{platform}/list",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/comments.readonly"
+],
+"summary": "List comments for a post or thread"
+},
+{
+"operationId": "delete-like",
+"domain": "social-planner",
+"method": "DELETE",
+"path": "/social-media-posting/comments/{platform}/{id}/like",
+"kind": "delete",
+"requiredScopes": [
+"socialplanner/comments.write"
+],
+"summary": "Unlike a comment"
+},
+{
+"operationId": "create-like",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/comments/{platform}/{id}/like",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/comments.write"
+],
+"summary": "Like a comment"
+},
+{
+"operationId": "get-oauth-accounts",
+"domain": "social-planner",
+"method": "GET",
+"path": "/social-media-posting/oauth/{locationId}/{platform}/accounts/{accountId}",
+"kind": "read",
+"requiredScopes": [
+"socialplanner/oauth.readonly"
+],
+"summary": "Get Available Accounts (Step 2 of 3)"
+},
+{
+"operationId": "attach-oauth-accounts",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/oauth/{locationId}/{platform}/accounts/{accountId}",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/oauth.write"
+],
+"summary": "Connect Account (Step 3 of 3)"
+},
+{
+"operationId": "get-statistics",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/statistics",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/statistics.readonly"
+],
+"summary": "Get Social Media Statistics"
+},
+{
+"operationId": "get-account",
+"domain": "social-planner",
+"method": "GET",
+"path": "/social-media-posting/{locationId}/accounts",
+"kind": "read",
+"requiredScopes": [
+"socialplanner/account.readonly"
+],
+"summary": "Get Accounts"
+},
+{
+"operationId": "delete-account",
+"domain": "social-planner",
+"method": "DELETE",
+"path": "/social-media-posting/{locationId}/accounts/{id}",
+"kind": "delete",
+"requiredScopes": [
+"socialplanner/account.write"
+],
+"summary": "Delete Account"
+},
+{
+"operationId": "get-categories-location-id",
+"domain": "social-planner",
+"method": "GET",
+"path": "/social-media-posting/{locationId}/categories",
+"kind": "read",
+"requiredScopes": [
+"socialplanner/category.readonly"
+],
+"summary": "Get categories by location id"
+},
+{
+"operationId": "get-categories-id",
+"domain": "social-planner",
+"method": "GET",
+"path": "/social-media-posting/{locationId}/categories/{id}",
+"kind": "read",
+"requiredScopes": [
+"socialplanner/category.readonly"
+],
+"summary": "Get categories by id"
+},
+{
+"operationId": "get-upload-status",
+"domain": "social-planner",
+"method": "GET",
+"path": "/social-media-posting/{locationId}/csv",
+"kind": "read",
+"requiredScopes": [
+"socialplanner/csv.readonly"
+],
+"summary": "Get Upload Status"
+},
+{
+"operationId": "delete-csv-post",
+"domain": "social-planner",
+"method": "DELETE",
+"path": "/social-media-posting/{locationId}/csv/{csvId}/post/{postId}",
+"kind": "delete",
+"requiredScopes": [
+"socialplanner/csv.write"
+],
+"summary": "Delete CSV Post"
+},
+{
+"operationId": "delete-csv",
+"domain": "social-planner",
+"method": "DELETE",
+"path": "/social-media-posting/{locationId}/csv/{id}",
+"kind": "delete",
+"requiredScopes": [
+"socialplanner/csv.write"
+],
+"summary": "Delete CSV"
+},
+{
+"operationId": "get-csv-post",
+"domain": "social-planner",
+"method": "GET",
+"path": "/social-media-posting/{locationId}/csv/{id}",
+"kind": "read",
+"requiredScopes": [
+"socialplanner/csv.readonly"
+],
+"summary": "Get CSV Post"
+},
+{
+"operationId": "start-csv-finalize",
+"domain": "social-planner",
+"method": "PATCH",
+"path": "/social-media-posting/{locationId}/csv/{id}",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/csv.write"
+],
+"summary": "Start CSV Finalize"
+},
+{
+"operationId": "create-post",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/{locationId}/posts",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/post.write"
+],
+"summary": "Create post"
+},
+{
+"operationId": "bulk-delete-social-planner-posts",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/{locationId}/posts/bulk-delete",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/post.write"
+],
+"summary": "Bulk Delete Social Planner Posts"
+},
+{
+"operationId": "get-posts",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/{locationId}/posts/list",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/post.readonly"
+],
+"summary": "Get posts"
+},
+{
+"operationId": "delete-post",
+"domain": "social-planner",
+"method": "DELETE",
+"path": "/social-media-posting/{locationId}/posts/{id}",
+"kind": "delete",
+"requiredScopes": [
+"socialplanner/post.write"
+],
+"summary": "Delete Post"
+},
+{
+"operationId": "get-post",
+"domain": "social-planner",
+"method": "GET",
+"path": "/social-media-posting/{locationId}/posts/{id}",
+"kind": "read",
+"requiredScopes": [
+"socialplanner/post.readonly"
+],
+"summary": "Get post"
+},
+{
+"operationId": "edit-post",
+"domain": "social-planner",
+"method": "PUT",
+"path": "/social-media-posting/{locationId}/posts/{id}",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/post.write"
+],
+"summary": "Edit post"
+},
+{
+"operationId": "set-accounts",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/{locationId}/set-accounts",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/csv.write"
+],
+"summary": "Set Accounts"
+},
+{
+"operationId": "get-tags-location-id",
+"domain": "social-planner",
+"method": "GET",
+"path": "/social-media-posting/{locationId}/tags",
+"kind": "read",
+"requiredScopes": [
+"socialplanner/tag.readonly"
+],
+"summary": "Get tags by location id"
+},
+{
+"operationId": "get-tags-by-ids",
+"domain": "social-planner",
+"method": "POST",
+"path": "/social-media-posting/{locationId}/tags/details",
+"kind": "write",
+"requiredScopes": [
+"socialplanner/tag.readonly"
+],
+"summary": "Get tags by ids"
+},
+{
+"operationId": "list-shipping-carriers",
+"domain": "store",
+"method": "GET",
+"path": "/store/shipping-carrier",
+"kind": "read",
+"requiredScopes": [
+"store/shipping.readonly"
+],
+"summary": "List Shipping Carriers"
+},
+{
+"operationId": "create-shipping-carrier",
+"domain": "store",
+"method": "POST",
+"path": "/store/shipping-carrier",
+"kind": "write",
+"requiredScopes": [
+"store/shipping.write"
+],
+"summary": "Create Shipping Carrier"
+},
+{
+"operationId": "delete-shipping-carrier",
+"domain": "store",
+"method": "DELETE",
+"path": "/store/shipping-carrier/{shippingCarrierId}",
+"kind": "delete",
+"requiredScopes": [
+"store/shipping.write"
+],
+"summary": "Delete shipping carrier"
+},
+{
+"operationId": "get-shipping-carriers",
+"domain": "store",
+"method": "GET",
+"path": "/store/shipping-carrier/{shippingCarrierId}",
+"kind": "read",
+"requiredScopes": [
+"store/shipping.readonly"
+],
+"summary": "Get Shipping Carrier"
+},
+{
+"operationId": "update-shipping-carrier",
+"domain": "store",
+"method": "PUT",
+"path": "/store/shipping-carrier/{shippingCarrierId}",
+"kind": "write",
+"requiredScopes": [
+"store/shipping.write"
+],
+"summary": "Update Shipping Carrier"
+},
+{
+"operationId": "list-shipping-zones",
+"domain": "store",
+"method": "GET",
+"path": "/store/shipping-zone",
+"kind": "read",
+"requiredScopes": [
+"store/shipping.readonly"
+],
+"summary": "List Shipping Zones"
+},
+{
+"operationId": "create-shipping-zone",
+"domain": "store",
+"method": "POST",
+"path": "/store/shipping-zone",
+"kind": "write",
+"requiredScopes": [
+"store/shipping.write"
+],
+"summary": "Create Shipping Zone"
+},
+{
+"operationId": "delete-shipping-zone",
+"domain": "store",
+"method": "DELETE",
+"path": "/store/shipping-zone/{shippingZoneId}",
+"kind": "delete",
+"requiredScopes": [
+"store/shipping.write"
+],
+"summary": "Delete shipping zone"
+},
+{
+"operationId": "get-shipping-zones",
+"domain": "store",
+"method": "GET",
+"path": "/store/shipping-zone/{shippingZoneId}",
+"kind": "read",
+"requiredScopes": [
+"store/shipping.readonly"
+],
+"summary": "Get Shipping Zone"
+},
+{
+"operationId": "update-shipping-zone",
+"domain": "store",
+"method": "PUT",
+"path": "/store/shipping-zone/{shippingZoneId}",
+"kind": "write",
+"requiredScopes": [
+"store/shipping.write"
+],
+"summary": "Update Shipping Zone"
+},
+{
+"operationId": "list-shipping-rates",
+"domain": "store",
+"method": "GET",
+"path": "/store/shipping-zone/{shippingZoneId}/shipping-rate",
+"kind": "read",
+"requiredScopes": [
+"store/shipping.readonly"
+],
+"summary": "List Shipping Rates"
+},
+{
+"operationId": "create-shipping-rate",
+"domain": "store",
+"method": "POST",
+"path": "/store/shipping-zone/{shippingZoneId}/shipping-rate",
+"kind": "write",
+"requiredScopes": [
+"store/shipping.write"
+],
+"summary": "Create Shipping Rate"
+},
+{
+"operationId": "delete-shipping-rate",
+"domain": "store",
+"method": "DELETE",
+"path": "/store/shipping-zone/{shippingZoneId}/shipping-rate/{shippingRateId}",
+"kind": "delete",
+"requiredScopes": [
+"store/shipping.write"
+],
+"summary": "Delete shipping rate"
+},
+{
+"operationId": "get-shipping-rates",
+"domain": "store",
+"method": "GET",
+"path": "/store/shipping-zone/{shippingZoneId}/shipping-rate/{shippingRateId}",
+"kind": "read",
+"requiredScopes": [
+"store/shipping.readonly"
+],
+"summary": "Get Shipping Rate"
+},
+{
+"operationId": "update-shipping-rate",
+"domain": "store",
+"method": "PUT",
+"path": "/store/shipping-zone/{shippingZoneId}/shipping-rate/{shippingRateId}",
+"kind": "write",
+"requiredScopes": [
+"store/shipping.write"
+],
+"summary": "Update Shipping Rate"
+},
+{
+"operationId": "get-store-settings",
+"domain": "store",
+"method": "GET",
+"path": "/store/store-setting",
+"kind": "read",
+"requiredScopes": [
+"store/setting.readonly"
+],
+"summary": "Get Store Settings"
+},
+{
+"operationId": "create-store-setting",
+"domain": "store",
+"method": "POST",
+"path": "/store/store-setting",
+"kind": "write",
+"requiredScopes": [
+"store/setting.write"
+],
+"summary": "Create/Update Store Settings"
+},
+{
+"operationId": "get-surveys",
+"domain": "surveys",
+"method": "GET",
+"path": "/surveys/",
+"kind": "read",
+"requiredScopes": [
+"surveys.readonly"
+],
+"summary": "Get Surveys"
+},
+{
+"operationId": "get-surveys-submissions",
+"domain": "surveys",
+"method": "GET",
+"path": "/surveys/submissions",
+"kind": "read",
+"requiredScopes": [
+"surveys.readonly"
+],
+"summary": "Get Surveys Submissions"
+},
+{
+"operationId": "create-user",
+"domain": "users",
+"method": "POST",
+"path": "/users/",
+"kind": "write",
+"requiredScopes": [
+"users.write"
+],
+"summary": "Create User"
+},
+{
+"operationId": "search-users",
+"domain": "users",
+"method": "GET",
+"path": "/users/search",
+"kind": "read",
+"requiredScopes": [
+"users.readonly"
+],
+"summary": "Search Users"
+},
+{
+"operationId": "filter-users-by-email",
+"domain": "users",
+"method": "POST",
+"path": "/users/search/filter-by-email",
+"kind": "read",
+"requiredScopes": [
+"users.readonly"
+],
+"summary": "Filter Users by Email"
+},
+{
+"operationId": "delete-user",
+"domain": "users",
+"method": "DELETE",
+"path": "/users/{userId}",
+"kind": "delete",
+"requiredScopes": [
+"users.write"
+],
+"summary": "Delete User"
+},
+{
+"operationId": "get-user",
+"domain": "users",
+"method": "GET",
+"path": "/users/{userId}",
+"kind": "read",
+"requiredScopes": [
+"users.readonly"
+],
+"summary": "Get User"
+},
+{
+"operationId": "update-user",
+"domain": "users",
+"method": "PUT",
+"path": "/users/{userId}",
+"kind": "write",
+"requiredScopes": [
+"users.write"
+],
+"summary": "Update User"
+},
+{
+"operationId": "voice-ai.create-action",
+"domain": "voice-ai",
+"method": "POST",
+"path": "/voice-ai/actions",
+"kind": "write",
+"requiredScopes": [
+"voice-ai-agent-goals.write"
+],
+"summary": "Create Agent Action"
+},
+{
+"operationId": "voice-ai.delete-action",
+"domain": "voice-ai",
+"method": "DELETE",
+"path": "/voice-ai/actions/{actionId}",
+"kind": "delete",
+"requiredScopes": [
+"voice-ai-agent-goals.write"
+],
+"summary": "Delete Agent Action"
+},
+{
+"operationId": "get-action",
+"domain": "voice-ai",
+"method": "GET",
+"path": "/voice-ai/actions/{actionId}",
+"kind": "read",
+"requiredScopes": [
+"voice-ai-agent-goals.readonly"
+],
+"summary": "Get Agent Action"
+},
+{
+"operationId": "voice-ai.update-action",
+"domain": "voice-ai",
+"method": "PUT",
+"path": "/voice-ai/actions/{actionId}",
+"kind": "write",
+"requiredScopes": [
+"voice-ai-agent-goals.write"
+],
+"summary": "Update Agent Action"
+},
+{
+"operationId": "get-agents",
+"domain": "voice-ai",
+"method": "GET",
+"path": "/voice-ai/agents",
+"kind": "read",
+"requiredScopes": [
+"voice-ai-agents.readonly"
+],
+"summary": "List Agents"
+},
+{
+"operationId": "voice-ai.create-agent",
+"domain": "voice-ai",
+"method": "POST",
+"path": "/voice-ai/agents",
+"kind": "write",
+"requiredScopes": [
+"voice-ai-agents.write"
+],
+"summary": "Create Agent"
+},
+{
+"operationId": "voice-ai.delete-agent",
+"domain": "voice-ai",
+"method": "DELETE",
+"path": "/voice-ai/agents/{agentId}",
+"kind": "delete",
+"requiredScopes": [
+"voice-ai-agents.write"
+],
+"summary": "Delete Agent"
+},
+{
+"operationId": "voice-ai.get-agent",
+"domain": "voice-ai",
+"method": "GET",
+"path": "/voice-ai/agents/{agentId}",
+"kind": "read",
+"requiredScopes": [
+"voice-ai-agents.readonly"
+],
+"summary": "Get Agent"
+},
+{
+"operationId": "patch-agent",
+"domain": "voice-ai",
+"method": "PATCH",
+"path": "/voice-ai/agents/{agentId}",
+"kind": "write",
+"requiredScopes": [
+"voice-ai-agents.write"
+],
+"summary": "Patch Agent"
+},
+{
+"operationId": "get-call-logs",
+"domain": "voice-ai",
+"method": "GET",
+"path": "/voice-ai/dashboard/call-logs",
+"kind": "read",
+"requiredScopes": [
+"voice-ai-dashboard.readonly"
+],
+"summary": "List Call Logs"
+},
+{
+"operationId": "getCallLog",
+"domain": "voice-ai",
+"method": "GET",
+"path": "/voice-ai/dashboard/call-logs/{callId}",
+"kind": "read",
+"requiredScopes": [
+"voice-ai-dashboard.readonly"
+],
+"summary": "Get Call Log"
+},
+{
+"operationId": "get-workflow",
+"domain": "workflows",
+"method": "GET",
+"path": "/workflows/",
+"kind": "read",
+"requiredScopes": [
+"workflows.readonly"
+],
+"summary": "Get Workflow"
+}
+]
