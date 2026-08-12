@@ -32,9 +32,17 @@ here) or only researching what the GHL API can do (that is ghl-crm).
 supports dry runs, name prefixes, exact-name updates, deletion by prefix and rate
 limiting.
 
-## The split you have to remember
+## Access lanes
 
 **Template content is API-writable. Workflow structure is not.**
+
+- **MCP, optional**: run `claude mcp list` and use the registered GoHighLevel server name.
+- **Direct REST**: use the template endpoints with the Private Integration Token from
+  repo-root `secrets/ghl.env`.
+- **CLI**: use `scripts/push_templates.py` for template batches or repo-root
+  `scripts/ghl raw` for individual endpoint calls.
+- **Browser fallback**: use `ghl-browser` for workflow steps, subjects, SMS bodies,
+  waits, and status changes.
 
 You can create, update, list and delete email templates through the API all day. You
 cannot attach a template to a workflow step, edit a subject inside a step, write an SMS

@@ -1,23 +1,20 @@
-# GHL Capability Matrix — API/MCP vs Browser-Only
+# GHL Capability Matrix: API, MCP, and browser-only work
 
-Verified 2026-07-12 against the live v2 MCP operation catalog (570 operations, 37 domains),
-the official OpenAPI specs (github.com/GoHighLevel/highlevel-api-docs), and live probes on a
-real location. This file is the routing truth: check it BEFORE deciding how to execute any
-GHL task. If a task's domain says BROWSER-ONLY, do not burn time hunting for an endpoint —
-go straight to the browser lane (skill `ghl-browser`, engine agent-browser).
+This file is the routing truth. Check it before choosing an execution lane. When a task
+is browser-only, use `ghl-browser` instead of hunting for an endpoint.
 
 ## How to read this
 
-- **API-FULL** — do it via ghl-v2 `execute_operation` (or a fixed ghl-official tool / raw REST).
-- **API-PARTIAL** — some operations exist; the listed gaps are browser-only.
-- **BROWSER-ONLY** — no public API surface. Flag it, use the browser lane.
+- **API-FULL**: use the optional MCP server, direct REST, or `scripts/ghl`.
+- **API-PARTIAL**: some operations exist; the listed gaps are browser-only.
+- **BROWSER-ONLY**: no public API surface. Use `ghl-browser`.
 
 ## The ladder (always in this order)
 
-1. **ghl-official fixed tools** — 36 tools (expanded from 21 by GHL), fastest for common CRM ops (contacts, opps, convos, calendars, social, blogs, emails, payments).
-2. **ghl-v2 meta-tools** — everything else the API can do: `search_operations` → `describe_operation` → `execute_operation`. 570 ops.
-3. **Raw REST / bash `ghl` helper** — when MCP is unavailable or for bulk loops. Base `https://services.leadconnectorhq.com`, header `Version: 2021-07-28`.
-4. **Browser lane** — skill `ghl-browser` (agent-browser + 2FA-via-Gmail). Codex browser lane is the cross-agent alternative.
+1. **MCP, optional**: run `claude mcp list` and use the registered GoHighLevel server name.
+2. **Direct REST**: use the Private Integration Token and the documented endpoint.
+3. **`scripts/ghl` CLI**: use named commands or `scripts/ghl raw` with the same token.
+4. **Browser fallback**: use `ghl-browser` only for the browser-only registry below.
 
 ## Domain matrix
 
@@ -31,8 +28,8 @@ go straight to the browser lane (skill `ghl-browser`, engine agent-browser).
 | products | 27 | API-FULL | products, prices, inventory, collections, reviews |
 | payments | 22 | API-PARTIAL | orders/transactions/subscriptions READ; record-payment, coupons CRUD, custom providers |
 | social-planner | 43 | API-FULL | posts CRUD, bulk CSV, OAuth attach, categories/queues, comments, stats |
-| emails | 18 (v3) + builder | API-FULL* | See "Email templates & campaigns" below — the load-bearing one |
-| medias | 6 | API-FULL | upload/list/update/folders — powers all image assets for emails/posts |
+| emails | 18 (v3) + builder | API-FULL* | See "Email templates & campaigns" below |
+| medias | 6 | API-FULL | upload/list/update/folders; powers image assets for emails/posts |
 | blogs | 7 | API-PARTIAL | create/update posts, no post DELETE, no blog-site create |
 | links (trigger links) | 6 | API-FULL | full CRUD + search |
 | locations | 26 | API-PARTIAL | custom values CRUD, custom fields CRUD, tags CRUD, recurring tasks. Location email/sms "marketing templates": GET+DELETE only |
@@ -50,7 +47,7 @@ go straight to the browser lane (skill `ghl-browser`, engine agent-browser).
 | users | 6 | API-FULL | create needs agency-level token |
 | businesses | 5 | API-FULL | |
 | store | 17 | API-FULL | shipping zones/rates/carriers, store settings |
-| saas | 22 | API (agency token) | enable/pause/rebill — agency-level auth required |
+| saas | 22 | API (agency token) | enable/pause/rebill; agency-level auth required |
 | snapshots | 4 | API-PARTIAL | list + share-link + push-status. **Create/load snapshot = BROWSER-ONLY** |
 | proposals (documents) | 4 | API-PARTIAL | list + SEND only. **Document/template builder = BROWSER-ONLY** |
 | phone-system | 4 | API-PARTIAL | pools/available/purchase/active. **Config/release/A2P = BROWSER-ONLY** |
@@ -60,12 +57,12 @@ go straight to the browser lane (skill `ghl-browser`, engine agent-browser).
 | affiliate-manager | 4 | READ-ONLY API | payouts/commissions read |
 | marketplace / oauth | 11 | API | app rebilling, installedLocations, locationToken |
 
-## BROWSER-ONLY registry (flag these — no public API, confirmed)
+## BROWSER-ONLY registry (flag these, no public API, confirmed)
 
-1. **Workflow builder** — create/edit workflows, steps, actions, the Triggers tab, and the emails/SMS inside workflow steps. (Our email-flows case.)
-2. **Funnel / website page builder** — page content read AND write.
+1. **Workflow builder**: create/edit workflows, steps, actions, the Triggers tab, and the emails/SMS inside workflow steps.
+2. **Funnel / website page builder**: page content read and write.
 3. **Form builder** and **Survey builder**.
-4. **Pipeline + stage create/rename/reorder** (moving opportunities between existing stages IS API). SOFTENING 2026-07-12: our PIT now carries the new `pipelines.write` scope and a raw `POST /opportunities/pipelines` probe returned 422 validation (auth passed) — the endpoint EXISTS but isn't in the v2 catalog yet. Pipeline CRUD via API may be arriving; re-probe before defaulting to browser lane. Structure writes still need the account owner's explicit OK (safety rule 3).
+4. **Pipeline and stage create/rename/reorder**. Moving opportunities between existing stages is available through the API.
 5. **Memberships / courses builder**.
 6. **Documents & Contracts builder** (send-only API).
 7. **Snapshot create/load**.
@@ -74,38 +71,42 @@ go straight to the browser lane (skill `ghl-browser`, engine agent-browser).
 10. **Private Integration token scope management** (Settings → Private Integrations).
 11. **Location "marketing templates" create/update** (`/locations/{id}/templates` is GET+DELETE only).
 
-Evidence for the big four: workflows spec has 1 path; funnels spec write = redirects only; forms spec = 3 read paths; pipelines = single GET. Top ideas-board requests confirm (workflow CRUD, pipeline API, funnel/form API, "Become An API First Company").
+## Email templates and campaigns
 
-## Email templates & campaigns (the email-flows lever — live-proven 2026-07-12)
+Two API generations are usable:
 
-Two API generations, BOTH usable:
-
-**Legacy builder family — works with our current token TODAY:**
-- `POST /emails/builder` `{locationId, name, type:"html"}` → returns template `id`
-- `POST /emails/builder/data` `{locationId, templateId, html, editorType:"html", previewText, updatedBy}` — **`updatedBy` is REQUIRED** (422 without it). Accepts full raw HTML; also accepts `dnd` JSON for drag-drop-editor templates (schema undocumented — round-trip an existing template's dnd rather than hand-writing it)
-- `GET /emails/builder?locationId=&limit=&search=` — list
+**Legacy builder family:**
+- `POST /emails/builder` `{locationId, name, type:"html"}` returns template `id`
+- `POST /emails/builder/data` `{locationId, templateId, html, editorType:"html", previewText, updatedBy}`. **`updatedBy` is required** and omission returns 422. It accepts full raw HTML and `dnd` JSON. Round-trip an existing template's `dnd` value rather than writing that schema by hand.
+- `GET /emails/builder?locationId=&limit=&search=` lists templates
 - `DELETE /emails/builder/{locationId}/{templateId}`
-- Success returns a Firebase `previewUrl` — fetch it to verify the render.
+- Success returns a `previewUrl`. Fetch it to verify the render.
 
-**v3 templates + campaigns (in the v2 MCP catalog):**
-- `/emails/locations/{locationId}/templates` CRUD + import + folders — needs `emails/templates.*` scope (our PIT HAS it as of 2026-07-12 — verified 200 via ghl-v2 `list-email-templates`). NOTE: raw REST to these `/emails/locations/...` paths 404s at the public gateway; route them through ghl-v2 `execute_operation`, which maps them correctly.
-- Email CAMPAIGNS: create/update/schedule/delete + stats (`emails/campaigns.*`) — full campaign sends via API
-- `GET .../campaigns/workflows` — read workflow email campaign entries (read-only window into workflow emails)
+**v3 templates and campaigns:**
+- `/emails/locations/{locationId}/templates` supports CRUD, import, and folders and needs `emails/templates.*` scope. If the public REST gateway returns 404 for this path, use the full-catalog operation exposed by the registered GHL MCP server.
+- Email campaigns support create, update, schedule, delete, and statistics with `emails/campaigns.*` scopes.
+- `GET .../campaigns/workflows` reads workflow email campaign entries.
 
-**What this means for flows:** branded emails are built as code, pushed as GHL email templates via API, verified via previewUrl. The ONLY manual/browser step left is attaching the template inside the workflow email step (workflow builder = browser-only).
+**What this means for flows:** build emails as code, push them as templates, and verify
+the preview URL. Attaching a template inside a workflow email step is browser-only.
 
-**BETTER (proven 2026-07-14, Install nurture v3 port): skip the attach entirely.** Every workflow email step already has a hidden BACKING template in the emails system. Overwrite IT and the workflow sends the new body immediately — no UI, no publish cycle:
-1. Discover the backing id: open the workflow in agent-browser with `network requests --filter templateId` on, click the email step → the app fires `GET /emails/campaigns/{loc}/template?...actionId=...&templateId=<BACKING_ID>`.
-2. `POST /emails/builder/data` with that templateId + new html (+updatedBy) → `{ok:true, previewUrl}`. Verify via previewUrl (GHL adds Outlook mso fixes; text stays 1:1).
-Still browser-only: adding steps (waits/SMS), SMS bodies, template *selection* swaps (the panel's Save action can hang forever and silently lose the change — never trust it; verify by reload). Full recipe: memory `ghl-workflow-email-api-trick.md`.
+An existing workflow email step has a backing template in the email system:
 
-## Cross-cutting quirks (live-verified)
+1. Open the workflow in `ghl-browser`, inspect network requests filtered by `templateId`,
+   and click the email step. Record the backing template ID from the template request.
+2. `POST /emails/builder/data` with that template ID, the new HTML, and `updatedBy`.
+3. Open the returned preview URL, then reload the workflow and verify the change.
 
-- `execute_operation` (ghl-v2): write ops need `idempotencyKey` (any stable string) or they 400. Ops carry `requiresApproval: true` — supply the key deliberately, never retry-loop a write blind.
-- 401 "not authorized for this scope" from v2 execute = the PIT is missing that scope, NOT a bug. Fix: GHL Settings → Private Integrations → edit scopes (browser lane), or use the legacy endpoint family if one exists.
+Adding waits or SMS steps, editing SMS bodies, and changing template selection remain
+browser-only.
+
+## Cross-cutting quirks
+
+- Full-catalog write operations may require `idempotencyKey`. Supply a stable key and never blind-retry a write.
+- 401 "not authorized for this scope" means the token is missing that scope. Edit the Private Integration scopes or use a permitted endpoint family.
 - REST: header `Version: 2021-07-28` required. Custom User-Agent (Cloudflare blocks python-requests default).
 - Rate limits: 429 → exponential backoff (2s/4s/8s); bulk loops 0.5s spacing.
 - Sub-account scope: one location per token/MCP connection. Agency ops (SaaS, snapshots, user-create, locationToken) need an agency token.
-- MCP inherits every API gap — the v2 MCP cannot build workflows/funnels/forms either. The matrix above IS the MCP's ceiling.
-- `GET /emails/builder` list can LAG behind newly API-created templates (create/update/delete by ID still work; keep the returned IDs). Verify via the returned previewUrl, not the list.
-- Private Integrations UI (scope edit / create with sensitive scopes): the final Confirm can hang server-side under automation (observed 2026-07-12, two flows) — BUT the save can land anyway. Before re-staging or asking for a manual click, PROBE a gated endpoint: 401 = scope really missing; 200/422 = the "hung" save actually went through (proven 2026-07-12).
+- MCP inherits every API gap. It cannot build workflows, funnels, or forms.
+- `GET /emails/builder` can lag behind newly created templates. Keep returned IDs and verify through the preview URL.
+- If the Private Integrations confirmation screen appears to hang, probe a gated endpoint before retrying. A 401 means the scope is missing. A 200 or 422 means the save landed.

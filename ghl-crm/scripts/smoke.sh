@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ghl-crm smoke test.
-# Verifies GHL is reachable via MCP + bash helper, and the SKILL.md is complete.
+# Verifies the skill files and optional access lanes.
 set -u
 
 FAILS=0
@@ -25,32 +25,32 @@ else
   fail "SKILL.md missing"
 fi
 
-# 2. ghl-official MCP registered (cloud MCP, checked via claude mcp list)
+# 2. Optional MCP inventory is readable
 if command -v claude >/dev/null 2>&1; then
-  if claude mcp list 2>/dev/null | grep -qi "ghl-official\|ghl_official\|claude_ai_GHL\|ghl-community"; then
-    ok "GHL MCP server(s) registered with Claude Code"
+  if claude mcp list >/dev/null 2>&1; then
+    ok "MCP inventory readable; use the registered GoHighLevel server name if present"
   else
-    warn "No GHL MCP detected via claude mcp list. May be wired at user-scope or via claude.ai."
+    warn "Could not read MCP inventory; REST and scripts/ghl still work"
   fi
 else
-  warn "claude CLI not on PATH, can't verify MCP registration"
+  warn "claude CLI not on PATH; REST and scripts/ghl still work"
 fi
 
-# 3. Bash helper script reachable
-GHL_HELPER=$(find ~/.claude/projects -name "ghl" -type f 2>/dev/null | head -1)
-if [[ -n "$GHL_HELPER" && -x "$GHL_HELPER" ]]; then
-  ok "ghl bash helper present at $GHL_HELPER"
+# 3. Repo-root CLI helper reachable when running from the bundle
+REPO_ROOT="$(cd "$SKILL_DIR/.." && pwd)"
+if [[ -x "$REPO_ROOT/scripts/ghl" ]]; then
+  ok "repo-root scripts/ghl present"
 else
-  warn "ghl bash helper not found (optional, MCP is canonical path)"
+  warn "scripts/ghl not beside the skill bundle; use direct REST or run the repo verifier"
 fi
 
-# 4. GHL credentials reachable (env var or secrets/ghl.env)
+# 4. GHL credentials reachable
 if [[ -n "${GHL_API_KEY:-}" ]]; then
   ok "GHL_API_KEY set in environment"
-elif [[ -f "$SKILL_DIR/secrets/ghl.env" ]] || find ~ -maxdepth 4 -name "ghl.env" -path "*/secrets/*" 2>/dev/null | grep -q .; then
-  ok "secrets/ghl.env present"
+elif [[ -f "$REPO_ROOT/secrets/ghl.env" ]]; then
+  ok "repo-root secrets/ghl.env present"
 else
-  warn "No GHL credentials found. Set \$GHL_API_KEY or add secrets/ghl.env."
+  warn "No credentials found; check repo-root secrets/ghl.env"
 fi
 
 # 5. Sister skills present (browser fallback + pairs-with)
@@ -60,7 +60,7 @@ else
   warn "ghl-browser not installed (needed for UI-only ops the API can't do)"
 fi
 
-# 6. Examples + CHANGELOG present (evidence layer)
+# 6. Examples and changelog present
 for f in examples CHANGELOG.md; do
   if [[ -e "$SKILL_DIR/$f" ]]; then
     ok "$f present"

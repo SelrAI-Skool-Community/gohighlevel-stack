@@ -1,14 +1,14 @@
 # Worked example: ghl-landing-pages session
 
-An end-to-end run across all three install paths. Names, IDs and domains are examples;
-substitute your own. Assume `GHL_LOCATION_ID` and `GHL_API_KEY` are set.
+An end-to-end run across all three page-install paths. Company names, IDs and domains
+are examples. Assume `GHL_LOCATION_ID` and `GHL_API_KEY` are set.
 
 ---
 
 ## 1. Publish a new page through the blog API
 
 ```
-User: Build me a landing page for the renovation quote offer and publish it.
+User: Build me a landing page for the service consultation offer and publish it.
 ```
 
 Claude checks which blog site and author exist in the location:
@@ -18,29 +18,29 @@ blogs_get-blogs  locationId=$GHL_LOCATION_ID
 → [{ _id: "<blogId>", name: "Main site" }]
 
 blogs_get-all-blog-authors-by-location  locationId=$GHL_LOCATION_ID
-→ [{ _id: "<authorId>", name: "Sample Bathrooms Co" }]
+→ [{ _id: "<authorId>", name: "Sample Co" }]
 ```
 
 Claude drafts the HTML locally, previews it at `http://localhost:8888`, then publishes:
 
 ```
 blogs_create-blog-post
-  body_title:        "Free Bathroom Renovation Quote"
+  body_title:        "Service Consultation Quote"
   body_locationId:   $GHL_LOCATION_ID
   body_blogId:       "<blogId>"
   body_rawHTML:      "<html>...</html>"
   body_status:       "PUBLISHED"
-  body_urlSlug:      "renovation-quote"
-  body_description:  "Book a free measure and quote for your bathroom renovation."
-  body_imageUrl:     "https://cdn.example.com/finished-bathroom.jpg"
-  body_imageAltText: "Finished bathroom renovation"
+  body_urlSlug:      "service-consultation-quote"
+  body_description:  "Book a 45-minute service consultation and receive a written quote."
+  body_imageUrl:     "https://cdn.example.com/service-team.jpg"
+  body_imageAltText: "Service team preparing for a consultation"
   body_author:       "<authorId>"
 ```
 
 Result:
 
-- Live at `yourdomain.com/blog/renovation-quote`
-- Audit run with `PAGE_URL=https://yourdomain.com/blog/renovation-quote`:
+- Live at `yourdomain.com/blog/service-consultation-quote`
+- Audit run with `PAGE_URL=https://yourdomain.com/blog/service-consultation-quote`:
   0 broken links, 0 broken images, 0 em dashes, no mobile overflow
 - A test form submission created a contact in GHL, verified by searching for it
 
@@ -49,7 +49,7 @@ Result:
 ## 2. Update the copy on a published page
 
 ```
-User: Change the headline to lead with the free measure, not the price.
+User: Change the headline to lead with the 45-minute consultation, not the price.
 ```
 
 Claude edits the local HTML, reruns the local preview, then:
@@ -79,7 +79,7 @@ on:
 
 1. Deploy the HTML to a static host, giving `https://checkout-page.example.com`
 2. In GHL: Funnel → the checkout page → Settings → Header Tracking Code
-3. Paste the iframe injection block from SKILL.md, Method 3, with `src` set to that URL
+3. Paste the iframe injection block from `../SKILL.md`, Method 3, with `src` set to that URL
 4. Save, publish, hard-refresh the live page
 
 Result:
@@ -112,7 +112,7 @@ URL. If that matters for branding, use the iframe method from section 3 instead.
 
 ## What went wrong along the way
 
-- **First publish showed a broken image.** The HTML referenced `assets/bathroom.jpg`,
+- **First publish showed a broken image.** The HTML referenced `assets/service-team.jpg`,
   a local path. Fixed by uploading to the media library and using the absolute URL
 - **The Custom Code element was framed by GHL chrome** until the Header Code CSS
   override was pasted

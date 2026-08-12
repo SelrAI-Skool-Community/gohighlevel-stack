@@ -20,7 +20,7 @@ drag-and-drop builder.
 **GHL has no public API for funnel page content.** You cannot create or edit a funnel
 page body with a REST call. Three methods work instead, in this order of preference.
 
-### Method 1 — Blog API with rawHTML (fully programmatic, start here)
+### Method 1, Blog API with rawHTML (fully programmatic, start here)
 
 The blog endpoints accept a complete HTML document in the `rawHTML` field, including
 inline CSS and scripts. Blog posts publish to a live URL on the connected domain, and
@@ -28,22 +28,24 @@ you get full create, read, update and delete through the API.
 
 - URL pattern: `yourdomain.com/blog/<url-slug>`
 - Requires a blog site to already exist in the location (create one in the UI once)
-- Tools: `mcp__ghl__blogs_create-blog-post` / `blogs_update-blog-post`, or the REST
-  helper. Anything missing goes through the ghl-crm operation catalogue, blogs domain.
+- MCP lane: run `claude mcp list`, use the GoHighLevel server name shown there, then use
+  its blog create or update operation. The server name is machine-specific.
+- REST lane: call the blog endpoint directly with the Private Integration Token.
+- CLI lane: use `scripts/ghl raw` with credentials from `secrets/ghl.env`.
 
 Create a page:
 
 ```
 blogs_create-blog-post
-  body_title:        "Bathroom Renovation Quote"
+  body_title:        "Service Consultation Quote"
   body_locationId:   "$GHL_LOCATION_ID"
   body_blogId:       "<from the blogs list call>"
   body_rawHTML:      "<html>...</html>"
   body_status:       "PUBLISHED"
-  body_urlSlug:      "renovation-quote"
+  body_urlSlug:      "service-consultation-quote"
   body_description:  "Page description used for SEO"
   body_imageUrl:     "https://<your CDN or GHL media URL>"
-  body_imageAltText: "Finished bathroom renovation"
+  body_imageAltText: "Service team preparing for a consultation"
   body_categories:   []
   body_author:       "<author id from the authors list call>"
   body_publishedAt:  "2026-01-01T00:00:00.000Z"
@@ -57,7 +59,7 @@ blogs_update-blog-post
   requestBody: { rawHTML: "<html>...</html>" }
 ```
 
-### Method 2 — Custom Code element in the funnel builder (browser lane)
+### Method 2, Custom Code element in the funnel builder (browser lane)
 
 When the page has to live at a funnel URL rather than a blog URL, drive the builder
 through the browser. See the ghl-browser skill for the engine and the login flow.
@@ -82,7 +84,7 @@ CSS override that hides the GHL wrapper and makes your code full-viewport:
 </style>
 ```
 
-### Method 3 — External host, GHL loads it
+### Method 3, External host, GHL loads it
 
 Host the HTML anywhere static (Vercel, Cloudflare Pages, Netlify, S3) and have GHL
 point at it. Two ways:
@@ -177,7 +179,7 @@ const URL = process.env.PAGE_URL;           // set PAGE_URL before running
 
   console.log('LINKS  :', links.filter(l => l.broken).length, 'broken of', links.length);
   console.log('IMAGES :', images.filter(i => !i.loaded).length, 'broken of', images.length);
-  console.log('DASHES :', (allText.match(/[–—]/g) || []).length, 'em/en dashes');
+  console.log('DASHES :', (allText.match(/[\u2013\u2014]/g) || []).length, 'long dashes');
 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(500);
@@ -199,8 +201,8 @@ Then check by eye, because the script cannot:
 
 - One idea per section, one clear next step per page
 - Lead with the customer's problem, not your company history
-- Use the words your customers use. If they say "reno", do not write "renovation
-  solution"
+- Use the words your customers use. If they say "service visit", do not write
+  "service-delivery engagement"
 - Avoid filler: "unlock", "leverage", "cutting-edge", "game-changer", "revolutionise",
   "seamless", "empower"
 - Never promise an outcome, a refund or a support level you have not agreed to deliver
@@ -208,10 +210,10 @@ Then check by eye, because the script cannot:
 
 ## Authentication and routing
 
-Route every API call down the ghl-crm ladder: fixed MCP tools first, then the operation
-catalogue, then the REST helper (`scripts/ghl`, credentials in `secrets/ghl.env`), then
-the browser lane. The capability matrix in `ghl-crm/references/capability-matrix.md` is
-the routing truth for what funnels and forms can never do through the API.
+Run `claude mcp list` before using the optional MCP lane, then use the GoHighLevel server
+name it returns. The REST lane and `scripts/ghl` CLI lane use the Private Integration
+Token from `secrets/ghl.env` and work without MCP. The capability matrix in
+`../ghl-crm/references/capability-matrix.md` is the routing truth for the browser fallback.
 
 Browser sessions, login and two-factor handling all live in the ghl-browser skill. GHL
 pages take 10 to 20 seconds to load, so use generous timeouts and never close the

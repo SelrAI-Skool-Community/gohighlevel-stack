@@ -5,7 +5,7 @@ description: Runs GoHighLevel invoicing, estimates, recurring billing, product/p
 
 # GHL Payments & Invoicing⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
-Runs the money side of GoHighLevel for a bathroom renovation business: one-off invoices,
+Runs the money side of GoHighLevel for a small service business: one-off invoices,
 estimates, recurring billing schedules,
 text-2-pay links, the product/price catalog, coupons, and the read-side of orders,
 transactions, and subscriptions that Xero reconciliation depends on downstream. Domain
@@ -14,16 +14,13 @@ cross-cutting API quirks, and safety rules; this file only adds what's specific 
 
 ## Execution ladder (see ghl-crm for the full version)
 
-1. **ghl-official fixed tools** - only two exist for this domain:
-   `mcp__ghl-official__payments_get-order-by-id`, `mcp__ghl-official__payments_list-transactions`.
-   Everything else in invoices/products/payments/store goes through the v2 ladder below.
-2. **ghl-v2 meta-tools** - `search_operations {query, domains:["invoices"|"products"|"payments"|"store"]}`
-   → `describe_operation {operationId, domain}` for exact params/body → `execute_operation
-   {operationId, domain, idempotencyKey, params}`. `references/operations.md` has all 103 ops
-   pre-sorted by business task with opId/scopes/kind - search there before calling
-   `search_operations` if the task matches a playbook below.
-3. **No MCP client** (cron, server, Codex batch) - `ghl-crm`'s
-   `scripts/ghl_v2_call.py` calls the same endpoints directly, same operationId/domain/params shape.
+1. **MCP, optional**: run `claude mcp list` and use the registered GoHighLevel server
+   name. Use fixed payment reads when available. Otherwise search, describe, then execute
+   the relevant full-catalog operation.
+2. **Direct REST**: use the method and path in `references/operations.md` with the token
+   from repo-root `secrets/ghl.env`.
+3. **CLI**: use repo-root `scripts/ghl orders`, or `scripts/ghl raw` for another
+   documented endpoint. REST and CLI work without MCP.
 
 ## Core playbooks
 

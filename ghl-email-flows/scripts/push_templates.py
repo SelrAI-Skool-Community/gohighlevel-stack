@@ -13,7 +13,7 @@ What it does per email:
   2. POST /emails/builder/data                -> load the full HTML (updatedBy required)
   3. Prints the previewUrl                    -> EYEBALL EACH ONE before calling it done
 The workflow email step still has to be pointed at the template in the GHL UI (browser
-lane) — that is the only manual part left.
+lane), that is the only manual part left.
 
 Auth: GHL_API_KEY / GHL_LOCATION_ID env, else secrets/ghl.env.
 Rate-limited 0.6s between calls. Idempotent-ish: if a template with the exact target
@@ -22,6 +22,9 @@ name already exists, its content is updated instead of creating a duplicate.
 import argparse, glob, json, os, subprocess, sys, time
 
 BASE = "https://services.leadconnectorhq.com"
+REPO_ENV = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..", "secrets", "ghl.env")
+)
 
 
 def _sh(cmd):
@@ -34,8 +37,9 @@ def resolve(name, env_grep):
     if v:
         return v
     for env_file in [os.environ.get("GHL_ENV_FILE", ""),
+                     REPO_ENV,
                      "secrets/ghl.env",
-                     os.path.expanduser("~/.ghl/ghl.env")]:
+                     ]:
         if env_file and os.path.exists(env_file):
             v = _sh(f"grep {env_grep} {env_file} | cut -d= -f2 | tr -d '\"'")
             if v:
@@ -60,7 +64,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("masters_dir")
     ap.add_argument("--prefix", default=None, help="template name prefix; default = dir basename")
-    ap.add_argument("--updated-by", default="selr-ai-automation")
+    ap.add_argument("--updated-by", default="sample-co-automation")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--delete-prefix", default=None, help="delete all templates whose name starts with this, then exit")
     a = ap.parse_args()
@@ -68,7 +72,7 @@ def main():
     tok = resolve("GHL_API_KEY", "GHL_API_KEY")
     loc = resolve("GHL_LOCATION_ID", "GHL_LOCATION_ID")
     if not (tok and loc):
-        sys.exit("Missing GHL token/location. Ask Claude to run kp doctor — it self-heals.")
+        sys.exit("Missing GHL token/location. Ask Claude to check repo-root secrets/ghl.env and retry.")
 
     existing = api("GET", f"/emails/builder?locationId={loc}&limit=100", tok).get("builders", [])
     by_name = {b.get("name"): (b.get("id") or b.get("templateId")) for b in existing}

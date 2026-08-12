@@ -1,26 +1,25 @@
 ---
 name: ghl-calendars-booking
-description: Runs GoHighLevel calendars and booking end to end. Creates and configures calendars, sets availability/schedules, finds free slots and books appointments for a contact, reschedules or cancels with notifications, blocks out time, manages calendar groups, and manages resources (rooms/equipment) and bookable services. Use when the user says things like "book a discovery call for this lead", "what slots are free tomorrow", "reschedule that appointment", "cancel their booking", "block out Friday afternoon", "set up a new calendar for the showroom", "add a room resource", "who's on the calendar this week", "create a round-robin calendar group", "pull today's bookings" or "give me the week's ops brief".
+description: Runs GoHighLevel calendars and booking end to end. Creates and configures calendars, sets availability/schedules, finds free slots and books appointments for a contact, reschedules or cancels with notifications, blocks out time, manages calendar groups, and manages resources (rooms/equipment) and bookable services. Use when the user says things like "book a discovery call for this lead", "what slots are free tomorrow", "reschedule that appointment", "cancel their booking", "block out Friday afternoon", "set up a service consultation calendar", "add a room resource", "who's on the calendar this week", "create a round-robin calendar group", "pull today's bookings" or "give me the week's ops brief".
 ---
 
 # GHL Calendars & Booking⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
-Runs the calendars domain (59 operations) for a bathroom renovation business where
-calendars power three lanes: discovery-call booking (sales), showroom consultation scheduling
-(delivery), and team/room availability (ops). Domain playbook under **`ghl-crm`**: read
+Runs the calendars domain (59 operations) for a small service business. Calendars cover
+discovery calls, service consultations, and team or room availability. This is a domain
+playbook under **`ghl-crm`**: read
 that skill first for the full ladder, cross-cutting quirks, and safety rules. This file
 only adds calendars-specific detail.
 
 ## Execution ladder
 
-1. **ghl-official fixed tools**: `get-calendar-events` and `get-appointment-notes` are the
-   fast lane. Reach for these first for any read-only "what's on the calendar" or "show me
-   the notes on this booking" ask. No domain param, no scope hunting.
-2. **ghl-v2 meta-tools**: everything else, via `search_operations({query, domains:["calendars"]})`,
-   then `describe_operation({operationId, domain:"calendars"})`, then
-   `execute_operation({operationId, domain:"calendars", idempotencyKey, params})`.
-3. **No MCP client** (cron/server/Codex batch): `ghl-crm`'s `scripts/ghl_v2_call.py` calls
-   the same endpoints directly.
+1. **MCP, optional**: run `claude mcp list` and use the registered GoHighLevel server
+   name. Use fixed calendar reads when available. Otherwise search, describe, then
+   execute the relevant full-catalog operation.
+2. **Direct REST**: use the method and path in `references/operations.md` with the token
+   from repo-root `secrets/ghl.env`.
+3. **CLI**: use repo-root `scripts/ghl` calendar commands or `scripts/ghl raw` for
+   another documented endpoint. REST and CLI work without MCP.
 
 Full op list reorganised by task: `references/operations.md`.
 
@@ -31,7 +30,7 @@ Full op list reorganised by task: `references/operations.md`.
 2. `createCalendarSchedule` on the new `calendarId`: weekly hours, timezone, booking
    notice window, buffer time. For team-wide hours instead of per-calendar, run
    `createSchedule` once, then `add-calendar-to-schedule` for each calendar that shares it.
-3. `create-event-notification`: at least a confirmation email and a reminder; showroom
+3. `create-event-notification`: at least a confirmation email and a reminder. Service
    consultations should also carry a cancellation notification.
 4. Verify: `get-calendar` and `getCalendarSchedule`, confirm hours and notifications saved.
 
@@ -73,19 +72,20 @@ Full op list reorganised by task: `references/operations.md`.
 4. `disable-group` to pull the public page down without deleting history. `delete-group`
    only when the lane is retired for good.
 
-### 7. Manage resources (rooms/equipment) for showroom consultations
+### 7. Manage resources (rooms/equipment) for service consultations
 1. `fetch-calendar-resources` on `resourceType: "rooms"` (or `"equipments"`): check what's
    already registered before creating a duplicate.
-2. `create-calendar-resource`: name, capacity/quantity (e.g. "Main Showroom",
-   capacity 40).
+2. `create-calendar-resource`: name, capacity/quantity, for example
+   `Consultation Room A`, capacity 12.
 3. Reference the resource when building the service catalog entry (playbook 8) so
    capacity constraints apply to bookings automatically.
 4. `update-calendar-resource` / `delete-calendar-resource` as rooms/gear change.
 
-### 8. Book a recurring showroom tour via the services catalog
+### 8. Book a recurring group service via the services catalog
 Use this lane instead of a plain calendar when the business needs capacity limits and a
-fixed venue per session (tour seats, not 1:1 calls).
-1. `create-service-catalog`: name (e.g. "Weekend Showroom Tour"), duration, price, capacity.
+fixed venue per session (group seats, not 1:1 calls).
+1. `create-service-catalog`: name, for example `Saturday Group Service`, with a 90-minute
+   duration, $120 price, and capacity 12.
 2. `create-service-location`: the venue for that service.
 3. `create-service-booking`: books one seat/attendee against a specific service, location,
    and time.
@@ -94,7 +94,7 @@ fixed venue per session (tour seats, not 1:1 calls).
 
 ### 9. Pull an upcoming-events list for a day/week ops brief
 1. `get-calendar-events` **[fixed tool]**: pass the date range and, if scoping to one lane,
-   the relevant `calendarId` (discovery calls, showroom consultations, and team availability
+   the relevant `calendarId` (discovery calls, service consultations, and team availability
    are usually separate calendars; check `get-calendars` once per install and record the
    IDs so this doesn't need re-discovery every brief).
 2. Cross-reference `get-appointment-notes` **[fixed tool]** on any booking that needs
@@ -118,7 +118,7 @@ fixed venue per session (tour seats, not 1:1 calls).
   booking visible in reporting and notification history. Default to that.
 - Calendar groups and the services catalog are two different bundling mechanisms: groups
   are a public booking page across calendars, services are a capacity-limited session
-  type. Don't reach for a group when the ask is really "limit this showroom tour to 40 seats",
+  type. Don't reach for a group when the ask is really "limit this group service to 12 seats",
   that's services catalog plus resources.
 
 ## Browser-only edges
@@ -141,7 +141,7 @@ deliberate idempotencyKey, verify every write). Adds for this domain:
    notification rule exists. Treat `edit-appointment` on someone else's confirmed booking
    with the same care as a live send, not a silent data edit.
 3. Check capacity (`get-service-bookings` count vs the service's capacity) before
-   confirming a showroom tour seat. Overbooking a physical room is a real-world failure, not
+   confirming a group service seat. Overbooking a physical room is a real-world failure, not
    just a data inconsistency.
 4. Deleting a calendar group or resource that's still referenced by an active service
    breaks future bookings silently. Check `get-services-catalog`/`get-service-locations`

@@ -1,8 +1,8 @@
 # ghl-payments-invoicing - operation catalog (103 ops, reorganised by business task)
 
-Source domains: `invoices` (37), `products` (27), `payments` (22), `store` (17). All ops run
-through ghl-v2 `execute_operation` unless a fixed ghl-official tool is named. Domain field
-below is what `search_operations`/`describe_operation` expect as `domain`.
+Source domains: `invoices` (37), `products` (27), `payments` (22), `store` (17). Use the
+registered GoHighLevel MCP server, direct REST, or repo-root `scripts/ghl raw`. The domain
+field below is used by full-catalog MCP operations.
 
 ## 1. Invoice lifecycle (create → send → collect → close)
 
@@ -94,11 +94,11 @@ below is what `search_operations`/`describe_operation` expect as `domain`.
 ## 7. Orders, transactions, subscriptions (reconciliation reads)
 
 - `GET /payments/orders` - `list-orders` | payments/orders.readonly | read
-- `GET /payments/orders/{orderId}` - `get-order-by-id` | payments/orders.readonly | read (also fixed tool `mcp__ghl-official__payments_get-order-by-id`)
+- `GET /payments/orders/{orderId}` - `get-order-by-id` | payments/orders.readonly | read (may be a fixed MCP operation)
 - `GET /payments/orders/{orderId}/fulfillments` - `list-order-fulfillment` | payments/orders.readonly | read
 - `POST /payments/orders/{orderId}/fulfillments` - `create-order-fulfillment` | payments/orders.write | write
 - `POST /payments/orders/{orderId}/record-payment` - `record-order-payment` | payments/orders.collectPayment | write - logs an offline/manual payment against an order
-- `GET /payments/transactions` - `list-transactions` | payments/transactions.readonly | read (also fixed tool `mcp__ghl-official__payments_list-transactions`)
+- `GET /payments/transactions` - `list-transactions` | payments/transactions.readonly | read (may be a fixed MCP operation)
 - `GET /payments/transactions/{transactionId}` - `get-transaction-by-id` | payments/transactions.readonly | read
 - `GET /payments/subscriptions` - `list-subscriptions` | payments/subscriptions.readonly | read
 - `GET /payments/subscriptions/{subscriptionId}` - `get-subscription-by-id` | payments/subscriptions.readonly | read

@@ -1,22 +1,15 @@
-# SETUP-PROMPT.md
+# Set up ghl-social-planner
 
-Paste into Claude Code to install + verify the ghl-social-planner skill.
+Paste this into Claude Code:
 
-```
-Install + verify the ghl-social-planner skill on this machine.
+```text
+Set up and verify the ghl-social-planner skill.
 
-1. Confirm the skill exists at ~/.claude/skills/ghl-social-planner/ (symlink into the kit's GHL connector pack).
-2. Confirm the master router is installed: ~/.claude/skills/ghl-crm/ — this skill is a domain
-   playbook under it and inherits its ladder, quirks, and safety rails.
-3. Confirm MCP servers: run `claude mcp list` and check ghl-official AND ghl-v2 are connected.
-   Missing? Follow ghl-crm/SETUP-PROMPT.md step 2.
-4. Dry test: load the ghl-social-planner skill and run Social Planner posting, queues, comments, stats with a read-only call
-   (any playbook step 1). Expect real data back, no 401.
-5. Ready. Trigger phrases include "schedule a social post", "check connected social accounts", "pull social stats".
+1. Confirm ~/.claude/skills/ghl-social-planner/SKILL.md and the ghl-crm skill exist.
+2. Load GHL_API_KEY and GHL_LOCATION_ID from secrets/ghl.env in the GoHighLevel stack repo root.
+3. Run `claude mcp list`. If a GoHighLevel MCP server is listed, use its actual registered name. MCP is optional.
+4. Without MCP, use direct REST with the Private Integration Token or the repo-root `scripts/ghl raw` command.
+5. Run a read-only connected-account query. On failure, ask Claude to retry after checking the token scope and location ID.
 ```
 
-## Notes
-
-- Full operation list by business task: `references/operations.md` in this skill.
-- Browser-only edges route to /ghl-browser; the capability matrix in ghl-crm references is the truth.
-- No MCP client (cron/server)? Use `ghl-crm/scripts/ghl_v2_call.py` with the same operationIds.
+The operations list is in `references/operations.md`. First-time social-account connections use `ghl-browser`.

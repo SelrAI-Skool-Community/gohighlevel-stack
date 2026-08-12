@@ -1,5 +1,5 @@
 #!/bin/bash
-# GHL API Helper — used by Claude Code to manage GoHighLevel CRM
+# GHL API Helper, used by Claude Code to manage GoHighLevel CRM
 # Usage: ghl <command> [args...]
 
 # Credentials: environment first, then the secrets file next to this script.
@@ -17,7 +17,7 @@ fi
 
 BASE="${GHL_BASE_URL:-https://services.leadconnectorhq.com}"
 LOC="$GHL_LOCATION_ID"
-TZ="${GHL_TIMEZONE:-Australia/Brisbane}"
+TZ="${GHL_TIMEZONE:-UTC}"
 GHL_API_VERSION="${GHL_API_VERSION:-2021-07-28}"
 
 cmd="$1"; shift
@@ -60,14 +60,14 @@ case "$cmd" in
     ;;
 
   create-contact)
-    # Usage: ghl create-contact '{"firstName":"John","lastName":"Doe","email":"jane@example.com"}'
+    # Usage: ghl create-contact '{"companyName":"Sample Co","email":"customer@example.com"}'
     curl -s -X POST "$BASE/contacts/" \
       -H "Authorization: Bearer $GHL_API_KEY" -H "Version: $GHL_API_VERSION" -H "Content-Type: application/json" \
       -d "{\"locationId\":\"$LOC\",$(echo "$1" | sed 's/^{//' )}"
     ;;
 
   update-contact)
-    # Usage: ghl update-contact <contactId> '{"firstName":"Jane"}'
+    # Usage: ghl update-contact <contactId> '{"companyName":"Sample Co"}'
     curl -s -X PUT "$BASE/contacts/$1" \
       -H "Authorization: Bearer $GHL_API_KEY" -H "Version: $GHL_API_VERSION" -H "Content-Type: application/json" \
       -d "$2"
@@ -275,7 +275,7 @@ case "$cmd" in
     ;;
 
   *)
-    echo "GHL CRM CLI — Commands:"
+    echo "GHL CRM CLI, Commands:"
     echo ""
     echo "  CONTACTS:"
     echo "    contacts [limit]              List contacts"

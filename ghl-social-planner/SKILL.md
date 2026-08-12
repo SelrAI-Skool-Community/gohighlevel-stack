@@ -1,28 +1,26 @@
 ---
 name: ghl-social-planner
-description: Runs GoHighLevel's Social Planner, covering connected account audits, single and bulk post scheduling, evergreen queues, comment moderation, and post/account statistics. Use when the user says "schedule a social post", "post this to Facebook and Instagram", "bulk-schedule these posts", "set up an evergreen queue", "recycle old posts", "check my connected social accounts", "reply to comments on that post", "pull social stats for last month", "upload this image to the media library", "clone that queue item", "what's connected to GHL social", or "queue up a week of posts". Domain playbook under /ghl-crm, pairs with /ghl-browser for OAuth connect flows and CSV file upload.
+description: Runs GoHighLevel's Social Planner, covering connected account audits, single and bulk post scheduling, evergreen queues, comment moderation, and post/account statistics. Use when the user says "schedule a social post", "post this to Facebook and Instagram", "bulk-schedule these posts", "set up an evergreen queue", "recycle old posts", "check my connected social accounts", "reply to comments on that post", "pull social stats for last month", "upload this image to the media library", "clone that queue item", "what's connected to GHL social", or "queue up a week of posts". Domain playbook under ghl-crm, pairs with ghl-browser for OAuth connect flows and CSV file upload.
 ---
 
 # GHL Social Planner⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
-Runs the Social Planner lane of GoHighLevel for a bathroom renovation business:
+Runs the Social Planner lane of GoHighLevel for a small service business:
 connected-account hygiene, scheduling single
 posts and full content calendars across Facebook, Instagram, LinkedIn, TikTok, Google
 Business Profile and more, evergreen recycling queues, comment replies, and performance
 reporting. This is a domain playbook: the ladder, cross-cutting quirks, and safety
-baseline live in `/ghl-crm`, read that first if anything here is unclear.
+baseline live in `ghl-crm`, read that first if anything here is unclear.
 
 ## Execution ladder (domain-specific)
 
-1. **ghl-official fixed tools (fast lane)**: 6 social tools cover the common path,
-   `social-media-posting_create-post`, `_edit-post`, `_get-post`, `_get-posts`,
-   `_get-account`, `_get-social-media-statistics`. Reach for these first for a single
-   post or a quick stats pull.
-2. **ghl-v2 meta-tools**: everything else in this pack (queues, CSV, comments, media,
-   tags, OAuth attach) goes through `search_operations {query, domains:["social-planner"]}`,
-   then `describe_operation {operationId, domain}`, then `execute_operation {...}`.
-3. No MCP client handy? `ghl-crm`'s `scripts/ghl_v2_call.py` calls the same endpoint
-   directly. Full ladder detail and cross-cutting quirks live in `/ghl-crm`.
+1. **MCP, optional**: run `claude mcp list` and use the registered GoHighLevel server
+   name. Use fixed social operations when available. Otherwise search, describe, then
+   execute the relevant full-catalog operation.
+2. **Direct REST**: use the method and path in `references/operations.md` with the token
+   from repo-root `secrets/ghl.env`.
+3. **CLI**: use repo-root `scripts/ghl raw METHOD /path [body]`. REST and CLI work
+   without MCP.
 
 Full operation list, reorganised by task, sits in `references/operations.md`.
 
@@ -30,7 +28,7 @@ Full operation list, reorganised by task, sits in `references/operations.md`.
 
 ### 1. Audit connected social accounts
 Goal: know exactly what's connected before touching anything else.
-1. `get-account` (ghl-official, or v2 `get-account`) lists every connected account for
+1. `get-account` lists every connected account for
    the location: accountId, platform, display name, connection status.
 2. Any account flagged expired or disconnected, run `get-oauth-accounts` to check token
    health for that specific platform/accountId.
@@ -54,7 +52,7 @@ scheduled item, never live without an explicit ask.
 Goal: load a content calendar (30 days of posts, say) in one pass.
 - **Preferred, pure API path**: parse the source CSV/sheet locally, then loop
   `create-post` once per row with a stable per-row `idempotencyKey` (a hash of
-  date+platform+caption) and the rate-limit spacing from `/ghl-crm` (0.5s between
+  date+platform+caption) and the rate-limit spacing from `ghl-crm` (0.5s between
   writes). This avoids the native CSV importer entirely and is fully scriptable.
 - **Native CSV importer path** (the file itself is uploaded through the browser, see
   Browser-only edges): once a CSV has been dropped into GHL's own importer, drive
@@ -107,7 +105,7 @@ Goal: performance reporting for a date range or a specific account.
 Goal: get an asset into the shared media library, then reference it from a post.
 1. This pack's 6 `medias` ops are library management (list, folder, rename/retag,
    delete), none of them is a raw multipart file upload. Before assuming that means
-   browser-only, run `search_operations {"query":"upload media file"}` via ghl-v2 first,
+   browser-only, search the registered GHL MCP server for `upload media file` first,
    the full 570-op catalog may carry an upload endpoint this domain slice doesn't
    surface. If `describe_operation` confirms one, use it (organise into a folder first
    with `create-media-folder` for a campaign-sized batch).
@@ -158,7 +156,7 @@ Goal: get an asset into the shared media library, then reference it from a post.
 
 ## Safety rails
 
-Inherits `/ghl-crm`'s baseline (no bulk sends without approval, deliberate
+Inherits `ghl-crm`'s baseline (no bulk sends without approval, deliberate
 idempotencyKey, verify every write, never delete contacts). Domain-specific:
 
 1. **Scheduled and draft posts are autonomous.** Building out a content calendar with

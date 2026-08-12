@@ -6,16 +6,20 @@ description: Runs GoHighLevel's Conversation AI stack, covering knowledge bases,
 # GHL Conversation AI⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Runs GoHighLevel's most under-used lane: the AI chat and voice agents that can
-answer leads 24/7 across web chat, SMS, social DMs, and phone calls, grounded in a trained
+answer leads 24/7 across web chat, SMS, social messages, and phone calls, grounded in a trained
 knowledge base and a consistent brand voice. This is a DOMAIN PLAYBOOK under `ghl-crm`.
 Read that skill first for the full ladder, quirks, and safety rules; this file only adds
 what's specific to Conversation AI.
 
 ## Execution ladder (see `ghl-crm` for the full version)
 
-1. **ghl-official** has no fixed tools for this domain, so go straight to ghl-v2.
-2. **ghl-v2 meta-tools**: `search_operations {query, domains:["knowledge-base","voice-ai","chat-widget","brand-boards"]}`, then `describe_operation` for the exact body schema, then `execute_operation` with a deliberate `idempotencyKey` on every write.
-3. No MCP client handy: `ghl-crm/scripts/ghl_v2_call.py execute_operation '{...}'`.
+1. **MCP, optional**: run `claude mcp list` and use the GoHighLevel server name it shows.
+   This domain usually needs full-catalog operations: search, describe, then execute the
+   operation for `knowledge-base`, `voice-ai`, `chat-widget`, or `brand-boards`.
+2. **Direct REST**: use the method and path in `references/operations.md` with the token
+   from repo-root `secrets/ghl.env`.
+3. **CLI**: use repo-root `scripts/ghl raw METHOD /path [body]`. REST and CLI work
+   without MCP.
 
 Full op table, organised by task: `references/operations.md`.
 
@@ -23,7 +27,8 @@ Full op table, organised by task: `references/operations.md`.
 
 ### 1. Build a knowledge base from a website crawl and FAQs
 Goal: give an agent a grounded, accurate source of truth before it talks to a single lead.
-1. `createKnowledgeBase`, named for the brand/offer it serves (e.g. "Sample Bathrooms Co, main site").
+1. `createKnowledgeBase`, named for the brand or offer it serves, for example
+   `Sample Co, main site`.
 2. `discoverWebsite` with the KB id plus the root URL. Kicks off the crawler.
 3. Poll `getCrawlingStatusForLatestOperation` until it reports done.
 4. `getAllWebsiteUrlsDataByKnowledgeBase`, reviewing the discovered URL list before training; drop anything stale (old pricing pages, dead campaigns).
@@ -32,7 +37,7 @@ Goal: give an agent a grounded, accurate source of truth before it talks to a si
 7. Verify: `getKnowledgeBaseById` plus `list` (faqs), confirming counts match what was trained.
 
 ### 2. Create a Conversation AI (chat) agent and wire it to channels
-Goal: an agent that answers web chat, SMS, and social DMs consistently.
+Goal: an agent that answers web chat, SMS, and social messages consistently.
 1. `voice-ai.create-agent` with the KB id attached, the channels it should answer (chat/SMS/social), and its prompt/personality.
 2. `voice-ai.create-action` for each real job it needs to do beyond answering questions: book a call, tag a hot lead, hand off to a human.
 3. `patch-agent` to attach a brand voice (playbook 5) once one exists.
@@ -63,7 +68,8 @@ Goal: one tone of voice the AI writes in everywhere, not a different personality
 ### 6. Review AI agent conversations for quality
 Goal: catch a bad answer before it costs a lead, not after.
 1. Voice agents: `get-call-logs` for the period, then `getCallLog` on flagged calls for transcript and recording.
-2. Chat/SMS/social agents: message content lives in the `conversations` domain, not here; use `ghl-crm` / `mcp__ghl-official__conversations_search-conversation` plus `_get-messages` to pull the actual transcript.
+2. Chat/SMS/social agents: message content lives in the `conversations` domain, not here.
+   Use `ghl-crm` to search the conversation and retrieve its messages.
 3. Pattern-match: the same wrong answer twice means the knowledge base is missing or wrong, not a one-off. Fix the KB (playbook 1) or add an FAQ, don't just re-prompt the agent.
 4. If an agent is giving out information nobody verified (pricing, dates, guarantees), pull that content into the KB/FAQ from a real source immediately. Never leave a live agent citing unverified facts.
 
@@ -76,7 +82,7 @@ Goal: keep an agent's job list current as the business's process changes.
 ## Domain gotchas
 
 - **Crawl then train are two separate steps.** `discoverWebsite` only builds the candidate URL list; nothing is trained until `trainDiscoveredUrls` runs against selected ids. A crawl that "did nothing" usually means training was skipped.
-- **One agent object, all channels.** The API domain is still named `voice-ai` for historical reasons, but `/voice-ai/agents/{agentId}` is the single object behind chat, SMS, social DM, and phone. Don't look for a separate `/conversation-ai/agents` path; it doesn't exist.
+- **One agent object, all channels.** The API domain is still named `voice-ai` for historical reasons, but `/voice-ai/agents/{agentId}` is the single object behind chat, SMS, social messaging, and phone. Do not look for a separate `/conversation-ai/agents` path; it does not exist.
 - **Default brand voice is location-wide.** `set-default-brand-voice` changes what every agent inherits unless it has an explicit override, so check how many active agents rely on the default before changing it.
 - **FAQ delete opId is inconsistently named** (`knowledge-base.delete` instead of a `delete-faq`-style id), a naming quirk in the catalog, not a functional gap.
 - **`agent-studio`** (create/execute/promote agent workflows) is named in the `ghl-crm` capability matrix as living in this domain but is not one of the 43 ops in this pack. Run `search_operations` for it before assuming it needs the browser lane.

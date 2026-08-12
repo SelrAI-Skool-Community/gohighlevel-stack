@@ -1,49 +1,37 @@
 # Worked example: ghl-browser session
 
-Three short transcripts showing the `ghl-browser` skill in use.
+Three concrete examples of browser-only GHL work.
 
-## Example 1: Standard invocation
+## Example 1: Rename a pipeline stage
 
-```
-User: use ghl browser
+```text
+User: Configure the Sales Pipeline stages as New Enquiry, Contacted, Quote Sent, Won, and Lost.
 
-Claude: [invokes /ghl-browser]
-[reads SKILL.md, follows the documented workflow]
-[returns the result the skill is designed to produce]
+Claude checks the capability matrix, reuses the signed-in browser session, opens
+Opportunities, then Pipeline Settings, sets the five stages in order, and reloads the pipeline.
 
-Done. Result delivered per the skill's operation map.
-```
-
-## Example 2: Edge case
-
-```
-User: run ghl browser
-
-Claude: [invokes /ghl-browser]
-[detects the edge case in SKILL.md's failure-modes list]
-[handles per documented fallback]
-
-Note: this is the documented edge case. The skill handles it cleanly.
+Verified stages: New Enquiry, Contacted, Quote Sent, Won, Lost.
 ```
 
-## Example 3: Pairs-with handoff
+## Example 2: Recover from a stalled page
 
+```text
+User: Add the Quote Request form to the service page.
+
+Claude opens the funnel builder. The page is still blank after 20 seconds, so Claude
+reopens it through agent-browser, takes a fresh interactive snapshot, and continues.
+
+The form is saved, the live page is reloaded, and a test submission creates one contact.
 ```
-User: start ghl browser
 
-Claude: [invokes /ghl-browser]
-[completes the ghl-browser-specific work]
-[hands off to a pairs-with skill if one is listed in SKILL.md]
+## Example 3: Hand off API-capable work
 
-The pairs-with handoff is documented in SKILL.md "Pairs with" section.
+```text
+User: Move enquiry 2048 to Quote Sent.
+
+Claude checks the capability matrix and sees that moving an opportunity between existing
+stages is API-capable. It uses ghl-crm through the available MCP, REST, or scripts/ghl
+lane, then fetches the opportunity again.
+
+Verified: enquiry 2048 is now in Quote Sent.
 ```
-
-## What kit-doctor sees after the cook
-
-- Evidence: 4 (smoke + examples + CHANGELOG = 4 points)
-- Install story: 4-5 (SETUP-PROMPT.md present)
-- Trigger fidelity: 4-5 (frontmatter description has "use when" + quoted phrases)
-- Clarity: 4-5 (depends on SKILL.md body, unchanged by cook)
-- Differentiation: 3 (default until the kit-index yaml supplies cross-check)
-
-Lifts the skill from sub-Promising to Promising 4.0-4.4 verdict.

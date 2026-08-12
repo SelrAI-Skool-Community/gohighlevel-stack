@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ghl-browser smoke test.
-# Verifies the skill's evidence layer is in place + SKILL.md is valid.
+# Verifies the skill files and frontmatter.
 set -u
 
 FAILS=0
@@ -25,7 +25,7 @@ else
   fail "SKILL.md missing"
 fi
 
-# 2. Evidence layer present
+# 2. Setup, changelog, and examples present
 for f in SETUP-PROMPT.md CHANGELOG.md; do
   if [[ -s "$SKILL_DIR/$f" ]]; then
     ok "$f present"

@@ -3,21 +3,20 @@
 49 ops total (43 social-planner + 6 medias), reorganised from the raw v2 catalog slice
 by what you're trying to DO rather than by path. `kind` is the v2 catalog's label; some
 "write"-kind ops are read requests that happen to use POST for their filter body (see
-Domain gotchas in SKILL.md).
+Domain gotchas in `../SKILL.md`).
 
 ## Accounts & connections
 
 - `GET /social-media-posting/{locationId}/accounts`, opId `get-account`, scopes
   socialplanner/account.readonly, kind read. Lists every connected account for the
-  location (accountId, platform, display name, status). Also exposed as a fixed
-  ghl-official tool.
+  location (accountId, platform, display name, status). It may be a fixed MCP operation.
 - `GET /social-media-posting/oauth/{locationId}/{platform}/accounts/{accountId}`, opId
   `get-oauth-accounts`, scopes socialplanner/oauth.readonly, kind read. Checks token
   health for one connected account.
 - `POST /social-media-posting/oauth/{locationId}/{platform}/accounts/{accountId}`, opId
   `attach-oauth-accounts`, scopes socialplanner/oauth.write, kind write. Reattaches or
   refreshes a token GHL already has a handshake for. Does NOT do the first-time OAuth
-  consent (browser-only, see SKILL.md).
+  consent (browser-only, see `../SKILL.md`).
 - `DELETE /social-media-posting/{locationId}/accounts/{id}`, opId `delete-account`,
   scopes socialplanner/account.write, kind delete. Disconnects an account. Preview the
   impact with the user before running (posts scheduled to it will orphan).
@@ -26,16 +25,15 @@ Domain gotchas in SKILL.md).
 
 - `POST /social-media-posting/{locationId}/posts`, opId `create-post`, scopes
   socialplanner/post.write, kind write. Creates a post (draft, scheduled, or
-  immediate). Also a fixed ghl-official tool.
+  immediate). It may be a fixed MCP operation.
 - `PUT /social-media-posting/{locationId}/posts/{id}`, opId `edit-post`, scopes
-  socialplanner/post.write, kind write. Edits an existing post. Also a fixed
-  ghl-official tool.
+  socialplanner/post.write, kind write. Edits an existing post. It may be a fixed MCP operation.
 - `GET /social-media-posting/{locationId}/posts/{id}`, opId `get-post`, scopes
   socialplanner/post.readonly, kind read. Fetches one post, use it to verify a write.
-  Also a fixed ghl-official tool.
+  It may be a fixed MCP operation.
 - `POST /social-media-posting/{locationId}/posts/list`, opId `get-posts`, scopes
   socialplanner/post.readonly, kind write (filter body, read semantics). Lists posts by
-  date range, status, or account. Also a fixed ghl-official tool.
+  date range, status, or account. It may be a fixed MCP operation.
 - `DELETE /social-media-posting/{locationId}/posts/{id}`, opId `delete-post`, scopes
   socialplanner/post.write, kind delete. Removes a single post.
 
@@ -102,7 +100,7 @@ Domain gotchas in SKILL.md).
 - `DELETE /social-media-posting/category/queues/{postId}/active-post`, opId
   `deleteCurrentActivePostAndScheduleNext`, scopes socialplanner/category.write, kind
   delete. Pulls whatever's live now and immediately promotes the next queued item.
-  Publish-adjacent, needs explicit ask (see SKILL.md safety rails).
+  Publish-adjacent, needs explicit ask (see `../SKILL.md` safety rails).
 - `POST /social-media-posting/category/queues/{queueId}/edit/start`, opId
   `startEditSession`, scopes socialplanner/category.write, kind write. Opens a safe
   edit session on a queue's calendar.
@@ -120,7 +118,7 @@ Domain gotchas in SKILL.md).
 
 - `GET /social-media-posting/{locationId}/categories`, opId
   `get-categories-location-id`, scopes socialplanner/category.readonly, kind read.
-  Lists legacy location categories. Not the same system as queues, see SKILL.md
+  Lists legacy location categories. Not the same system as queues, see `../SKILL.md`
   gotchas.
 - `GET /social-media-posting/{locationId}/categories/{id}`, opId `get-categories-id`,
   scopes socialplanner/category.readonly, kind read. Fetches one legacy category.
@@ -144,13 +142,13 @@ Domain gotchas in SKILL.md).
   scopes socialplanner/comments.write, kind write. Likes a comment.
 - `DELETE /social-media-posting/comments/{platform}/{id}/like`, opId `delete-like`,
   scopes socialplanner/comments.write, kind delete. Unlikes a comment. No
-  delete-comment op exists in this pack (see Browser-only edges in SKILL.md).
+  delete-comment op exists in this pack (see Browser-only edges in `../SKILL.md`).
 
 ## Statistics
 
 - `POST /social-media-posting/statistics`, opId `get-statistics`, scopes
   socialplanner/statistics.readonly, kind write (filter body, read semantics). Per-post
-  or per-account performance metrics for a date range. Also a fixed ghl-official tool
+  or per-account performance metrics for a date range. It may be a fixed MCP operation
   (`get-social-media-statistics`).
 
 ## Media library
@@ -170,6 +168,6 @@ Domain gotchas in SKILL.md).
   kind write. Removes many assets at once.
 
 Note: none of the 6 medias ops in this pack is a raw multipart file-upload endpoint.
-Before treating a new-asset upload as browser-only, run `search_operations
-{"query":"upload media file"}` via ghl-v2, the full 570-op catalog may carry an upload
-op this domain slice doesn't surface. See SKILL.md playbook 7.
+Before treating a new-asset upload as browser-only, search the registered GoHighLevel MCP
+server for `upload media file`. Its full catalog may carry an upload operation this
+domain slice does not surface. See `../SKILL.md` playbook 7.

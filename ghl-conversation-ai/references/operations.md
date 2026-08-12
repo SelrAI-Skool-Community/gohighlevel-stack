@@ -1,10 +1,11 @@
 # Conversation AI operations, by business task
 
 43 ops from the v2 catalog, domain-tagged `knowledge-base`, `voice-ai`, `chat-widget`,
-`brand-boards`. Reorganised below by what you're actually trying to do. All writes need
-`idempotencyKey` through `ghl-v2 execute_operation`; see `ghl-crm` for the ladder.
+`brand-boards`. Reorganised below by business task. Use the registered GoHighLevel MCP
+server, direct REST, or repo-root `scripts/ghl raw`. Supply an `idempotencyKey` when the
+operation schema requires it.
 
-GHL's product is branded "Conversation AI" (chat, SMS, social DM, voice all answered by
+GHL's product is branded "Conversation AI" (chat, SMS, social messaging, voice all answered by
 the same AI employee), but the underlying API domain is still named `voice-ai`. There is
 no separate `/conversation-ai/*` path. One agent object (`/voice-ai/agents/{agentId}`)
 covers every channel; which channel(s) it answers is set in the create/patch body, not by
@@ -104,4 +105,4 @@ a different endpoint family.
 matrix as part of this domain but did not surface as ops in this 43-op slice. If a task
 needs it, run `search_operations {query:"agent studio"}` before assuming it's browser-only.
 Actual chat message content (the transcript a chat/SMS/social agent produced) lives in the
-`conversations` domain, not here; see `ghl-crm` / `mcp__ghl-official__conversations_*`.
+`conversations` domain, not here; see `ghl-crm` for MCP, REST, and CLI routes.

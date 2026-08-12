@@ -1,8 +1,13 @@
-# API and browser lanes
+# API access and browser fallback
 
-## Lane A: email templates
+## Email templates
 
-The builder API below was verified live against a real GHL location.
+Choose any API access lane:
+
+- MCP is optional. Run `claude mcp list` and use the registered GoHighLevel server name.
+- Direct REST uses the Private Integration Token from repo-root `secrets/ghl.env`.
+- `../scripts/push_templates.py` handles batches. Repo-root `scripts/ghl raw` handles an
+  individual endpoint call.
 
 ```text
 POST /emails/builder
@@ -32,9 +37,11 @@ The v3 templates/campaigns API also supports full campaign sends:
 - campaign create/schedule endpoints
 - required PIT scopes: `emails/templates.*` and `emails/campaigns.*`
 
-Use the inherited `scripts/push_templates.py` helper for the builder lane. Its own help text documents dry runs, predictable prefixes, exact-name updates, deletion by prefix, credential resolution, and rate limiting.
+Use `../scripts/push_templates.py` for the builder lane. Its help text documents dry runs,
+predictable prefixes, exact-name updates, deletion by prefix, credential resolution, and
+rate limiting.
 
-## Lane B: workflow steps
+## Workflow steps
 
 The public workflow API lists workflow names only. The following work stays in the signed-in workflow builder:
 
@@ -43,6 +50,5 @@ The public workflow API lists workflow names only. The following work stays in t
 - Edit SMS bodies.
 - Change waits, Active/Disabled statuses, and other step configuration.
 
-Use `ghl-browser` with agent-browser for automated login and 2FA, or prepare a Codex browser handover. The capability matrix in `ghl-crm` records the boundary.
-
-After any live GHL change, re-sync the flows dashboard so review truth and delivery truth match.
+Use `ghl-browser` and reuse the signed-in session. The capability matrix in `ghl-crm`
+records the boundary.

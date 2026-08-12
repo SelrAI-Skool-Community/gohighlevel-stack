@@ -1,8 +1,8 @@
 # Calendars & Booking: operations by business task (59 ops, domain `calendars`)
 
-All ops run through ghl-v2 `execute_operation` with `domain: "calendars"` unless marked
-**[fixed]** (ghl-official MCP, no domain param needed). Writes need a deliberate
-`idempotencyKey`. Full param schemas: `describe_operation({operationId, domain: "calendars"})`.
+Use the registered GoHighLevel MCP server, direct REST, or repo-root `scripts/ghl raw`.
+Entries marked **[fixed]** may appear as fixed MCP operations. Inspect the operation
+schema before a write and supply an `idempotencyKey` when required.
 
 ## 1. Calendars (create/read/update/delete the calendar object itself)
 - `get-calendars`: `GET /calendars/`, list all calendars for the location
@@ -67,14 +67,14 @@ All ops run through ghl-v2 `execute_operation` with `domain: "calendars"` unless
 - `update-service-booking`: `PUT /calendars/services/bookings/{bookingId}`
 - `delete-service-booking`: `DELETE /calendars/services/bookings/{bookingId}`
 
-## 10. Services, catalog (the service/session type definition, e.g. "Discovery Call", "Showroom Tour")
+## 10. Services, catalog (the service/session type definition, e.g. "Discovery Call", "Group Service Session")
 - `get-services-catalog`: `GET /calendars/services/catalog`, list service types
 - `create-service-catalog`: `POST /calendars/services/catalog`, new service (name, duration, price, capacity)
 - `get-service-catalog-by-id`: `GET /calendars/services/catalog/{serviceId}`
 - `update-service-catalog`: `PUT /calendars/services/catalog/{serviceId}`
 - `delete-service-catalog`: `DELETE /calendars/services/catalog/{serviceId}`
 
-## 11. Services, locations (venues a service can be delivered at, e.g. showroom)
+## 11. Services, locations (venues a service can be delivered at, e.g. consultation room)
 - `get-service-locations`: `GET /calendars/services/locations`, list
 - `create-service-location`: `POST /calendars/services/locations`
 - `get-service-location-by-id`: `GET /calendars/services/locations/{serviceLocationId}`

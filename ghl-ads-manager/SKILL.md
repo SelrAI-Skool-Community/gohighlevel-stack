@@ -1,6 +1,6 @@
 ---
 name: ghl-ads-manager
-description: Runs GoHighLevel's built-in Ad Manager for Facebook/Instagram, Google, and LinkedIn campaigns entirely through the GHL API. Use when the user says "launch a Facebook ad campaign", "check what ad accounts are connected", "audit our ad platforms", "pause that Google campaign", "resume the LinkedIn ads", "pull the ad performance report", "how's the campaign spend looking", "build a custom audience for the renovation ad", "upload this ad creative", "set up a new ad set", "turn that ad back on", or "what platforms can we run ads on". This is the ONLY programmatic bridge to LinkedIn and Google ads in the stack (no direct API/MCP for either) and the fastest lane for Facebook/Instagram ads inside this stack. Pairs with /ghl-crm (master router + ladder) and /ghl-browser (first-time OAuth connects, LinkedIn audience building).
+description: Runs GoHighLevel's built-in Ad Manager for Facebook/Instagram, Google, and LinkedIn campaigns entirely through the GHL API. Use when the user says "launch a Facebook ad campaign", "check what ad accounts are connected", "audit our ad platforms", "pause that Google campaign", "resume the LinkedIn ads", "pull the ad performance report", "how's the campaign spend looking", "build a custom audience for the service offer ad", "upload this ad creative", "set up a new ad set", "turn that ad back on", or "what platforms can we run ads on". This is the programmatic bridge to LinkedIn and Google ads in the stack and the fastest lane for Facebook/Instagram ads inside this stack. Pairs with ghl-crm for routing and ghl-browser for first-time OAuth connections and LinkedIn audience building.
 ---
 
 # GHL Ad Manager Playbook⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
@@ -10,17 +10,18 @@ built-in Ad Manager (`ad-publishing` domain, 95 operations). This is the bridge 
 platforms the rest of the stack cannot reach directly: LinkedIn and Google have no other
 API or MCP connection anywhere in the toolset, so every LinkedIn/Google ad task routes
 here. For anything already living inside a GHL location
-(renovation enquiry campaigns, lead gen tied to GHL contacts/pipelines), this is the
+(service enquiry campaigns, lead generation tied to GHL contacts/pipelines), this is the
 faster, contact-aware lane.
 
 ## Execution ladder
 
-No `ghl-official` fixed tool covers ad-publishing, so go straight to `ghl-v2` meta-tools:
-`search_operations {query, domains:["ad-publishing"]}` to find the op, `describe_operation
-{operationId, domain}` to confirm the live schema before the first use of any op (naming
-and path don't always match, see gotchas), then `execute_operation` to run it. No MCP
-client handy? `ghl-crm`'s `scripts/ghl_v2_call.py` calls the same endpoints. Full ladder,
-quirks, and safety baseline live in `/ghl-crm`.
+1. **MCP, optional**: run `claude mcp list` and use the registered GoHighLevel server
+   name. Ad publishing needs its full-catalog tools: search, describe, then execute the
+   relevant `ad-publishing` operation.
+2. **Direct REST**: use the method and path in `references/operations.md` with the token
+   from repo-root `secrets/ghl.env`.
+3. **CLI**: use repo-root `scripts/ghl raw METHOD /path [body]`. REST and CLI work
+   without MCP.
 
 ## Core playbooks
 

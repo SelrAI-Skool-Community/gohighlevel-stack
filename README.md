@@ -41,23 +41,39 @@ be done by a browser clicking through the actual GHL screens. The big ones:
 - The **funnel page builder** and the **form builder**
 - **Pipeline stage** creation and reordering
 
-That is not a limitation of this stack, it is a limitation of GoHighLevel. The stack
-handles it by having two lanes: the API lane for everything it can reach, and
-`ghl-browser` for the rest. The capability matrix in `ghl-crm/references/` is the
-authority on which is which. Read it before you assume something is impossible, and
-before you assume something is easy.
+That is a GoHighLevel API limitation. This stack has three ways to reach the API:
+
+1. **MCP lane, optional.** Run `claude mcp list` and use whatever name your machine shows
+   for its GoHighLevel server. No fixed MCP name is assumed.
+2. **REST lane.** Call GoHighLevel directly with the Private Integration Token in
+   `secrets/ghl.env`.
+3. **CLI lane.** Use the repo-root `scripts/ghl` helper, which reads the same credentials.
+
+The full stack works without MCP. When the public API has no endpoint, `ghl-browser`
+drives the signed-in GHL interface. The capability matrix in
+`ghl-crm/references/capability-matrix.md` is the authority on which route applies.
 
 ## Install
 
 You need Claude Code installed, and a GoHighLevel account you are an admin on.
 
-**No GoHighLevel account yet?** There is a sub-account at $25 USD a month, and that tier
-carries everything this stack drives: CRM, pipelines, calendars, conversations, social
-planner and funnels.
+**No GoHighLevel account yet?** There is a sub-account at $25 USD a month, 15 days free,
+and that tier carries everything this stack drives: CRM, pipelines, calendars,
+conversations, social planner and funnels. You do not need a higher tier for any of the
+eleven skills.
 
-https://buy.stripe.com/8x27sNbwvbXE1zM2Ry0Ny0c
+https://buy.stripe.com/3cI3cx4432n43HU8bS0Ny0i
 
-You do not need a higher tier to run any of the eleven skills.
+Full detail, including the scopes to tick: [GET-A-GHL-ACCOUNT.md](GET-A-GHL-ACCOUNT.md).
+
+**Already paying for GoHighLevel through someone else?** You do not have to start again.
+GoHighLevel can move a sub-account between agencies and your contacts, pipelines,
+calendars, workflows and funnels go with it. The steps, the message to send, and the list
+of what breaks in a move: [MOVE-YOUR-ACCOUNT.md](MOVE-YOUR-ACCOUNT.md).
+
+**Fastest path:** open a new Claude Code session and paste the one prompt in
+[SETUP-PROMPT.md](SETUP-PROMPT.md). Claude does the clone and the install. Otherwise,
+clone this repo and run:
 
 ```sh
 bash install.sh
@@ -68,8 +84,8 @@ That copies the eleven skills into `~/.claude/skills/` and creates `secrets/ghl.
 Then open `secrets/ghl.env` and fill in two values. The file tells you where to find
 each one:
 
-- `GHL_API_KEY` — a Private Integration Token from GHL Settings
-- `GHL_LOCATION_ID` — the id in your GHL URL
+- `GHL_API_KEY`, a Private Integration Token from GHL Settings
+- `GHL_LOCATION_ID`, the id in your GHL URL
 
 Then check it actually worked:
 
@@ -93,7 +109,7 @@ Show me every enquiry from the last week that hasn't been quoted yet.
 ```
 
 ```
-Move the Henderson job to Quote Sent and add a note about the tile change.
+Move enquiry 2048 to Quote Sent and add a note about the revised service scope.
 ```
 
 ```
@@ -101,7 +117,7 @@ Build me a follow-up sequence for quotes that go quiet after five days.
 ```
 
 ```
-Who's booked into the showroom next Tuesday?
+What service consultations are booked next Tuesday?
 ```
 
 You do not need to know which of the eleven skills does the job. Ask `ghl-crm` and it
@@ -143,9 +159,5 @@ permission scope (401), the wrong location id (404), or you have asked for somet
 that is browser-only (no endpoint exists). The capability matrix settles the third one
 in about ten seconds.
 
-**One naming quirk to know about.** The skills refer to GHL tools by the names used
-where they were written (`ghl-official`, `ghl-v2`). Your machine may have registered the
-GoHighLevel connection under a different name. If Claude says it cannot find a GHL tool,
-tell it to run `claude mcp list` and use whatever the GHL server is actually called. The
-`scripts/ghl` helper and the REST lane work regardless of the MCP name, so nothing is
-ever truly blocked by this.
+If Claude cannot find a GHL MCP tool, ask Claude to run `claude mcp list` and retry with
+the GoHighLevel server name shown there. Direct REST and `scripts/ghl` work regardless.

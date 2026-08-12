@@ -3,7 +3,7 @@
 Domain: `ad-publishing` (95 ops). All scopes are `adPublishing.readonly` (read) or
 `adPublishing.write` (write/delete). Use `describe_operation {operationId, domain:
 "ad-publishing"}` for the exact param/body schema before the first use of any op. Several
-opId names don't match their path 1:1 (see SKILL.md gotchas).
+opId names do not match their path 1:1 (see `../SKILL.md` gotchas).
 
 ## 1. Connection and account audit
 

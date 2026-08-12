@@ -1,29 +1,17 @@
-# SETUP-PROMPT.md
+# Set up ghl-browser
 
-Paste into Claude Code to install + verify the `ghl-browser` skill.
+Paste this into Claude Code:
 
+```text
+Set up and verify the ghl-browser skill.
+
+1. Confirm ~/.claude/skills/ghl-browser/SKILL.md exists.
+2. Confirm the agent-browser CLI is installed with `agent-browser --version`.
+3. Reuse an existing signed-in GHL browser session. Do not place login credentials in secrets/ghl.env.
+4. Run `bash ~/.claude/skills/ghl-browser/scripts/smoke.sh`.
+5. Ask Claude to retry if the browser daemon stalls or the session needs reopening.
 ```
-Install + verify the ghl-browser skill on this machine.
 
-1. Confirm the skill exists at ~/.claude/skills/ghl-browser/.
-2. Run smoke: bash ~/.claude/skills/ghl-browser/scripts/smoke.sh. Expect SMOKE PASS.
-3. Read SKILL.md to understand the trigger phrases and intended use cases.
-4. Once verified, the skill is ready.
-```
-
-## What this skill does
-
-See `SKILL.md` for the full operation map and reference content. Trigger phrases are listed in the frontmatter description.
-
-## Failure modes
-
-| Symptom | Fix |
-|---|---|
-| Smoke FAIL on SKILL.md frontmatter | Check `name:` and `description:` keys are present |
-| Smoke FAIL on evidence layer | Re-run cook: this file, examples/<slug>-session.md, CHANGELOG.md all need to exist |
-| Skill not triggering on user phrases | Description may need richer trigger-phrase list. Edit frontmatter via /skill-creator |
-
-## Pairs with
-
-- `/kit-doctor` — audits this skill against Pass 1 rubric
-- `/skill-creator` — refactor or extend the SKILL.md
+Use this skill only for work listed as browser-only in
+`../ghl-crm/references/capability-matrix.md`. API-capable work uses the optional MCP lane,
+direct REST, or repo-root `scripts/ghl`.

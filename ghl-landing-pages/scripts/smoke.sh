@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # ghl-landing-pages smoke test.
-# Verifies the skill is wired: SKILL.md frontmatter, GHL MCP reachable, bash helper,
-# credentials, ghl-browser sister skill, evidence layer (examples + CHANGELOG).
+# Verifies the skill files and optional access lanes.
 set -u
 
 FAILS=0
@@ -26,30 +25,30 @@ else
   fail "SKILL.md missing"
 fi
 
-# 2. GHL MCP server(s) registered (this skill drives blogs API via ghl-official or ghl-community)
+# 2. Optional MCP inventory is readable
 if command -v claude >/dev/null 2>&1; then
-  if claude mcp list 2>/dev/null | grep -qi "ghl-official\|ghl_official\|claude_ai_GHL\|ghl-community"; then
-    ok "GHL MCP server(s) registered with Claude Code"
+  if claude mcp list >/dev/null 2>&1; then
+    ok "MCP inventory readable; use the registered GoHighLevel server name if present"
   else
-    warn "No GHL MCP detected via claude mcp list. May be wired at user-scope or via claude.ai."
+    warn "Could not read MCP inventory; REST and scripts/ghl still work"
   fi
 else
-  warn "claude CLI not on PATH, can't verify MCP registration"
+  warn "claude CLI not on PATH; REST and scripts/ghl still work"
 fi
 
-# 3. Bash helper script reachable (used for direct REST calls when MCP gaps)
-GHL_HELPER=$(find ~/.claude/projects -name "ghl" -type f 2>/dev/null | head -1)
-if [[ -n "$GHL_HELPER" && -x "$GHL_HELPER" ]]; then
-  ok "ghl bash helper present at $GHL_HELPER"
+# 3. Repo-root CLI helper reachable when running from the bundle
+REPO_ROOT="$(cd "$SKILL_DIR/.." && pwd)"
+if [[ -x "$REPO_ROOT/scripts/ghl" ]]; then
+  ok "repo-root scripts/ghl present"
 else
-  warn "ghl bash helper not found (optional, MCP is the canonical path)"
+  warn "scripts/ghl not beside the skill bundle; use direct REST or run the repo verifier"
 fi
 
 # 4. GHL credentials reachable (env var, else secrets/ghl.env)
 if [[ -n "${GHL_API_KEY:-}" ]]; then
   ok "GHL_API_KEY set in the environment"
-elif [[ -f secrets/ghl.env ]] || [[ -f ~/.ghl/ghl.env ]]; then
-  ok "GHL credentials file found"
+elif [[ -f "$REPO_ROOT/secrets/ghl.env" ]]; then
+  ok "repo-root secrets/ghl.env present"
 else
   warn "No GHL credentials. Set GHL_API_KEY, or create secrets/ghl.env from the template."
 fi
@@ -75,7 +74,7 @@ else
   warn "npx not on PATH. Vercel deploy path needs Node.js installed."
 fi
 
-# 8. Examples + CHANGELOG present (evidence layer)
+# 8. Examples and changelog present
 for f in examples CHANGELOG.md; do
   if [[ -e "$SKILL_DIR/$f" ]]; then
     ok "$f present"

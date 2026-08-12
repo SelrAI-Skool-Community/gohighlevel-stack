@@ -11,6 +11,9 @@ Location: $GHL_LOCATION_ID env, else `secrets/ghl.env`.
 import glob, json, os, subprocess, itertools, sys
 
 OUT_PATH = sys.argv[1] if len(sys.argv) > 1 else "./catalog.json"
+REPO_ENV = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..", "secrets", "ghl.env")
+)
 
 
 def _sh(cmd):
@@ -21,7 +24,7 @@ def resolve(name, env_grep):
     v = os.environ.get(name, "")
     if v:
         return v
-    candidates = [os.environ.get("GHL_ENV_FILE", "")] + sorted(glob.glob("secrets/ghl.env"))
+    candidates = [os.environ.get("GHL_ENV_FILE", ""), REPO_ENV] + sorted(glob.glob("secrets/ghl.env"))
     for env_file in candidates:
         if env_file and os.path.exists(env_file):
             v = _sh(f"grep {env_grep} {env_file} | cut -d= -f2 | tr -d '\"'")

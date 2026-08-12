@@ -14,16 +14,13 @@ associations, trigger links, and enrolment.
 
 ## Execution ladder
 
-1. **ghl-official fixed tools first**: 8 contact tools (create/get/get-all/update/upsert,
-   add-tags/remove-tags, get-all-tasks), 4 opportunity tools (get/search/update/get-pipelines),
-   3 conversation tools (search/get-messages/send-a-new-message). Fastest lane for the
-   90% case, reach for these before the v2 meta-tools.
-2. **ghl-v2 meta-tools** for everything in `references/operations.md` the fixed tools
-   don't cover (notes, followers, custom objects, associations, trigger links, workflow
-   enrolment, business linkage, custom field/value CRUD): `search_operations` then
-   `describe_operation` then `execute_operation`.
-3. No MCP client (cron/server/Codex batch): `ghl-crm/scripts/ghl_v2_call.py`.
-   Full ladder, quirks, and the fixed-tool inventory live in skill `ghl-crm`.
+1. **MCP, optional**: run `claude mcp list` and use the GoHighLevel server name it shows.
+   Use its fixed contact, opportunity, or conversation operations when available. If it
+   exposes full-catalog tools, search, describe, then execute the required operation.
+2. **Direct REST**: use the endpoint in `references/operations.md` with the Private
+   Integration Token from repo-root `secrets/ghl.env`.
+3. **CLI**: use repo-root `scripts/ghl` for named CRM commands or `scripts/ghl raw` for
+   another documented endpoint. REST and CLI work without MCP.
 
 ## Core playbooks
 
@@ -108,7 +105,7 @@ associations, trigger links, and enrolment.
 
 ### 7. Trigger-link tracking
 1. Create the link: `create-link` with a destination URL and a descriptive name (event
-   plus channel, e.g. `renovation-promo-sms-link`). One link per channel/campaign so click
+   plus channel, e.g. `service-plan-sms-link`). One link per channel/campaign so click
    attribution stays clean.
 2. Drop the link into the SMS/email body from playbook 1 or 4 above.
 3. Check performance: `search-trigger-links` or `get-link-by-id` for click counts.

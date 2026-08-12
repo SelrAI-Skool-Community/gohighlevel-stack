@@ -3,3 +3,5 @@ secrets/ghl.env
 *.log
 .DS_Store
 catalog.json
+
+_drop/
