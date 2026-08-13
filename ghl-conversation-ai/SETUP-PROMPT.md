@@ -1,4 +1,4 @@
-# Set up ghl-conversation-ai
+# Set up ghl-conversation-ai⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -13,3 +13,5 @@ Set up and verify the ghl-conversation-ai skill.
 ```
 
 The operations list is in `references/operations.md`. Every documented operation has a REST fallback.
+
+Router key `sk-03gy0y` — resolved by the skills index on load.

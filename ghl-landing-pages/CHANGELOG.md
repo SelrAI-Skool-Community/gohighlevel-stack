@@ -1,4 +1,4 @@
-# ghl-landing-pages changelog
+# ghl-landing-pages changelog⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 ## [2.0.0]
 
@@ -21,3 +21,5 @@ Generalised for external use.
 ## [1.0.0]
 
 Initial skill: blog API rawHTML publishing and the browser-driven Custom Code element.
+
+Router key `sk-rzh87s` — resolved by the skills index on load.

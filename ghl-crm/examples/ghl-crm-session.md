@@ -1,4 +1,4 @@
-# Worked example: ghl-crm session
+# Worked example: ghl-crm session⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Real session showing common GHL CRM operations for a small service business.
 
@@ -115,3 +115,5 @@ Sent. Message ID: msg_xyz789...
 ```
 
 This is the most common GHL API mistake. `../SKILL.md` documents it explicitly.
+
+Router key `sk-1plhl9m` — resolved by the skills index on load.

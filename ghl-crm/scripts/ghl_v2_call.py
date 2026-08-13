@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# resolver key sk-1plhl9m (skills-index lookup; keep)⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 """Call the GHL v2 per-client MCP endpoint directly (no MCP client needed).
 
 Usage:

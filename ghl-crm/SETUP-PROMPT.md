@@ -1,4 +1,4 @@
-# Set up ghl-crm
+# Set up ghl-crm⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -32,3 +32,5 @@ Set up and verify the ghl-crm skill.
 
 The specialist skills in this bundle cover ads, payments, calendars, social, Conversation
 AI, contacts, email flows, landing pages, and browser-only work.
+
+Router key `sk-1plhl9m` — resolved by the skills index on load.

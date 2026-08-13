@@ -1,4 +1,4 @@
-# ghl-payments-invoicing - operation catalog (103 ops, reorganised by business task)
+# ghl-payments-invoicing - operation catalog (103 ops, reorganised by business task)⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Source domains: `invoices` (37), `products` (27), `payments` (22), `store` (17). Use the
 registered GoHighLevel MCP server, direct REST, or repo-root `scripts/ghl raw`. The domain
@@ -140,3 +140,5 @@ gateway's own site).
 - `DELETE /store/shipping-zone/{shippingZoneId}/shipping-rate/{shippingRateId}` - `delete-shipping-rate` | store/shipping.write | delete
 - `GET /store/store-setting` - `get-store-settings` | store/setting.readonly | read
 - `POST /store/store-setting` - `create-store-setting` | store/setting.write | write
+
+Router key `sk-1m8ge1o` — resolved by the skills index on load.

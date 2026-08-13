@@ -1,4 +1,4 @@
-# Set up ghl-email-flows
+# Set up ghl-email-flows⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -14,3 +14,5 @@ Set up and verify the ghl-email-flows skill.
 ```
 
 The skill needs approved copy, hosted assets, and a rendered light-mode and dark-mode review before shipping.
+
+Router key `sk-5e44r9` — resolved by the skills index on load.

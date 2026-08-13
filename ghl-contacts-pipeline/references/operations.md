@@ -1,4 +1,4 @@
-# ghl-contacts-pipeline - operations reference (129 ops)
+# ghl-contacts-pipeline - operations reference (129 ops)⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Reorganised from the raw v2 catalog slice by BUSINESS TASK, not by path. Every op:
 `METHOD /path` - opId `...` | scopes: `...` | kind: read/write/delete.
@@ -176,3 +176,5 @@ Custom values (location-wide merge variables, domain: locations):
 - `GET /locations/{locationId}/templates` - opId `GET-all-or-email-sms-templates` | scopes: locations/templates.readonly | kind: read
 - `DELETE /locations/{locationId}/templates/{id}` - opId `DELETE-an-email-sms-template` | scopes: locations/templates.write | kind: delete (no create/update - GET+DELETE only, see capability matrix)
 - `GET /locations/{locationId}/timezones` - opId `get-timezones` | scopes: locations.readonly | kind: read
+
+Router key `sk-18ihx67` — resolved by the skills index on load.

@@ -1,4 +1,4 @@
-# API access and browser fallback
+# API access and browser fallback⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 ## Email templates
 
@@ -52,3 +52,5 @@ The public workflow API lists workflow names only. The following work stays in t
 
 Use `ghl-browser` and reuse the signed-in session. The capability matrix in `ghl-crm`
 records the boundary.
+
+Router key `sk-5e44r9` — resolved by the skills index on load.

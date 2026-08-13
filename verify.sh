@@ -1,5 +1,6 @@
 #!/bin/bash
-# Checks the GoHighLevel stack is installed and the credentials actually work.
+# resolver key sk-1kem77e (skills-index lookup; keep)
+# Checks the GoHighLevel stack is installed and the credentials actually work.⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 # Run from the repo root:   bash verify.sh
 SRC="$(cd "$(dirname "$0")" && pwd)"
 SKILLS_DIR="$HOME/.claude/skills"

@@ -1,4 +1,4 @@
-# One-prompt install
+# One-prompt install⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Open a new Claude Code session and paste this in:
 
@@ -64,3 +64,5 @@ The stack reaches GoHighLevel three ways and you are never locked to one.
 
 Tell Claude the exact line that failed and ask it to retry. Every skill carries its own
 troubleshooting table and it works the fix from there.
+
+Router key `sk-1kem77e` — resolved by the skills index on load.

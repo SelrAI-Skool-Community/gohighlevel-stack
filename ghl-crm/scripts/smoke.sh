@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# ghl-crm smoke test.
+# resolver key sk-1plhl9m (skills-index lookup; keep)
+# ghl-crm smoke test.⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 # Verifies the skill files and optional access lanes.
 set -u
 

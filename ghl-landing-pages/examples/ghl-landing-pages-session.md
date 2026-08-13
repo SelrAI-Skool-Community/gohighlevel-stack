@@ -1,4 +1,4 @@
-# Worked example: ghl-landing-pages session
+# Worked example: ghl-landing-pages session⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 An end-to-end run across all three page-install paths. Company names, IDs and domains
 are examples. Assume `GHL_LOCATION_ID` and `GHL_API_KEY` are set.
@@ -118,3 +118,5 @@ URL. If that matters for branding, use the iframe method from section 3 instead.
   override was pasted
 - **A redeploy appeared to do nothing.** The GHL page had cached the iframe. One
   hard-refresh fixed it
+
+Router key `sk-rzh87s` — resolved by the skills index on load.

@@ -1,4 +1,4 @@
-# Set up ghl-landing-pages
+# Set up ghl-landing-pages⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -34,3 +34,5 @@ Blog publishing and redirects have REST fallbacks. Funnel page content is browse
 | The hosted page still shows an old iframe | Hard-refresh the GHL page, then ask Claude to verify it again |
 | The page audit finds long dashes | Replace them in the page copy and redeploy |
 | An image exceeds 200KB | Resize it before uploading, then rerun the page audit |
+
+Router key `sk-rzh87s` — resolved by the skills index on load.

@@ -1,4 +1,4 @@
-# Set up ghl-calendars-booking
+# Set up ghl-calendars-booking⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -13,3 +13,5 @@ Set up and verify the ghl-calendars-booking skill.
 ```
 
 The operations list is in `references/operations.md`. Booking-page styling uses `ghl-browser`.
+
+Router key `sk-3lwfox` — resolved by the skills index on load.

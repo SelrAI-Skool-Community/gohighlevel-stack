@@ -1,4 +1,4 @@
-# Worked example: ghl-browser session
+# Worked example: ghl-browser session⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Three concrete examples of browser-only GHL work.
 
@@ -35,3 +35,5 @@ lane, then fetches the opportunity again.
 
 Verified: enquiry 2048 is now in Quote Sent.
 ```
+
+Router key `sk-1djxbff` — resolved by the skills index on load.

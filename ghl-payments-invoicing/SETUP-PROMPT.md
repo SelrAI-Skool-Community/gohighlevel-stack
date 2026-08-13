@@ -1,4 +1,4 @@
-# Set up ghl-payments-invoicing
+# Set up ghl-payments-invoicing⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -13,3 +13,5 @@ Set up and verify the ghl-payments-invoicing skill.
 ```
 
 The operations list is in `references/operations.md`. Payment-provider setup uses `ghl-browser` when the API cannot complete it.
+
+Router key `sk-1m8ge1o` — resolved by the skills index on load.

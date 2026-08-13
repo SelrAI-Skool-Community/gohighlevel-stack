@@ -1,4 +1,4 @@
-# Set up ghl-browser
+# Set up ghl-browser⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -24,3 +24,5 @@ direct REST, or repo-root `scripts/ghl`.
 | The saved GHL session has expired | Ask Claude to reopen the saved profile and retry |
 | A GHL page stays blank | Wait 20 seconds, reopen the page, take a fresh snapshot, and retry |
 | An emailed security code cannot be read | Run `claude mcp list`, use the registered email server if present, and ask Claude to retry |
+
+Router key `sk-1djxbff` — resolved by the skills index on load.

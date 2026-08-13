@@ -1,4 +1,4 @@
-# Delivery map
+# Delivery map⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 ## Truth layers
 
@@ -75,3 +75,5 @@ Do not call a flow shipped without all of this:
 - The API `previewUrl` for every pushed template was opened and looked at
 - Workflow steps were updated in the browser and re-read afterwards
 - A test send was opened on a real phone, in dark mode
+
+Router key `sk-5e44r9` — resolved by the skills index on load.

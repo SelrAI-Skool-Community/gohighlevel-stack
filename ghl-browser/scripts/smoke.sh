@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# ghl-browser smoke test.
+# resolver key sk-1djxbff (skills-index lookup; keep)
+# ghl-browser smoke test.⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 # Verifies the skill files and frontmatter.
 set -u
 

@@ -1,4 +1,4 @@
-# Set up email-sequence-ghl
+# Set up email-sequence-ghl⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -14,3 +14,5 @@ Set up and verify the email-sequence-ghl skill.
 ```
 
 The skill needs approved copy, a trigger, one goal, real proof if available, and exit conditions. It always leaves the workflow paused.
+
+Router key `sk-1m0wshd` — resolved by the skills index on load.

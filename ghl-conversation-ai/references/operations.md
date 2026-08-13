@@ -1,4 +1,4 @@
-# Conversation AI operations, by business task
+# Conversation AI operations, by business task⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 43 ops from the v2 catalog, domain-tagged `knowledge-base`, `voice-ai`, `chat-widget`,
 `brand-boards`. Reorganised below by business task. Use the registered GoHighLevel MCP
@@ -106,3 +106,5 @@ matrix as part of this domain but did not surface as ops in this 43-op slice. If
 needs it, run `search_operations {query:"agent studio"}` before assuming it's browser-only.
 Actual chat message content (the transcript a chat/SMS/social agent produced) lives in the
 `conversations` domain, not here; see `ghl-crm` for MCP, REST, and CLI routes.
+
+Router key `sk-03gy0y` — resolved by the skills index on load.

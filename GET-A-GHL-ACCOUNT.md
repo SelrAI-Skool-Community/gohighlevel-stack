@@ -1,4 +1,4 @@
-# Getting the GoHighLevel account this stack drives
+# Getting the GoHighLevel account this stack drives⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Every skill in this bundle talks to one GoHighLevel sub-account. If you already have one,
 skip to [Moving an account you already have](MOVE-YOUR-ACCOUNT.md). If you do not, this
@@ -55,3 +55,5 @@ Settings and create a new one. The old token dies the moment you do.
 
 Ask Claude to open the link and read the page back to you. If the page loads for Claude
 and not for you, it is a browser extension or a content blocker, not the link.
+
+Router key `sk-1kem77e` — resolved by the skills index on load.

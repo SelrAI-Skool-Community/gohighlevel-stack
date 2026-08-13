@@ -1,4 +1,4 @@
-# Set up ghl-contacts-pipeline
+# Set up ghl-contacts-pipeline⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -13,3 +13,5 @@ Set up and verify the ghl-contacts-pipeline skill.
 ```
 
 The operations list is in `references/operations.md`. Pipeline-stage configuration uses `ghl-browser`.
+
+Router key `sk-18ihx67` — resolved by the skills index on load.

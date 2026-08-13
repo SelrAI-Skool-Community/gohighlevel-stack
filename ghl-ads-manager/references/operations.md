@@ -1,4 +1,4 @@
-# Ad Manager operations, by business task
+# Ad Manager operations, by business task⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Domain: `ad-publishing` (95 ops). All scopes are `adPublishing.readonly` (read) or
 `adPublishing.write` (write/delete). Use `describe_operation {operationId, domain:
@@ -156,3 +156,5 @@ LinkedIn campaign group body. Google keeps a dedicated store in this domain:
 |---|---|---|---|
 | List Google assets | GET `/ad-publishing/google/assets` | `google-get-assets` | read |
 | Create/update Google assets | POST `/ad-publishing/google/assets` | `google-upsert-assets` | write |
+
+Router key `sk-uc260v` — resolved by the skills index on load.

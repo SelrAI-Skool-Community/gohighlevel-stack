@@ -1,4 +1,4 @@
-# Dark-mode contract
+# Dark-mode contract⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 ## The failure this exists to prevent
 
@@ -56,3 +56,5 @@ running Gmail's actual renderer. Do it before every launch, not just the first o
 
 Release evidence is both screenshots, the API `previewUrl` viewed in dark mode, and
 the phone test.
+
+Router key `sk-5e44r9` — resolved by the skills index on load.

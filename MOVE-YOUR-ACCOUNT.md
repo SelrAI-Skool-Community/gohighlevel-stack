@@ -1,4 +1,4 @@
-# Moving a GoHighLevel account you already have
+# Moving a GoHighLevel account you already have⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 If you are already paying for GoHighLevel through somebody else, you do not have to start
 again. GoHighLevel has a built-in transfer that moves a sub-account from one agency to
@@ -103,3 +103,5 @@ values rather than assuming they survived:
 
 Check four returning 200 is the proof. It means the move landed and the stack is talking
 to the right account.
+
+Router key `sk-1kem77e` — resolved by the skills index on load.

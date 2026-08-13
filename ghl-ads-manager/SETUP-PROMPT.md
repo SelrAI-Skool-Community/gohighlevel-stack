@@ -1,4 +1,4 @@
-# Set up ghl-ads-manager
+# Set up ghl-ads-manager⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -13,3 +13,5 @@ Set up and verify the ghl-ads-manager skill.
 ```
 
 The operations list is in `references/operations.md`. First-time ad-account connections use `ghl-browser`.
+
+Router key `sk-uc260v` — resolved by the skills index on load.

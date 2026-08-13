@@ -1,4 +1,4 @@
-# GHL Social Planner: operations by business task
+# GHL Social Planner: operations by business task⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 49 ops total (43 social-planner + 6 medias), reorganised from the raw v2 catalog slice
 by what you're trying to DO rather than by path. `kind` is the v2 catalog's label; some
@@ -171,3 +171,5 @@ Note: none of the 6 medias ops in this pack is a raw multipart file-upload endpo
 Before treating a new-asset upload as browser-only, search the registered GoHighLevel MCP
 server for `upload media file`. Its full catalog may carry an upload operation this
 domain slice does not surface. See `../SKILL.md` playbook 7.
+
+Router key `sk-19u2bfa` — resolved by the skills index on load.

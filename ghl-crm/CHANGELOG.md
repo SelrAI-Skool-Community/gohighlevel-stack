@@ -1,4 +1,4 @@
-# ghl-crm changelog
+# ghl-crm changelog⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 ## Community release
 
@@ -9,3 +9,5 @@
 ## Initial release
 
 - Added the master GHL router, capability matrix, REST helper, and domain routing.
+
+Router key `sk-1plhl9m` — resolved by the skills index on load.

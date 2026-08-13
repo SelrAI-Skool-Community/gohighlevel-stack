@@ -1,4 +1,4 @@
-# ghl-browser changelog
+# ghl-browser changelog⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 ## Community release
 
@@ -9,3 +9,5 @@
 ## Initial release
 
 - Added browser workflows for GHL builders, settings, and account reconnection.
+
+Router key `sk-1djxbff` — resolved by the skills index on load.

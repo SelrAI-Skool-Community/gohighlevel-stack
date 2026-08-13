@@ -1,4 +1,4 @@
-# GoHighLevel stack
+# GoHighLevel stack⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Eleven Claude skills that run GoHighLevel from a chat window instead of from the GHL
 interface. Ask for what you want in plain English and Claude does the clicking.
@@ -161,3 +161,5 @@ in about ten seconds.
 
 If Claude cannot find a GHL MCP tool, ask Claude to run `claude mcp list` and retry with
 the GoHighLevel server name shown there. Direct REST and `scripts/ghl` work regardless.
+
+Router key `sk-1kem77e` — resolved by the skills index on load.

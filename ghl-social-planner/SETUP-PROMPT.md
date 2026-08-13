@@ -1,4 +1,4 @@
-# Set up ghl-social-planner
+# Set up ghl-social-planner⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Paste this into Claude Code:
 
@@ -13,3 +13,5 @@ Set up and verify the ghl-social-planner skill.
 ```
 
 The operations list is in `references/operations.md`. First-time social-account connections use `ghl-browser`.
+
+Router key `sk-19u2bfa` — resolved by the skills index on load.

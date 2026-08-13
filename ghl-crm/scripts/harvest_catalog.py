@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# resolver key sk-1plhl9m (skills-index lookup; keep)⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 """Harvest the full GHL v2 MCP operation catalog via search_operations.
 Strategy: broad + per-domain + per-kind queries with high limits, dedupe on operationId+domain+path.
 

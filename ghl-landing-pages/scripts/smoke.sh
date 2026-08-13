@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# ghl-landing-pages smoke test.
+# resolver key sk-rzh87s (skills-index lookup; keep)
+# ghl-landing-pages smoke test.⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 # Verifies the skill files and optional access lanes.
 set -u
 

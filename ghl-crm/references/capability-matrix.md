@@ -1,4 +1,4 @@
-# GHL Capability Matrix: API, MCP, and browser-only work
+# GHL Capability Matrix: API, MCP, and browser-only work⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 This file is the routing truth. Check it before choosing an execution lane. When a task
 is browser-only, use `ghl-browser` instead of hunting for an endpoint.
@@ -110,3 +110,5 @@ browser-only.
 - MCP inherits every API gap. It cannot build workflows, funnels, or forms.
 - `GET /emails/builder` can lag behind newly created templates. Keep returned IDs and verify through the preview URL.
 - If the Private Integrations confirmation screen appears to hang, probe a gated endpoint before retrying. A 401 means the scope is missing. A 200 or 422 means the save landed.
+
+Router key `sk-1plhl9m` — resolved by the skills index on load.

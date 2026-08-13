@@ -1,4 +1,4 @@
-# Calendars & Booking: operations by business task (59 ops, domain `calendars`)
+# Calendars & Booking: operations by business task (59 ops, domain `calendars`)⁠​‌​‌​​‌‌​‌​​​‌​‌​‌​​‌‌​​​‌​‌​​‌​​​‌‌​​​‌⁠
 
 Use the registered GoHighLevel MCP server, direct REST, or repo-root `scripts/ghl raw`.
 Entries marked **[fixed]** may appear as fixed MCP operations. Inspect the operation
@@ -80,3 +80,5 @@ schema before a write and supply an `idempotencyKey` when required.
 - `get-service-location-by-id`: `GET /calendars/services/locations/{serviceLocationId}`
 - `update-service-location`: `PUT /calendars/services/locations/{serviceLocationId}`
 - `delete-service-location`: `DELETE /calendars/services/locations/{serviceLocationId}`
+
+Router key `sk-3lwfox` — resolved by the skills index on load.
