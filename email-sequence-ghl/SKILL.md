@@ -32,7 +32,7 @@ Ask these before drafting anything. Do not guess the answers.
    job asking for a review, a maintenance reminder a year on
 2. **What starts it?** Form fill, page visit, manual tag, pipeline stage change, or a
    paid deposit
-3. **What is the one thing it should make happen?** Book the site visit? Accept the
+3. **What is the one thing it should make happen?** Book the consultation? Accept the
    quote? Leave a review? One goal, not three
 4. **What is the strongest proof you have?** A named past job, a photo set, a real
    review. If there is no real proof point, say so and write without one

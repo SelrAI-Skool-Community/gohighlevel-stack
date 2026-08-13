@@ -206,7 +206,7 @@ case "$cmd" in
     ;;
 
   create-appointment)
-    # Usage: ghl create-appointment '{"calendarId":"xxx","contactId":"xxx","startTime":"2026-03-15T10:00:00+10:00","endTime":"2026-03-15T10:30:00+10:00","title":"Discovery Call"}'
+    # Usage: ghl create-appointment '{"calendarId":"xxx","contactId":"xxx","startTime":"2026-03-15T10:00:00Z","endTime":"2026-03-15T10:30:00Z","title":"Discovery Call"}'
     curl -s -X POST "$BASE/calendars/events/appointments" \
       -H "Authorization: Bearer $GHL_API_KEY" -H "Version: $GHL_API_VERSION" -H "Content-Type: application/json" \
       -d "$1"

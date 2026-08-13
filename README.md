@@ -49,7 +49,7 @@ That is a GoHighLevel API limitation. This stack has three ways to reach the API
    `secrets/ghl.env`.
 3. **CLI lane.** Use the repo-root `scripts/ghl` helper, which reads the same credentials.
 
-The full stack works without MCP. When the public API has no endpoint, `ghl-browser`
+The stack is fully functional without MCP. When the public API has no endpoint, `ghl-browser`
 drives the signed-in GHL interface. The capability matrix in
 `ghl-crm/references/capability-matrix.md` is the authority on which route applies.
 

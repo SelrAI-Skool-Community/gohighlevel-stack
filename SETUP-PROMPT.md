@@ -14,10 +14,10 @@ Keep the cloned folder. It holds `secrets/ghl.env` and the `scripts/ghl` helper.
 
 ## The two values
 
-- `GHL_API_KEY` — a Private Integration Token. GoHighLevel Settings, then Private
+- `GHL_API_KEY`: a Private Integration Token. GoHighLevel Settings, then Private
   Integrations, then Create new integration. Tick the scopes you want, create it, copy
   the token immediately. It is shown once.
-- `GHL_LOCATION_ID` — read it out of your GoHighLevel address bar. The URL reads
+- `GHL_LOCATION_ID`: read it out of your GoHighLevel address bar. The URL reads
   `app.gohighlevel.com/v2/location/XXXXXXXXXXXXXXXX/dashboard`. The `XXXXXXXXXXXXXXXX`
   part is the id.
 
@@ -56,11 +56,11 @@ The stack reaches GoHighLevel three ways and you are never locked to one.
 
 ## If verify fails
 
-- `401` — the token is wrong, expired, or was minted without the scope for what you
+- `401`: the token is wrong, expired, or was minted without the scope for what you
   asked. Create a new Private Integration with the right scopes ticked.
-- `403` — the token is valid but not permitted on that location.
-- `404` — `GHL_LOCATION_ID` points at a different sub-account.
-- `could not reach GHL` — network, not credentials.
+- `403`: the token is valid but not permitted on that location.
+- `404`: `GHL_LOCATION_ID` points at a different sub-account.
+- `could not reach GHL`: network, not credentials.
 
 Tell Claude the exact line that failed and ask it to retry. Every skill carries its own
 troubleshooting table and it works the fix from there.

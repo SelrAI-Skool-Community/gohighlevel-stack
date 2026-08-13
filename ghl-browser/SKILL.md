@@ -87,7 +87,7 @@ If the login form appears, ask Claude to reopen the saved profile and retry. The
 See next section.
 
 **Step 5: Location selection**
-If prompted to select a location, choose "[YOUR BUSINESS NAME]" (`<YOUR_LOCATION_ID>`).
+If prompted to select a location, choose "Sample Co" (`<YOUR_LOCATION_ID>`).
 
 ## GHL 2FA Handling (Fully Autonomous)
 
@@ -203,7 +203,7 @@ ps aux | grep -i agent-browser | grep -v grep
 
 ### GHL Returns 403/Blocked
 - Cloudflare may block automated requests. Use realistic User-Agent headers.
-- Set a custom User-Agent header like `YourBusiness-GHL/2.0.0` in API scripts.
+- Set a custom User-Agent header like `Sample-Co-GHL/2.0.0` in API scripts.
 - If agent-browser hits a Cloudflare challenge: wait for it, the persistent profile usually passes.
 
 ### GHL Session Expired

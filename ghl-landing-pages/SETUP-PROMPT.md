@@ -22,3 +22,15 @@ Set up and verify the ghl-landing-pages skill.
 | Redirect a GHL path to an external page | MCP, direct REST, or `scripts/ghl raw` |
 
 Blog publishing and redirects have REST fallbacks. Funnel page content is browser-only.
+
+## Troubleshooting
+
+| Symptom | Fix |
+|---|---|
+| Blog MCP operations are missing | Run `claude mcp list`, use the registered GHL server name, or switch to REST or `scripts/ghl raw`, then ask Claude to retry |
+| 401 Unauthorized | Check the token and blog scopes in repo-root `secrets/ghl.env`, then ask Claude to retry |
+| A published image is broken | Upload it to GHL media or a CDN and use the absolute URL, then retry |
+| GHL chrome surrounds the custom HTML | Add the wrapper-hiding CSS from `SKILL.md`, Method 2, then retry |
+| The hosted page still shows an old iframe | Hard-refresh the GHL page, then ask Claude to verify it again |
+| The page audit finds long dashes | Replace them in the page copy and redeploy |
+| An image exceeds 200KB | Resize it before uploading, then rerun the page audit |
